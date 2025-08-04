@@ -1,0 +1,34 @@
+{
+  "name": "uview1.0_doc",
+  "version": "1.0.0",
+  "description": "uView document",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
+    "eject": "NODE_OPTIONS=--openssl-legacy-provider vuepress eject",
+    "deploy": "pnpm build && node deploy",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "keywords": [
+    "uView"
+  ],
+  "author": "uViewUI",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "1.26.2",
+    "sass-loader": "8.0.2",
+    "vuepress": "^1.6.0"
+  },
+  "dependencies": {
+    "anve-upload-upyun": "^1.0.8",
+    "axios": "^0.27.2",
+    "core-js": "^2.6.11",
+    "element-ui": "^2.13.2"
+  },
+  "volta": {
+    "node": "18.20.6",
+    "pnpm": "10.2.1"
+  }
+}
