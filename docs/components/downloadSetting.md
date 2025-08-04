@@ -29,7 +29,7 @@ npm i sass-loader -D
 
 ```js
 // main.js
-import uView from "uview-ui";
+import uView from "uview-pro";
 Vue.use(uView);
 ```
 
@@ -40,7 +40,7 @@ Vue.use(uView);
 
 ```css
 /* uni.scss */
-@import 'uview-ui/theme.scss';
+@import 'uview-pro/theme.scss';
 ```
 
 
@@ -53,7 +53,7 @@ Vue.use(uView);
 ```css
 <style lang="scss">
 	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
-	@import "uview-ui/index.scss";
+	@import "uview-pro/index.scss";
 </style>
 ```
 
@@ -71,7 +71,7 @@ Vue.use(uView);
 // pages.json
 {
 	"easycom": {
-		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		"^u-(.*)": "@/uview-pro/components/u-$1/u-$1.vue"
 	},
 	
 	// 此为本身已有的内容

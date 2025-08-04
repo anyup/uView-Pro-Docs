@@ -10,7 +10,7 @@
 使用方法：
 
 ```js
-import md5Libs from "uview-ui/libs/function/md5";
+import md5Libs from "uview-pro/libs/function/md5";
 export default{
 	onLoad() {
 		console.log(md5Libs.md5('uView'))

@@ -13,12 +13,12 @@
 
 ### 下载安装
 
-使用下载的方式安装，能更方便阅读源码，但是每次升级都需要重新下载并覆盖`uview-ui`文件夹。
+使用下载的方式安装，能更方便阅读源码，但是每次升级都需要重新下载并覆盖`uview-pro`文件夹。
 
 - 在uni-app插件市场右上角选择`使用HBuilder X 导入插件`或者`下载插件ZIP`
-- 如果您的项目是由HBuilder X创建的标准uni-app项目，将下载后的`uview-ui`文件夹，复制到项目根目录。
+- 如果您的项目是由HBuilder X创建的标准uni-app项目，将下载后的`uview-pro`文件夹，复制到项目根目录。
 - 如果您的项目是由[vue-cli](https://uniapp.dcloud.io/quickstart?id=_2-%e9%80%9a%e8%bf%87vue-cli%e5%91%bd%e4%bb%a4%e8%a1%8c)模式创建的，
-请将下载后的`uview-ui`文件夹放到项目的`src`文件夹中即可。
+请将下载后的`uview-pro`文件夹放到项目的`src`文件夹中即可。
 
 
 **注意：**  此安装方式必须要按照[下载方式安装的配置](/components/downloadSetting.html)中的说明配置了才可用。
@@ -26,7 +26,7 @@
 <br>
 <div @click="downloadPost(2)" class="download-link">
 	<!-- 下载地址：<a href="https://download.uviewui.com/uView_1.3.6.zip">uView_1.3.6.zip</a> -->
-	下载地址：<a target="_blank" href="https://ext.dcloud.net.cn/plugin?id=6682">https://ext.dcloud.net.cn/plugin?id=6682</a>
+	下载地址：<a target="_blank" href="https://ext.dcloud.net.cn/plugin?id=24633">https://ext.dcloud.net.cn/plugin?id=24633</a>
 </div>
 <br>
 <br>
@@ -38,14 +38,26 @@
 此方式为整个uView演示项目，里面有uView核心，组件演示，模板等，建议用户可以下载
 此项目运行用于查看UI演示效果，复制模板案例，通过里面的示例，可以快速掌握某一个组件的用法。 
 
-- 途径一：uView示例项目已内置到`HBuilder X`中，在`文件 -> 新建 -> 项目 -> uni-app`中，找到`uView UI`下载运行即可。
+<!-- - 途径一：uView示例项目已内置到`HBuilder X`中，在`文件 -> 新建 -> 项目 -> uni-app`中，找到`uView Pro`下载运行即可。 -->
 
-- 途径二：在uni-app插件市场右上角选择`使用 HBuilderX 导入示例项目`或者`下载示例项目ZIP`，然后在HBuilder X中运行即可。
+<!-- - 途径二：在uni-app插件市场右上角选择`使用 HBuilderX 导入示例项目`或者`下载示例项目ZIP`，然后在HBuilder X中运行即可。 -->
+
+通过github或gitee下载uView Pro示例项目，在VSCode中运行即可。
+
+- github：[https://github.com/anyup/uview-pro](https://github.com/anyup/uview-pro)
+- gitee：[https://gitee.com/anyup/uview-pro](https://gitee.com/anyup/uview-pro)
+
+```bash
+
+pnpm install
+
+pnpm run dev:h5
+```
 
 <br>
 <div @click="downloadPost(3)" class="download-link">
 	<!-- 下载地址：<a href="https://download.uviewui.com/uView_1.3.6_demo.zip">uView_1.3.6_demo.zip</a> -->
-	uni-app插件市场地址：<a target="_blank" href="https://ext.dcloud.net.cn/plugin?id=6682">https://ext.dcloud.net.cn/plugin?id=6682</a>
+	uni-app插件市场地址：<a target="_blank" href="https://ext.dcloud.net.cn/plugin?id=24633">https://ext.dcloud.net.cn/plugin?id=24633</a>
 </div>
 <br>
 <br>
@@ -100,10 +112,10 @@
 // npm init -y
 
 // 安装
-npm install uview-ui@1.8.8
+npm install uview-pro@1.8.8
 
 // 更新
-npm update uview-ui
+npm update uview-pro
 ```
 
 
@@ -123,7 +135,7 @@ console.log(this.$u.config.version);
 
 - 通过源码查看的形式
 
-可以查阅uView的配置文件得知当前版本号，具体位置为"/uview-ui/libs/config/config.js"。
+可以查阅uView的配置文件得知当前版本号，具体位置为"/uview-pro/libs/config/config.js"。
 
 
 <script>

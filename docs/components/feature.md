@@ -47,7 +47,7 @@ h3[id=vue特性在各平台支持度] + ol + table thead tr th:nth-child(2){
 
 <!-- ### 二次修改封装uView组件
 
-uView组件一直追求完善而精致，如果您觉得某个组件可能和您的需求不一致，或者您有更好的实现方案和或思路，您可以在群里反馈给我们，也可以在[github](https://github.com/YanxinNet/uView)上
+uView组件一直追求完善而精致，如果您觉得某个组件可能和您的需求不一致，或者您有更好的实现方案和或思路，您可以在群里反馈给我们，也可以在[github](https://github.com/anyup/uView-Pro)上
 给我们提PR，我们会第一时间跟进和处理。 
 如果您仍然有需要修改uView组件源码的需求，通常情况下，可以有如下两个办法：
 
@@ -56,17 +56,17 @@ uView组件一直追求完善而精致，如果您觉得某个组件可能和您
 
 然而，我们有更好的方案，本质上还是利用了`easycom`的特性，让您能无感的修改并使用uView的组件，以下以修改`u-button`组件作为示例：
 
-1). 到`uview-ui`组件库文件中的`components`目录中复制`u-button`目录，并粘贴到项目**根目录**的`components`目录中
+1). 到`uview-pro`组件库文件中的`components`目录中复制`u-button`目录，并粘贴到项目**根目录**的`components`目录中
 
-2). 此时`uview-ui/components`和根目录的`components`目录中，各有一份`u-button`组件源码，在符合规则的情况下，hx编译会自动对根目录的`components`组件引用`easycom`
-规则，但由于`pages.json`中定义了`easycom`规则，所以`uview-ui/components`中的同名组件比根目录的`components`目录中的同名组件优先级更高，解决办法是
+2). 此时`uview-pro/components`和根目录的`components`目录中，各有一份`u-button`组件源码，在符合规则的情况下，hx编译会自动对根目录的`components`组件引用`easycom`
+规则，但由于`pages.json`中定义了`easycom`规则，所以`uview-pro/components`中的同名组件比根目录的`components`目录中的同名组件优先级更高，解决办法是
 在`pages.json`中定义另一条`easycom`规则：
 
 ```json
 // pages.json
 "easycom": {
-	"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
-	// 由于后来者居上的原则，下面的规则覆盖上面的规则，所以同名组件时，components中的u-button比uview-ui中的u-button优先级更高
+	"^u-(.*)": "@/uview-pro/components/u-$1/u-$1.vue",
+	// 由于后来者居上的原则，下面的规则覆盖上面的规则，所以同名组件时，components中的u-button比uview-pro中的u-button优先级更高
 	"^u-(.*)": "@/components/u-$1/u-$1.vue"
 }
 ```

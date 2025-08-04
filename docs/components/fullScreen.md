@@ -33,7 +33,7 @@
 
 "pages": [
 	{
-		"path": "uview-ui/components/u-full-screen/u-full-screen",
+		"path": "uview-pro/components/u-full-screen/u-full-screen",
 		"style": {
 			"navigationStyle": "custom",  // 取消本页面的导航栏
 			"app-plus": {
@@ -62,7 +62,7 @@
 export default {
 	onLoad() {
 		// 也可以在onShow生命周期打开，此为uView封装的请求方法
-		this.$u.route("/uview-ui/components/u-full-screen/u-full-screen?id=1");
+		this.$u.route("/uview-pro/components/u-full-screen/u-full-screen?id=1");
 	}
 }
 ```

@@ -11,7 +11,7 @@
 
 ```js
 // main.js
-import uView from "uview-ui";
+import uView from "uview-pro";
 Vue.use(uView);
 ```
 
@@ -47,7 +47,7 @@ easycom的另一个最大的特点是，它是**按需引入**的，所以您引
 
 Hbuilder X自2.5.1版开始正式支持`easycom`特性，**HX2.5.5**版支持自动引入`components/组件名称/组件名称.vue`，考虑到用户的一些自定义组件
 都会放在`components`目录中，为了不和用户的自定义组件混淆，同时也是为了能让用户一键升级uView，所以我们把uView相关的所有内容都放在了根目录的
-`uview-ui`文件夹中。
+`uview-pro`文件夹中。
 
 :::tip 温馨提示
 uni-app为了调试性能的原因，修改`easycom`规则不会实时生效，配置完后，您需要重启HX或者重新编译项目才能正常使用uView的功能。

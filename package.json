@@ -12,9 +12,9 @@
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [
-    "uView"
+    "uView Pro"
   ],
-  "author": "uViewUI",
+  "author": "anyup",
   "license": "MIT",
   "devDependencies": {
     "sass": "1.26.2",

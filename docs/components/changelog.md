@@ -30,16 +30,49 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            logList: []
+            logList: [
+				{
+                "_id": "6797147e4736aefcf83a0787",
+                "docs": "v1",
+                "version": "1.8.8",
+                "releaseDate": "2023-03-27",
+                "changes": [
+                    {
+                        "type": "add",
+                        "desc": "欢迎加群交流反馈",
+                        "issueAnchor": "",
+                        "issueUrl": ""
+                    },
+                    {
+                        "type": "perf",
+                        "desc": "重构deepClone & deepMerge",
+                        "issueAnchor": "",
+                        "issueUrl": ""
+                    },
+                    {
+                        "type": "fix",
+                        "desc": "路由在部分情况下不能跳转问题",
+                        "issueAnchor": "",
+                        "issueUrl": ""
+                    },
+                    {
+                        "type": "fix",
+                        "desc": "其他一些修复",
+                        "issueAnchor": "",
+                        "issueUrl": ""
+                    }
+                ]
+            },
+			]
         }
     },
     created() {
-        axios.get(`https://api.uviewui.com/client/changelog?size=10000&docs=v1`).then(({ data }) => {
-            const { data: { list }, code } = data
-            if (code === 0) {
-                this.logList = list
-            }
-        })
+        // axios.get(`https://api.uviewui.com/client/changelog?size=10000&docs=v1`).then(({ data }) => {
+        //     const { data: { list }, code } = data
+        //     if (code === 0) {
+        //         this.logList = list
+        //     }
+        // })
     }
 }
 </script>

@@ -32,7 +32,7 @@
   export default {
     data() {
       return {
-        avatar: "https://cdn.uviewui.com/uview/common/logo.png",
+        avatar: "https://ik.imagekit.io/anyup/uview-pro/common/logo.png",
       };
     },
     created() {
@@ -55,7 +55,7 @@
         // 此为uView的跳转方法，详见"文档-JS"部分，也可以用uni的uni.navigateTo
         this.$u.route({
           // 关于此路径，请见下方"注意事项"
-          url: "/uview-ui/components/u-avatar-cropper/u-avatar-cropper",
+          url: "/uview-pro/components/u-avatar-cropper/u-avatar-cropper",
           // 内部已设置以下默认参数值，可不传这些参数
           params: {
             // 输出图片宽度，高等于宽，单位px
@@ -93,8 +93,8 @@
 
 ### 注意事项
 
-根据`下载`方式和`NPM`方式引入 uView 的不同，需要进行不同的处理，下载方式可以引用`uview-ui`中的某个文件当做页面文件，但是`NPM`方式，不能引入
-`node_modules`文件夹中的`uview-ui`包的某个文件当做页面路径，故下方对两个方式分别说明：
+根据`下载`方式和`NPM`方式引入 uView 的不同，需要进行不同的处理，下载方式可以引用`uview-pro`中的某个文件当做页面文件，但是`NPM`方式，不能引入
+`node_modules`文件夹中的`uview-pro`包的某个文件当做页面路径，故下方对两个方式分别说明：
 
 #### 1. 下载引入 uView 方式
 
@@ -102,7 +102,7 @@
 
 ```js
 {
-	"path": "uview-ui/components/u-avatar-cropper/u-avatar-cropper",
+	"path": "uview-pro/components/u-avatar-cropper/u-avatar-cropper",
 	"style": {
 		"navigationBarTitleText": "头像裁剪",
 		"navigationBarBackgroundColor": "#000000"
@@ -112,7 +112,7 @@
 
 #### 1. NPM 引入 uView 方式
 
-您需要去`node_modules`文件中，按路径`/node_modules/uview-ui/components/u-avatar-cropper/u-avatar-cropper.vue`找到此文件，将其内容复制出来，
+您需要去`node_modules`文件中，按路径`/node_modules/uview-pro/components/u-avatar-cropper/u-avatar-cropper.vue`找到此文件，将其内容复制出来，
 放到`/pages`文件夹中的某个文件中，再按上面下载方式引入的一样的操作，去声明和引用页面即可。
 
 - 裁剪后的结果，通过`uni.$on`监听`uAvatarCropper`事件，由于 uni-app 限制，H5 端裁剪的结果为`base64`格式，其他端为`blod`二进制形式，

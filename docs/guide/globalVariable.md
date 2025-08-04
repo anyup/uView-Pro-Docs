@@ -80,7 +80,7 @@ export default {
 需要使用的时候，我们通过`import`引入即可，这种方式，缺点是每次都需要引入文件，我们无法将挂载在到Vue.prototype上。
 
 ```js
-import config from "./uview-ui/libs/config/config.js"
+import config from "./uview-pro/libs/config/config.js"
 
 export default {
 	onLoad() {
@@ -95,7 +95,7 @@ export default {
 
 ```js
 // main.js
-import config from "./uview-ui/libs/config/config.js"
+import config from "./uview-pro/libs/config/config.js"
 
 Vue.prototype.domain = config.domain;
 ```

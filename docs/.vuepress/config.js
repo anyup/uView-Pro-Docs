@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'uView - 多平台快速开发的UI框架 - uni-app UI框架', // 设置网站标题
-  description: 'uView UI，是uni-app生态最优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水',
+  title: 'uView Pro - 多平台快速开发的UI框架 - uni-app UI框架', // 设置网站标题
+  description: 'uView Pro，是uni-app生态最优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水',
   base: '/docs/', 
   dest: 'dist',
   markdown: {
@@ -36,7 +36,7 @@ module.exports = {
     }],
     ['meta', {
       name: 'keywords',
-      content: 'uview,uView,uviewui,uview ui,uviewUI,uViewui,uViewUI,uView UI,uni ui,uni UI,uni-app ui框架,uni-app UI框架,uniapp ui,ui,UI框架,uniapp ui框架,uniapp UI'
+      content: 'uview,uView,uviewui,uView Pro,uviewUI,uViewui,uViewUI,uView Pro,uni ui,uni UI,uni-app ui框架,uni-app UI框架,uniapp ui,ui,UI框架,uniapp ui框架,uniapp UI'
     }]
   ],
 
@@ -46,44 +46,50 @@ module.exports = {
     searchPlaceholder: '搜索文档关键字',
     sidebarDepth: 0,
     // lastUpdated: '上次更新时间',
-    nav: [{
-      text: '指南',
-      link: '/guide/demo'
-    }, {
-      text: '组件',
-      link: '/components/intro'
-    }, {
-      text: 'JS',
-      link: '/js/intro'
-    }, {
-      text: '模板',
-      link: '/layout/intro'
-    },
-    {
-      text: '资源',
-      link: '/components/resource'
-    },
-    {
-      text: '关于我们',
-      link: '/cooperation/about'
-    },
-    {
-      text: '捐赠名单',
-      link: '/cooperation/donation'
-    },
-    {
-      text: '1.X',
-      items: [{
-        text: '2.X',
-        link: 'https://uviewui.com'
-      }]
-    }, {
-      text: 'GitHub',
-      link: 'https://github.com/YanxinNet/uView'
-    }, {
-      text: 'Gitee',
-      link: 'https://gitee.com/umicro/uView'
-    }
+    nav: [
+      {
+        text: '指南',
+        link: '/guide/demo'
+      }, 
+      {
+        text: '组件',
+        link: '/components/intro'
+      }, 
+      // {
+      //   text: 'JS',
+      //   link: '/js/intro'
+      // }, 
+      // {
+      //   text: '模板',
+      //   link: '/layout/intro'
+      // },
+      // {
+      //   text: '资源',
+      //   link: '/components/resource'
+      // },
+      {
+        text: '关于我',
+        link: '/cooperation/about'
+      },
+      // {
+      //   text: '捐赠名单',
+      //   link: '/cooperation/donation'
+      // },
+      // {
+      //   text: '1.X',
+      //   items: [{
+      //     text: '2.X',
+      //     link: 'https://uview-pro.anyup.cn/docs/'
+      //   }]
+      // }, 
+      {
+        text: 'GitHub',
+        link: 'https://github.com/anyup/uView-Pro'
+      }, 
+      {
+        text: 'Gitee',
+        link: 'https://gitee.com/anyup/uView-Pro'
+      }
     ],
     sidebar: {
       '/components/': [{
@@ -239,8 +245,8 @@ module.exports = {
           //	['/guide/addQQGroup', '加QQ群交流反馈'],
           ['/guide/customIcon', '扩展自定义图标库'],
           ['/guide/theme', '自定义主题'],
-          ['/guide/i18n', '多语言切换'],
-          ['/guide/globalVariable', '全局变量的实现'],
+          // ['/guide/i18n', '多语言切换'],
+          // ['/guide/globalVariable', '全局变量的实现'],
           ['/guide/codeHint', 'HBuilder X代码提示'],
           ['/guide/design', '设计理念'],
           ['/guide/note', '注意事项']
@@ -324,7 +330,7 @@ module.exports = {
         ]
       }]
     },
-    logo: '/common/logo.png',
+    logo: 'https://ik.imagekit.io/anyup/uview-pro/common/logo.png',
     // 需要显示H5预览的地址集合
     simulatorUrl: [
       '/components/intro',

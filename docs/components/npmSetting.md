@@ -1,6 +1,6 @@
 ## npm安装方式配置 <to-api/>
 
-### 关于SCSS
+<!-- ### 关于SCSS
 
 uView依赖SCSS，您必须要安装此插件，否则无法正常运行。
 
@@ -14,7 +14,7 @@ npm i node-sass -D
 
 // 安装sass-loader
 npm i sass-loader -D
-```
+``` -->
 
 ### 准备工作
 
@@ -25,19 +25,27 @@ npm i sass-loader -D
 // npm init -y
 
 // 安装
-npm install uview-ui@1.8.8
+npm install uview-pro
 ```
 
 ### 配置步骤
 
 #### 1. 引入uView主JS库
 
-在项目根目录中的`main.js`中，引入并使用uView的JS库，注意这两行要放在`import Vue`之后。
+在项目根目录中的`main.ts`中，引入并使用uView的JS库，注意这两行要放在`import Vue`之后。
 
 ```js
-// main.js
-import uView from "uview-ui";
-Vue.use(uView);
+// main.ts
+import uViewPro from 'uview-pro';
+
+export function createApp() {
+    const app = createSSRApp(App);
+    app.use(uViewPro);
+    // 其他配置
+    return {
+        app
+    };
+}
 ```
 
 
@@ -47,7 +55,7 @@ Vue.use(uView);
 
 ```css
 /* uni.scss */
-@import 'uview-ui/theme.scss';
+@import 'uview-pro/theme.scss';
 ```
 
 
@@ -60,7 +68,7 @@ Vue.use(uView);
 ```css
 <style lang="scss">
 	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
-	@import "uview-ui/index.scss";
+	@import "uview-pro/index.scss";
 </style>
 ```
 
@@ -78,7 +86,7 @@ Vue.use(uView);
 // pages.json
 {
 	"easycom": {
-		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+		"^u-(.*)": "uview-pro/components/u-$1/u-$1.vue"
 	},
 	
 	// 此为本身已有的内容

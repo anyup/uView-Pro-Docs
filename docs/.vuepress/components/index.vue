@@ -4,10 +4,10 @@
 			<div class="banner">
 				<div class="desc">
 					<h1>
-						多平台快速开发的UI框架
+						uni-app Vue3 多平台快速开发的UI框架
 					</h1>
 					<h2 class="desc-text">
-						uView UI，是uni-app生态最优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水
+						uView Pro，是 uni-app 全面兼容 Vue3 的 uni-app 生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水。
 					</h2>
 					<div class="banner-img">
 						<img src="/index/banner_1920x1080.png" />
@@ -142,13 +142,13 @@
 					</li>
 				</ul>
 			</div>
-			<div class="card-box friend-link">
+			<!-- <div class="card-box friend-link">
 				<p class="card-title">友情链接</p>
 				<friend-link></friend-link>
-			</div>
+			</div> -->
 		</div>
 		<div class="foot">
-			Copyright {{year}} uView UI | <a target="_blank" href="http://beian.miit.gov.cn">粤ICP备19025822号</a>
+			Copyright {{year}} uView Pro | <a target="_blank" href="http://beian.miit.gov.cn">鲁ICP备2021040594号-1</a>
 		</div>
 	</div>
 </template>
@@ -161,7 +161,7 @@
 			}
 		},
 		created() {
-			// this.$alert('深圳宝安区高薪招聘前端开发岗位，加入我们，和uView UI核心研发团队一起工作和成长，快来看看吧！联系QQ：1416956117，查看岗位：http://zpurl.cn/Y3SzR', '高薪招聘前端开发', {
+			// this.$alert('深圳宝安区高薪招聘前端开发岗位，加入我们，和uView Pro核心研发团队一起工作和成长，快来看看吧！联系QQ：1416956117，查看岗位：http://zpurl.cn/Y3SzR', '高薪招聘前端开发', {
 			// 	confirmButtonText: '确定',
 			// 	callback: action => {
 			// 		if(action == 'confirm') window.open("http://zpurl.cn/YnBDC");

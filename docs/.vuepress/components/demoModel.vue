@@ -24,13 +24,13 @@
 		},
 		computed: {
 			href() {
-				return this.url.indexOf('http') == 0 ? this.url : 'https://v1-h5.uviewui.com/index.html#' + this.url;
+				return this.url.indexOf('http') == 0 ? this.url : 'https://uview-pro.anyup.cn/h5/index.html#' + this.url;
 			}
 		},
 		created() {
 			// this.$notify({
 			// 	title: '高薪招聘前端开发',
-			// 	message: '深圳宝安区高薪招聘前端开发岗位，加入我们，和uView UI核心研发团队一起工作和成长，快来看看吧！联系QQ：1416956117，查看岗位：http://zpurl.cn/Y3SzR',
+			// 	message: '深圳宝安区高薪招聘前端开发岗位，加入我们，和uView Pro核心研发团队一起工作和成长，快来看看吧！联系QQ：1416956117，查看岗位：http://zpurl.cn/Y3SzR',
 			// 	duration: 10000,
 			// 	offset: 100
 			// });

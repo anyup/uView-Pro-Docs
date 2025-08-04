@@ -27,7 +27,7 @@ uView 会将各个版本的演示在此展示，目前演示的版本有 H5，�
 <div class="demo-wrap row">
 	<div class="col-md-3 col-sm-6 col-xs-12">
 		<div class="demo-item">
-			<img src="https://cdn.uviewui.com/uview/resources/gh_ee0b6fe4b230_344.png" />
+			<img src="https://ik.imagekit.io/anyup/images/social/qr_uview_pro_wx.jpg" />
 			<div class="platform-name">
 				微信小程序
 				<p class="platform-tips">只能微信扫码</p>
@@ -36,7 +36,7 @@ uView 会将各个版本的演示在此展示，目前演示的版本有 H5，�
 	</div>
 	<div class="col-md-3 col-sm-6 col-xs-12">
 		<div class="demo-item">
-			<img src="/common/h5_qrcode.png" />
+			<img src="https://ik.imagekit.io/anyup/images/social/qr_uview_pro_h5.png" />
 			<div class="platform-name">
 				H5
 				<p class="platform-tips">微信或浏览器扫码</p>
@@ -45,7 +45,7 @@ uView 会将各个版本的演示在此展示，目前演示的版本有 H5，�
 	</div>
 	<div class="col-md-3 col-sm-6 col-xs-12">
 		<div class="demo-item">
-			<img src="/common/android_qrcode.png" />
+			<img src="https://ik.imagekit.io/anyup/images/social/qr_uview_pro_android.png" />
 			<div class="platform-name">
 				安卓
 				<p class="platform-tips">浏览器扫码安装(微信扫码无效)</p>

@@ -36,7 +36,7 @@ console.log(this.$u.os())
 - 本次升级主要针对支付宝小程序的兼容，uView目前已全面实现对支付宝小程序的兼容，前提是需要开启支付宝特有的`component2`模式，才能实现一些新特性和支持。  
 - 本次升级中，由于table表格组件的单元格合并模式兼容性不好，且实现方式较为复杂，不利于该组件日后的升级和扩展，故在`1.5.4`版本废弃了table的单元格合并模式，
 如果您没有使用table的单元格合并模式，则无需理会，如果使用了可以按如下方法处理：
-1. 拷贝一份uView原来的table组件，单独引入：到`/uview-ui/components`中把`u-table`、`u-th`、`u-tr`、`u-td`拷贝到其他目录，另起别名使用
+1. 拷贝一份uView原来的table组件，单独引入：到`/uview-pro/components`中把`u-table`、`u-th`、`u-tr`、`u-td`拷贝到其他目录，另起别名使用
 2. 稍微修改组件用法，使用正常的table写法，放弃单元格合并模式
 
 <br>
@@ -62,13 +62,13 @@ console.log(this.$u.os())
 
 ### 1.1.7升级指导(2020-05-05)
 
-本次升级，迎来了uView的一个跨越发展，uView正式支持npm方式安装，借助此方式，您不用每次都下载覆盖升级，仅执行`npm update uview-ui`即可，
-由于uView在npm的包名为`uview-ui`，引入时需写上`import uView from "uview-ui"`，旧版中下载方式安装时uView的文件夹为`uview`，为了规范和统一，
-在此`1.1.7`版本后，uView将以前根目录的`uview`文件夹，改名为`uview-ui`，其他保持不变。  
+本次升级，迎来了uView的一个跨越发展，uView正式支持npm方式安装，借助此方式，您不用每次都下载覆盖升级，仅执行`npm update uview-pro`即可，
+由于uView在npm的包名为`uview-pro`，引入时需写上`import uView from "uview-pro"`，旧版中下载方式安装时uView的文件夹为`uview`，为了规范和统一，
+在此`1.1.7`版本后，uView将以前根目录的`uview`文件夹，改名为`uview-pro`，其他保持不变。  
 
 对此您有两个选择：
-1. uView下载解压后得到`uview-ui`文件夹，您可以将其改名为`uview`，从而覆盖原有的同名库(如果这不是您第一次下载的话)，这样您无需在`pages.json`、`main.js`、`uni.scss`、`App.vue`做出路径名称的变更(但是我们不推荐这样做)
-2. 如果您是在进行下载方式的升级，删掉(或备份)原来的`uview`文件夹，将`uview-ui`文件夹放到根目录，然后根据[下载安装方式配置](/components/downloadSetting.html)说明对`pages.json`、`main.js`、`uni.scss`、`App.vue`做出细微修改。(推荐此方式，一劳永逸)
+1. uView下载解压后得到`uview-pro`文件夹，您可以将其改名为`uview`，从而覆盖原有的同名库(如果这不是您第一次下载的话)，这样您无需在`pages.json`、`main.js`、`uni.scss`、`App.vue`做出路径名称的变更(但是我们不推荐这样做)
+2. 如果您是在进行下载方式的升级，删掉(或备份)原来的`uview`文件夹，将`uview-pro`文件夹放到根目录，然后根据[下载安装方式配置](/components/downloadSetting.html)说明对`pages.json`、`main.js`、`uni.scss`、`App.vue`做出细微修改。(推荐此方式，一劳永逸)
 
 <br>
 <br>
@@ -84,7 +84,7 @@ console.log(this.$u.os())
 
 具体操作如下：
 
-- 在`App.vue`中**首行**的位置，增加如下一行`import "@/uview-ui/index.scss"`：
+- 在`App.vue`中**首行**的位置，增加如下一行`import "@/uview-pro/index.scss"`：
 
 :::danger 注意：
 1. 必须要将标签加入`lang="scss"`属性以支持SCSS，否则会出错！
@@ -94,18 +94,18 @@ console.log(this.$u.os())
 ```css
 <style lang="scss">
 	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
-	@import "@/uview-ui/index.scss";
+	@import "@/uview-pro/index.scss";
 	
 	/* ......其他的样式 */
 </style>
 ```
 
-- 在项目根目录的`uni.scss`中，删除原来的`@import '@/uview-ui/theme.scss';`一行，改成如下：
+- 在项目根目录的`uni.scss`中，删除原来的`@import '@/uview-pro/theme.scss';`一行，改成如下：
 
 ```js
 // 删除原来的这一行
-// @import '@/uview-ui/index.scss';
+// @import '@/uview-pro/index.scss';
 
 // 加入这一行
-@import '@/uview-ui/theme.scss';
+@import '@/uview-pro/theme.scss';
 ```

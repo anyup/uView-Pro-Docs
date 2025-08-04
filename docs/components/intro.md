@@ -3,9 +3,9 @@
 <demo-model url="/"></demo-model>
 
 <div class="intro-logo">
-	<img class="logo" src="/common/logo.png" alt="uView" />
-	<h3>uView</h3>
-	<p class="slogan">多平台快速开发的UI框架</p>
+	<img class="logo" src="https://ik.imagekit.io/anyup/uview-pro/common/logo.png" alt="uView" />
+	<h3>uView Pro</h3>
+	<p class="slogan">uni-app Vue3 多平台快速开发的UI框架</p>
 </div>
 
 #### 来由
@@ -23,15 +23,17 @@ uni-app在2018年初发布以来，一直蓬勃发展，一派欣欣向荣，社
 uView是uni-app生态专用的UI框架，uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，
 可发布到iOS、Android、H5、以及各种小程序(微信/支付宝/百度/头条/QQ/钉钉)等多个平台(引言自uni-app网)。  
 
+而uView Pro，是uni-app全面兼容Vue3的uni-app生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水。
+
 
 #### 版权信息
 
-uView遵循[MIT](https://baike.baidu.com/item/MIT/10772952)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView应用到您的产品中。  
+uView Pro遵循[MIT](https://baike.baidu.com/item/MIT/10772952)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView Pro应用到您的产品中。  
 
-注意：这并不意味着您可以将uView应用到非法的领域，比如涉及赌博，暴力等方面。如因此产生纠纷等法律问题，uView不承担任何责任。
+注意：这并不意味着您可以将uView Pro应用到非法的领域，比如涉及赌博，暴力等方面。如因此产生纠纷等法律问题，uView Pro不承担任何责任。
 
 
-### 捐赠uView的研发
+### 捐赠uView Pro的研发
 		
 <donation></donation>
 

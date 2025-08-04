@@ -1,29 +1,28 @@
 <p align="center">
-    <img alt="logo" src="https://uviewui.com/common/logo.png" width="120" height="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://ik.imagekit.io/anyup/uview-pro/common/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 <h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">uView 1.0文档</h3>
-<h3 align="center">多平台快速开发的UI框架</h3>
+<h3 align="center">uni-app Vue3 多平台快速开发的 UI 框架</h3>
 
 ## 说明
 
-uView UI，是[uni-app](https://uniapp.dcloud.io/)生态优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水
+uView Pro，是[uni-app](https://uniapp.dcloud.io/)全面兼容Vue3的uni-app生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水。
 
-## [官方文档：https://v1.uviewui.com](https://v1.uviewui.com)
+## [官方文档：https://uview-pro.anyup.cn/docs/](https://uview-pro.anyup.cn/docs/)
 
 ## 链接
 
-- [官方文档](https://v1.uviewui.com/)
-- [更新日志](https://v1.uviewui.com/components/changelog.html)
-- [升级指南](https://v1.uviewui.com/components/changelog.html)
-- [关于我们](https://v1.uviewui.com/cooperation/about.html)
+- [官方文档](https://uview-pro.anyup.cn/docs/)
+- [更新日志](https://uview-pro.anyup.cn/docs/components/changelog.html)
+- [升级指南](https://uview-pro.anyup.cn/docs/components/changelog.html)
+- [关于我](https://uview-pro.anyup.cn/docs/cooperation/about.html)
 
 ## 交流反馈
 
-欢迎加入我们的QQ群交流反馈：[点此跳转](https://www.uviewui.com/components/addQQGroup.html)
+<!-- 欢迎加入我们的 QQ 群交流反馈：[点此跳转](https://www.uviewui.com/components/addQQGroup.html) -->
 
-## 关于PR
+欢迎加入 uView Pro QQ 交流群： [点击进入](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=98nSVDldWEbDdq4lxiP4aL7uATfMSlI6&authKey=G2yQJ5MQiKzMldaxBsIfKt17NuJuUw8Fr6zdKLggc6NZXgw4BVbqkU2U3EE994yd&noverify=0&group_code=811732166)
 
-> 我们非常乐意接受各位的优质PR让文档更全面更完善！
+## 关于 PR
 
-### 推荐
-网易云信IM：全面兼容uni-app生态的即时通讯IM UIKit，30分钟一键集成单聊、群聊、聊天时等能力：[传送门](https://yunxin.163.com/im?from=uview)
+> 我们非常乐意接受各位的优质 PR 让文档更全面更完善！

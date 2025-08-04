@@ -115,7 +115,7 @@ export default {
 <template>
 	<view>
 		<view class="item">
-			uView UI
+			uView Pro
 		</view>
 		<view class="item">
 			<view>红豆生南国，春来发几枝</view>
@@ -152,16 +152,16 @@ export default {
 <template>
 	<view class="wrap">
 		<view class="item">
-			uView UI
+			uView Pro
 		</view>
 		<view class="item">
-			uView UI
+			uView Pro
 		</view>
 		<view class="item">
-			uView UI
+			uView Pro
 		</view>
 		<view class="item">
-			uView UI
+			uView Pro
 		</view>
 		<view class="item object-item" @tap="scrollEl">
 			点我，我就会滚动到导航栏下方
