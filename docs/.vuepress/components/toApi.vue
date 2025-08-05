@@ -1,6 +1,6 @@
 <template>
 	<a :href="'#' + anchor" class="anchor">
-		<img src="/docs/common/to_api.png" />
+		<img src="https://ik.imagekit.io/anyup/uview-pro/docs/common/to_api.png" />
 	</a>
 </template>
 

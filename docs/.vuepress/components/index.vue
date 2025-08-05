@@ -10,7 +10,7 @@
 						uView Pro，是 uni-app 全面兼容 Vue3 的 uni-app 生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水。
 					</h2>
 					<div class="banner-img">
-						<img src="/docs/index/banner_1920x1080.png" />
+						<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/banner_1920x1080.png" />
 					</div>
 				</div>
 			</div>
@@ -19,7 +19,7 @@
 				<ul class="row">
 					<li class="col-md-3 col-sm-12 ">
 						<div class="card-item">
-							<img src="/docs/index/guide.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/guide.png" />
 							<h3>
 								指南
 							</h3>
@@ -30,7 +30,7 @@
 					</li>
 					<li class="col-md-3 col-sm-12">
 						<div class="card-item">
-							<img src="/docs/index/components.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/components.png" />
 							<h3>
 								组件
 							</h3>
@@ -41,7 +41,7 @@
 					</li>
 					<li class="col-md-3 col-sm-12">
 						<div class="card-item">
-							<img src="/docs/index/js.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/js.png" />
 							<h3>
 								工具库
 							</h3>
@@ -52,7 +52,7 @@
 					</li>
 					<li class="col-md-3 col-sm-12">
 						<div class="card-item">
-							<img src="/docs/index/layout.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/layout.png" />
 							<h3>
 								布局
 							</h3>
@@ -68,7 +68,7 @@
 				<ul class="row">
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/android.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/android.png" />
 							<h3>
 								安卓
 							</h3>
@@ -77,7 +77,7 @@
 					</li>
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/ios.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/ios.png" />
 							<h3>
 								Apple
 							</h3>
@@ -86,7 +86,7 @@
 					</li>
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/weixin.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/weixin.png" />
 							<h3>
 								微信小程序
 							</h3>
@@ -95,7 +95,7 @@
 					</li>
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/h5.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/h5.png" />
 							<h3>
 								H5
 							</h3>
@@ -106,7 +106,7 @@
 				<ul class="row">
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/qq.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/qq.png" />
 							<h3>
 								QQ小程序
 							</h3>
@@ -115,7 +115,7 @@
 					</li>
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/baidu.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/baidu.png" />
 							<h3>
 								百度小程序
 							</h3>
@@ -124,7 +124,7 @@
 					</li>
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/alipay.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/alipay.png" />
 							<h3>
 								支付宝小程序
 							</h3>
@@ -133,7 +133,7 @@
 					</li>
 					<li class="col-md-3 col-sm-6 col-xs-6">
 						<div class="card-item">
-							<img src="/docs/index/toutiao.png" />
+							<img src="https://ik.imagekit.io/anyup/uview-pro/docs/index/toutiao.png" />
 							<h3>
 								头条小程序
 							</h3>
