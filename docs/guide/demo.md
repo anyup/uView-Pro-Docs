@@ -1,6 +1,6 @@
 ## 演示
 
-uView 会将各个版本的演示在此展示，目前演示的版本有 H5，安卓，微信小程序，其他版本的演示将会陆续添加。  
+uView Pro 会将各个版本的演示在此展示，目前演示的版本有 H5，安卓，微信小程序，其他版本的演示将会陆续添加。  
 <br>
 
 ### 使用方法
@@ -25,7 +25,7 @@ uView 会将各个版本的演示在此展示，目前演示的版本有 H5，�
 ### 扫码
 
 <div class="demo-wrap row">
-	<div class="col-md-3 col-sm-6 col-xs-12">
+	<div class="col-md-3 col-sm-6 col-xs-12 row-item">
 		<div class="demo-item">
 			<img src="https://ik.imagekit.io/anyup/images/social/qr_uview_pro_wx.jpg" />
 			<div class="platform-name">
@@ -34,7 +34,7 @@ uView 会将各个版本的演示在此展示，目前演示的版本有 H5，�
 			</div>
 		</div>
 	</div>
-	<div class="col-md-3 col-sm-6 col-xs-12">
+	<div class="col-md-3 col-sm-6 col-xs-12 row-item">
 		<div class="demo-item">
 			<img src="https://ik.imagekit.io/anyup/images/social/qr_uview_pro_h5.png" />
 			<div class="platform-name">
@@ -43,7 +43,7 @@ uView 会将各个版本的演示在此展示，目前演示的版本有 H5，�
 			</div>
 		</div>
 	</div>
-	<div class="col-md-3 col-sm-6 col-xs-12">
+	<div class="col-md-3 col-sm-6 col-xs-12 row-item">
 		<div class="demo-item">
 			<img src="https://ik.imagekit.io/anyup/images/social/qr_uview_pro_android.png" />
 			<div class="platform-name">
@@ -93,5 +93,8 @@ uView 会将各个版本的演示在此展示，目前演示的版本有 H5，�
 		width: 100%;
 		right: auto;
 		color: #909399;
+	}
+	.row-item {
+		min-width: 300px;
 	}
 </style>

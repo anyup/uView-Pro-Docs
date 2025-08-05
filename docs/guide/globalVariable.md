@@ -436,9 +436,9 @@ try{
 module.exports = {
 	created() {
 		// 将vuex方法挂在到$u中
-		// 使用方法为：如果要修改vuex的state中的user.name变量为"史诗" => this.$u.vuex('user.name', '史诗')
-		// 如果要修改vuex的state的version变量为1.0.1 => this.$u.vuex('version', '1.0.1')
-		this.$u.vuex = (name, value) => {
+		// 使用方法为：如果要修改vuex的state中的user.name变量为"史诗" => uni.$u.vuex('user.name', '史诗')
+		// 如果要修改vuex的state的version变量为1.0.1 => uni.$u.vuex('version', '1.0.1')
+		uni.$u.vuex = (name, value) => {
 			this.$store.commit('$uStore', {
 				name,value
 			})
@@ -480,9 +480,9 @@ state: {
 
 在`demo.vue`页面使用和修改这些变量，他们是动态全局响应的。  
 
-这里用的修改方式为：this.$u.vuex(key, value)：  
-1) 如果要修改`state`中的`vuex_version`变量为`1.0.3`，则：this.$u.vuex('vuex_version', '1.0.3')。  
-2) 如果要修改`state`中的`vuex_user`对象的`name`属性为`青柠`，则：this.$u.vuex('vuex_user.name', '青柠')，与1中不同的是，对象的话，
+这里用的修改方式为：uni.$u.vuex(key, value)：  
+1) 如果要修改`state`中的`vuex_version`变量为`1.0.3`，则：uni.$u.vuex('vuex_version', '1.0.3')。  
+2) 如果要修改`state`中的`vuex_user`对象的`name`属性为`青柠`，则：uni.$u.vuex('vuex_user.name', '青柠')，与1中不同的是，对象的话，
 需要用点"."分隔开。
 
 ```html
@@ -504,9 +504,9 @@ state: {
 	export default {
 		methods: {
 			modifyVuex() {
-				this.$u.vuex('vuex_version', '1.0.1');
+				uni.$u.vuex('vuex_version', '1.0.1');
 				// 修改对象的形式，中间用"."分隔
-				this.$u.vuex('vuex_user.name', '诗圣');
+				uni.$u.vuex('vuex_user.name', '诗圣');
 			}
 		}
 	}

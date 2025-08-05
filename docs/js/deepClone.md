@@ -38,7 +38,7 @@ console.log(a); // 结果为 {name: 'juli'}
 
 
 // 深度克隆
-let b = this.$u.deepClone(a);
+let b = uni.$u.deepClone(a);
 
 b.name = 'juli';
 console.log(b); // 结果为 {name: 'juli'}

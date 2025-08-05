@@ -16,7 +16,7 @@
 ```js
 export default{
 	onLoad() {
-		console.log(this.$u.color['error']);
+		console.log(uni.$u.color['error']);
 	}
 }
 ```
@@ -30,7 +30,7 @@ uView一共提供了四个颜色值，具体请见组件部分[Color色彩](/com
 ```js
 export default{
 	onLoad() {
-		console.log(this.$u.color['contentColor']);
+		console.log(uni.$u.color['contentColor']);
 	}
 }
 ```
@@ -43,7 +43,7 @@ uView提供了一个浅灰的背景颜色值，该值为`#f3f4f6`
 ```js
 export default{
 	onLoad() {
-		console.log(this.$u.color['bgColor']);
+		console.log(uni.$u.color['bgColor']);
 	}
 }
 ```

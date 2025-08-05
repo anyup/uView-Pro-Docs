@@ -1,8 +1,21 @@
 ### 交流反馈
 
-uView 为采用[MIT](https://baike.baidu.com/item/MIT/10772952)许可证的开源项目，使用完全免费。欢迎加 QQ 群交流反馈，一起学习，共同进步。
+<demo-model url="/pages/example/about"></demo-model>
+
+uView Pro 采用[MIT](https://baike.baidu.com/item/MIT/10772952)许可证的开源项目，使用完全免费。欢迎加 QQ 群交流反馈，一起学习，共同进步。
 
 <qq-group></qq-group>
+
+<table class="table" style="width: 700px;">
+    <tr>
+        <td align="center"><img src="https://ik.imagekit.io/anyup/images/social/weixin-chat.png" width="250" height="345" ></td>
+        <td align="center"><img src="https://ik.imagekit.io/anyup/images/social/qq-chat.png" width="250" height="345" ></td>
+    </tr>
+    <tr>
+        <td align="center"><strong>微信群</strong><br></td>
+        <td align="center"><strong>QQ群</strong><br></td>
+    </tr>
+</table>
 
 ### 作者
 
@@ -19,7 +32,7 @@ uView 为采用[MIT](https://baike.baidu.com/item/MIT/10772952)许可证的开�
 ### 研发组
 
 uView 的理念是"挣脱束缚，向往自由"，目标是做 uni-app 生态的标杆，推动 uni-app 生态和互联网的发展。  
-uView Pro免费开源，无需授权，欢迎商用。uView Pro的发展希望得到各个小伙伴的支持，我们一起为构建一个更加优秀的 UI 框架而努力。
+uView Pro 免费开源，无需授权，欢迎商用。uView Pro 的发展希望得到各个小伙伴的支持，我们一起为构建一个更加优秀的 UI 框架而努力。
 
 <!-- 以下为部分对 uView 有特出贡献的研发组成员，排名不分先后： -->
 
@@ -38,7 +51,7 @@ uView Pro免费开源，无需授权，欢迎商用。uView Pro的发展希望�
 
 ### 文档
 
-uView 的文档，力求不留死角，把所有可能需要注意的地方，都详细列出。uView 的文档经得起推敲，受得住考验。  
+uView 的文档，力求不留死角，把所有可能需要注意的地方，都详细列出。uView 的文档经得起推敲，受得住考验。
 
 <br>
 
@@ -51,7 +64,7 @@ uView Pro 的目标是做成 uniapp Vue3 生态的标杆，自由且免费开源
 1. **为了开源，理想和自由**，您可以加入 uView Pro 的研发工作组，我们一起并肩奋战。
 2. 如果您是个积极活跃的人，那么也欢迎您加入 uView 的 QQ 群或微信群成为管理员。
 
-所有加入 uView Pro贡献的同学，都会在官网声明，并且有自己的个人专属页。
+所有加入 uView Pro 贡献的同学，都会在官网声明，并且有自己的个人专属页。
 
 请加作者 微信(注明加入 uView 开发组)：anyupxing
 
@@ -66,7 +79,7 @@ uView 拥有众多用户，且文档详尽，经得起推敲，受得住考验�
 
 <br>
 
-### 捐赠 uView Pro的研发
+### 捐赠 uView Pro 的研发
 
 <donation></donation>
 

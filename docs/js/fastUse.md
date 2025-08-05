@@ -15,7 +15,7 @@
 此方法为uniapp的`uni.showToast`的二次封装，方便用户使用，参数只能配置`title`和`duration`
 
 ```js
-this.$u.toast('Hello uView!');
+uni.$u.toast('Hello uView!');
 ```
 
 
@@ -26,7 +26,7 @@ this.$u.toast('Hello uView!');
 **注意：** 1.5.8起，改为方法形式调用
 
 ```js
-console.log(this.$u.os())
+console.log(uni.$u.os())
 ```
 
 
@@ -37,6 +37,6 @@ console.log(this.$u.os())
 **注意：** 1.5.8起，改为方法形式调用，因为属性方式调用，结果可能会不准确
 
 ```js
-console.log(this.$u.sys())
+console.log(uni.$u.sys())
 ```
 

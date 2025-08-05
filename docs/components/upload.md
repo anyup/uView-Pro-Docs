@@ -200,7 +200,7 @@
 		methods: {
 			async beforeUpload(index, list) {
 				// await等待一个请求，请求回来后再返回true，继续上传文件
-				let data = await this.$u.post('url');
+				let data = await uni.$u.post('url');
 				return true; // 或者根据逻辑返回false
 			}
 		}
@@ -221,7 +221,7 @@
 			beforeUpload(index, list) {
 				// 返回一个promise
 				return new Promise((resolve, reject) => {
-					this.$u.post('url').then(res => {
+					uni.$u.post('url').then(res => {
 						// resolve()之后，将会进入promise的组件内部的then回调，相当于返回true
 						resolve();
 					}).catch(err => {

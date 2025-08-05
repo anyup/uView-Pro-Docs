@@ -62,7 +62,7 @@
 export default {
 	onLoad() {
 		// 也可以在onShow生命周期打开，此为uView封装的请求方法
-		this.$u.route("/uview-pro/components/u-full-screen/u-full-screen?id=1");
+		uni.$u.route("/uview-pro/components/u-full-screen/u-full-screen?id=1");
 	}
 }
 ```

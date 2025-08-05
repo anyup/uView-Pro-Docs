@@ -94,10 +94,10 @@
       click(index, index1) {
         if (index1 == 1) {
           this.list.splice(index, 1);
-          this.$u.toast(`删除了第${index}个cell`);
+          uni.$u.toast(`删除了第${index}个cell`);
         } else {
           this.list[index].show = false;
-          this.$u.toast(`收藏成功`);
+          uni.$u.toast(`收藏成功`);
         }
       },
       // 如果打开一个的时候，不需要关闭其他，则无需实现本方法

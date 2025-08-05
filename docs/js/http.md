@@ -24,7 +24,7 @@
 - `params` <Object\> 请求的参数，对象形式，如"{name: 'lisa', age: 23}"，该参数是可选的
 - `header` <Object\> 请求的header，对象形式，如果token等字段，建议通过配置写入，该参数是可选的
 
-`get`和`post`都挂载在`$u`对象下，其中`get`和`post`使用方法完全一致，只是一个为`this.$u.get`，一个为`this.$u.post`,使用如下：  
+`get`和`post`都挂载在`$u`对象下，其中`get`和`post`使用方法完全一致，只是一个为`uni.$u.get`，一个为`uni.$u.post`,使用如下：  
 
 一般来说，只在`then`中接收返回值即可，`catch`无特殊情况，无需编写和理会，因为如果服务端返回的不是200状态，插件内部会弹出model提示
 
@@ -33,7 +33,7 @@
 	export default {
 		onLoad() {
 			// 不带header
-			this.$u.post('http://www.example.com', {
+			uni.$u.post('http://www.example.com', {
 				id: 3,
 				menu: 1
 			}).then(res => {
@@ -41,7 +41,7 @@
 			});
 			
 			// 带上header(对象形式)，由于header为第三个参数，如果不需要请求参数，第二个参数传一个空对象"{ }"即可
-			this.$u.get('http://www.example.com', {}, {
+			uni.$u.get('http://www.example.com', {}, {
 				token: 'xyz'
 			}).then(res => {
 				console.log(res);
@@ -150,7 +150,7 @@ export default {
 #### 何谓请求拦截？  
 
 顾名思义，就是在请求发出之前，对请求做一些额外处理，比如对不同api接口，携带不同的`header`参数，或者(也是最重要)
-配置统一的token到`header`中，这样就不用每次请求，都写token相关的部分到`this.$u.post()`的第三个请求头参数中，如下：
+配置统一的token到`header`中，这样就不用每次请求，都写token相关的部分到`uni.$u.post()`的第三个请求头参数中，如下：
 
 #### $u.http.interceptor.request = (config) => { ... }
 
@@ -204,7 +204,7 @@ export default {
 #### 何谓响应拦截？  
 	
 响应拦截，意味着是在请求返回时，对返回的数据进行一些处理，如不同的状态对应的关系，比如约定状态码200为成功，
-则把返回数据返回到`this.$u.post().then()`的`then`中，如果为201(约定为token失效，需要登录)，则可以在在拦截中进行toast
+则把返回数据返回到`uni.$u.post().then()`的`then`中，如果为201(约定为token失效，需要登录)，则可以在在拦截中进行toast
 提示，并跳转到登录页。 
 
 :::tip 注意
@@ -269,13 +269,13 @@ export default {
 <script>
 	export default {
 		onLoad() {
-			this.$u.get('/ebapi/store_api/hot_search', {
+			uni.$u.get('/ebapi/store_api/hot_search', {
 				id: 2
 			}).then(res => {
 				this.result = res;
 			})
 			
-			this.$u.post('/ebapi/public_api/index', {
+			uni.$u.post('/ebapi/public_api/index', {
 				id: 1
 			}).then(res => {
 				this.result = res;
@@ -296,19 +296,19 @@ export default {
 	methods: {
 		login() {
 			// 正确，但是需要在回调中打印
-			this.$u.post('/user/login').then(res => {
+			uni.$u.post('/user/login').then(res => {
 				console.log(res);
 			})
 			
 			// 错误，如果想要使用同步的形式，无需then回调，且需要await关键字
-			let result = this.$u.post('/user/login').then(res => {
+			let result = uni.$u.post('/user/login').then(res => {
 				console.log(res);
 			})
 			console.log(result);
 			
 			// 错误，无需then回调是对的，但是ret会为undefined，因为登录是一个异步过程(可能需要几十毫秒)
 			// 下一行打印的时候，请求还没返回，所以ret会为undefined
-			let ret = this.$u.post('/user/login');
+			let ret = uni.$u.post('/user/login');
 			console.log(ret);
 		}
 	}
@@ -325,7 +325,7 @@ export default {
 export default {
 	// 可以放心在生命周期前加上async，不会导致问题
 	async onLoad() {
-		let ret = await this.$u.post('/user/login');
+		let ret = await uni.$u.post('/user/login');
 		// 此处在函数体外写了async，并且使用了await等待返回，所以可以打印ret结果
 		// 意味着这里的console.log是等待了几十毫秒请求返回后才执行的
 		console.log(ret);
@@ -339,7 +339,7 @@ export default {
 export default {
 	methods: {
 		async login() {
-			let ret = await this.$u.post('/user/login');
+			let ret = await uni.$u.post('/user/login');
 			// 此处在函数体外写了async，并且使用了await等待返回，所以可以打印ret结果
 			// 意味着这里的console.log是等待了几十毫秒请求返回后才执行的
 			console.log(ret);
@@ -350,11 +350,11 @@ export default {
 
 ### API集中管理
 
-这里说的集中管理，是指把各个请求，统一放到一个文件中进行管理，这样的好处是不用每次调用`this.$u.get`时都需要传入`url`参数，一些固定的
+这里说的集中管理，是指把各个请求，统一放到一个文件中进行管理，这样的好处是不用每次调用`uni.$u.get`时都需要传入`url`参数，一些固定的
 请求参数也可以不用显式的传入，如下为配置后的使用示例：
 
 ```
-this.$u.api.getSearch().then(res => {
+uni.$u.api.getSearch().then(res => {
 	console.log(res);
 })
 ```
@@ -442,7 +442,7 @@ export default {
 	methods: {
 		// post示例
 		sumbitByPost() {
-			this.$u.post('/user/login', {
+			uni.$u.post('/user/login', {
 				username: 'lisa',
 				password: '123456'
 			}).then(res => {
@@ -452,7 +452,7 @@ export default {
 		
 		// get示例
 		sumbitByGet() {
-			this.$u.get('/user/login', {
+			uni.$u.get('/user/login', {
 				username: 'lisa',
 				password: '123456'
 			}).then(res => {

@@ -1,5 +1,29 @@
 ## 更新日志
 
+<!-- <div class="doc-update">
+	<ul class="u-timeline u-timeline-pending">
+    <li class="u-timeline-item">
+			<div class="u-timeline-item-tail"></div>
+			<div class="u-timeline-item-head u-timeline-item-head-blue"></div>
+			<div class="u-timeline-item-content">
+				<div class="anchor">
+					<h2>{{ item.version }}</h2>
+				</div>
+				<p><code>{{ item.releaseDate }}</code></p>
+				<ul>
+					<li v-for="log in item.changes" :key="log._id">
+						<span class="fix" v-if="log.type === 'fix'">修复</span>
+						<span class="add" v-if="log.type === 'add'">添加</span>
+						<span class="optimize" v-if="log.type === 'perf'">优化</span>
+						{{ log.desc }}
+						<git-link v-if="log.issueAnchor" :anchors="log.issueAnchor" />
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div> -->
+
 <div class="doc-update">
 	<ul class="u-timeline u-timeline-pending">
     <li class="u-timeline-item" v-for="item in logList" :key="item._id">
@@ -12,17 +36,119 @@
 				<p><code>{{ item.releaseDate }}</code></p>
 				<ul>
 					<li v-for="log in item.changes" :key="log._id">
-              <span class="fix" v-if="log.type === 'fix'">修复</span>
-              <span class="add" v-if="log.type === 'add'">添加</span>
-              <span class="optimize" v-if="log.type === 'perf'">优化</span>
-							{{ log.desc }}
-							<git-link v-if="log.issueAnchor" :anchors="log.issueAnchor" />
+						<span class="fix" v-if="log.type === 'fix'">修复</span>
+						<span class="add" v-if="log.type === 'add'">添加</span>
+						<span class="optimize" v-if="log.type === 'perf'">优化</span>
+						{{ log.desc }}
+						<git-link v-if="log.issueAnchor" :anchors="log.issueAnchor" />
 					</li>
 				</ul>
 			</div>
 		</li>
 	</ul>
 </div>
+
+### 基础组件（8）
+
+- Color 色彩
+- Icon 图标
+- Image 图片
+- Button 按钮
+- Layout 布局
+- Cell 单元格
+- Badge 徽标数
+- Tag 标签
+
+---
+
+### 表单组件（15）
+
+- Form 表单
+- Calendar 日历
+- Select 列选择器
+- Keyboard 键盘
+- Picker 选择器
+- Rate 评分
+- Search 搜索
+- NumberBox 步进器
+- Upload 上传
+- VerificationCode 验证码倒计时
+- Field 输入框
+- Checkbox 复选框
+- Radio 单选框
+- Switch 开关选择器
+- Slider 滑动选择器
+
+---
+
+### 数据组件（4）
+
+- Progress 进度条
+- Table 表格
+- CountDown 倒计时
+- CountTo 数字滚动
+
+---
+
+### 反馈组件（10）
+
+- ActionSheet 操作菜单
+- AlertTips 警告提示
+- Toast 消息提示
+- NoticeBar 滚动通知
+- TopTips 顶部提示
+- SwipeAction 滑动单元格
+- Collapse 折叠面板
+- Popup 弹出层
+- Modal 模态框
+- fullScreen 压窗屏
+
+---
+
+### 布局组件（11）
+
+- Line 线条
+- Card 卡片
+- Mask 遮罩层
+- NoNetwork 无网络提示
+- Grid 宫格布局
+- Swiper 轮播图
+- TimeLine 时间轴
+- Skeleton 骨架屏
+- Sticky 吸顶
+- Waterfall 瀑布流
+- Divider 分割线
+
+---
+
+### 导航组件（11）
+
+- Dropdown 下拉菜单
+- Tabbar 底部导航栏
+- BackTop 返回顶部
+- Navbar 导航栏
+- Tabs 标签
+- TabsSwiper 全屏选项卡
+- Subsection 分段器
+- IndexList 索引列表
+- Steps 步骤条
+- Empty 内容为空
+- Section 查看更多
+
+---
+
+### 其他组件（8）
+
+- MessageInput 验证码输入
+- Loadmore 加载更多
+- ReadMore 展开阅读更多
+- LazyLoad 懒加载
+- Gap 间隔槽
+- Avatar 头像
+- Link 超链接
+- Loading 加载动画
+
+---
 
 <script>
 import axios from 'axios'
@@ -34,33 +160,15 @@ export default {
 				{
                 "_id": "6797147e4736aefcf83a0787",
                 "docs": "v1",
-                "version": "1.8.8",
-                "releaseDate": "2023-03-27",
+                "version": "0.0.2",
+                "releaseDate": "2024-08-04",
                 "changes": [
                     {
                         "type": "add",
-                        "desc": "欢迎加群交流反馈",
+                        "desc": "完成67个组件的重构",
                         "issueAnchor": "",
                         "issueUrl": ""
                     },
-                    {
-                        "type": "perf",
-                        "desc": "重构deepClone & deepMerge",
-                        "issueAnchor": "",
-                        "issueUrl": ""
-                    },
-                    {
-                        "type": "fix",
-                        "desc": "路由在部分情况下不能跳转问题",
-                        "issueAnchor": "",
-                        "issueUrl": ""
-                    },
-                    {
-                        "type": "fix",
-                        "desc": "其他一些修复",
-                        "issueAnchor": "",
-                        "issueUrl": ""
-                    }
                 ]
             },
 			]

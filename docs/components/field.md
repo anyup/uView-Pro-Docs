@@ -152,7 +152,7 @@
 						this.$refs.uCode.start();
 					}, 1000);
 				}else {
-					this.$u.toast('倒计时结束后再发送');
+					uni.$u.toast('倒计时结束后再发送');
 				}
 			}
 		}

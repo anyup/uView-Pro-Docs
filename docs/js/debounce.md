@@ -52,7 +52,7 @@ uView内置的按钮组件`u-button`内部已做节流处理(1.5.8版本)，无�
 			},
 			btnBClick() {
 				// 此处用法为在js中调用，需要写this.$u.throttle()
-				this.$u.throttle(this.toNext, 500)
+				uni.$u.throttle(this.toNext, 500)
 			},
 			toNext() {
 				console.log('btnBClick');
@@ -107,7 +107,7 @@ uView内置的按钮组件`u-button`内部已做节流处理(1.5.8版本)，无�
 			},
 			btnBClick() {
 				// 此处用法为在js中调用，需要写this.$u.debounce()
-				this.$u.debounce(this.toNext, 500)
+				uni.$u.debounce(this.toNext, 500)
 			},
 			toNext() {
 				console.log('btnBClick');

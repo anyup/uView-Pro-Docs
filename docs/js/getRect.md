@@ -41,7 +41,7 @@ res = {
 export default {
 	methods: {
 		getElInfo() {
-			this.$u.getRect('.user-avatar').then(res => {
+			uni.$u.getRect('.user-avatar').then(res => {
 				console.log(res);
 			})
 		}
@@ -59,7 +59,7 @@ export default {
 export default {
 	methods: {
 		async getElInfo() {
-			let rectInfo = await this.$u.getRect('.user-avatar');
+			let rectInfo = await uni.$u.getRect('.user-avatar');
 			console.log(rectInfo);
 		}
 	}
@@ -93,10 +93,10 @@ export default {
 		},
 		methods: {
 			getElInfo() {
-				this.$u.post('http://www.example.com/user/info').then(res => {
+				uni.$u.post('http://www.example.com/user/info').then(res => {
 					this.userName = res.name;
 					this.$nextTick(() => {
-						this.$u.getRect('.user-avatar').then(rect => {
+						uni.$u.getRect('.user-avatar').then(rect => {
 							console.log(rect);
 						})
 					})
@@ -131,7 +131,7 @@ export default {
 		},
 		methods: {
 			getElInfo() {
-				this.$u.getRect('.item', true).then(rect => {
+				uni.$u.getRect('.item', true).then(rect => {
 					// rect为一个数组(内有2个元素)，因为页面有2个.item节点
 					console.log(rect);
 				})
@@ -181,7 +181,7 @@ export default {
 		},
 		methods: {
 			scrollEl() {
-				this.$u.getRect('.object-item').then(res => {
+				uni.$u.getRect('.object-item').then(res => {
 					uni.pageScrollTo({
 						scrollTop: this.scrollTop + res.top,
 						duration: 0

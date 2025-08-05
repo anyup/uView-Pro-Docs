@@ -183,7 +183,7 @@ let list = [
     methods: {
       async beforeSwitch(index) {
         // await等待一个请求，请求回来后再返回true，再进行切换
-        let data = await this.$u.post("url");
+        let data = await uni.$u.post("url");
         return true; // 或者根据逻辑返回false
       },
     },

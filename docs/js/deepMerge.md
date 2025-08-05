@@ -70,7 +70,7 @@ let b = {
 	}
 }
 
-let c = this.$u.deepMerge(a, b);
+let c = uni.$u.deepMerge(a, b);
 
 // c为我们期望的结果
 c = {

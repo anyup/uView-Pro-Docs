@@ -2,18 +2,16 @@
 
 <demo-model url="/pages/componentsC/color/index"></demo-model>
 
-uView目前可以自定主题色，字体颜色，边框颜色等，所有组件内部的样式，都基于同一套主题，比如您修改了`primary`主题色，所有用到了`primary`颜色
+uView Pro 目前可以自定主题色，字体颜色，边框颜色等，所有组件内部的样式，都基于同一套主题，比如您修改了`primary`主题色，所有用到了`primary`颜色
 的组件都会受影响。
-
 
 ### 教程
 
 1. 可以在打开的颜色拾取器中输入或者选择颜色，再点"确定"按钮即可。
-2. 颜色配置完后，在页面底部下载文件，会得到一个名为`uview.theme.scss`的文件。
+2. 颜色配置完后，在页面底部下载文件，会得到一个名为`uview-pro.theme.scss`的文件。
 3. 将文件复制到项目的公共目录(视情况而定)中，再在项目根目录的`uni.scss`中引入即可。
 4. 删除`uni.scss`文件中原来引入的`@import 'uview-pro/theme.scss';`(旧的内置主题文件引入语句)。
-5. 重新编译项目或者重启HX即可生效。
-
+5. 重新编译项目或者重启 HX 即可生效。
 
 ### 主题色
 
@@ -94,7 +92,6 @@ uView目前可以自定主题色，字体颜色，边框颜色等，所有组件
 	</div>
 </div>
 
-
 ### 文字颜色
 
 内置的文字颜色有：主要文字、常规文字，次要文字、占位文字颜色，如需更详细的，详见：[Color 色彩](/components/color.html)章节。
@@ -114,10 +111,9 @@ uView目前可以自定主题色，字体颜色，边框颜色等，所有组件
 	</div>
 </div>
 
-
 ### 边框颜色
 
-uView所有组件边框相关的(特别说明的除外)，用的都是这一个颜色。
+uView 所有组件边框相关的(特别说明的除外)，用的都是这一个颜色。
 
 <div class="row">
 	<div class="col-md-2">
@@ -125,10 +121,9 @@ uView所有组件边框相关的(特别说明的除外)，用的都是这一个�
 	</div>
 </div>
 
-
 ### 背景颜色
 
-这个颜色是uView推荐的背景色，目前内置组件中使用的场景不多。
+这个颜色是 uView 推荐的背景色，目前内置组件中使用的场景不多。
 
 <div class="row">
 	<div class="col-md-2">
@@ -136,8 +131,7 @@ uView所有组件边框相关的(特别说明的除外)，用的都是这一个�
 	</div>
 </div>
 
-
-### Input边框颜色
+### Input 边框颜色
 
 此颜色用于在`u-input`组件显示边框时的边框颜色。
 
@@ -147,12 +141,10 @@ uView所有组件边框相关的(特别说明的除外)，用的都是这一个�
 	</div>
 </div>
 
-
 <div class="submit-btn-group">
 	<el-button type="warning" @click="resetTheme">重置</el-button>
     <el-button type="primary" @click="downThemeFile">下载主题文件</el-button>
 </div>
-
 
 <script>
 	import theme from "../util/theme.js";
@@ -178,8 +170,8 @@ uView所有组件边框相关的(特别说明的除外)，用的都是这一个�
 			// 生成文件的内容
 			downThemeFile() {
 				let date = new Date();
-				let content = `// 此自定义uView主题生成于${this.dateTime()}\n`;
-				content += '// 地址：http://www.uviewui.com/guide/theme.html\n\n';
+				let content = `// 此自定义uView Pro主题生成于${this.dateTime()}\n`;
+				content += '// 地址：https://uview-pro.anyup.cn/docs/guide/theme.html\n\n';
 				let i = 0;
 				for(let key in this.color) {
 					// 拼接成"$u-main-color: #303133;"这种形式
@@ -193,7 +185,7 @@ uView所有组件边框相关的(特别说明的除外)，用的都是这一个�
 				} catch(err) {
 					
 				}
-				this.download('uview.theme.scss', content);
+				this.download('uview-pro.theme.scss', content);
 			},
 			// 生成文件并下载
 			download(filename, text) {
@@ -253,7 +245,6 @@ uView所有组件边框相关的(特别说明的除外)，用的都是这一个�
 		}
 	}
 </script>
-
 
 <style scoped lang="scss">
 	.submit-btn-group {

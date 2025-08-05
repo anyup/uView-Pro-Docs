@@ -1,4 +1,4 @@
-## npm安装方式配置 <to-api/>
+## npm 安装方式配置 <to-api/>
 
 <!-- ### 关于SCSS
 
@@ -18,51 +18,54 @@ npm i sass-loader -D
 
 ### 准备工作
 
-在进行配置之前，请确保您已经根据[安装](/components/install.html)中的步骤对uView进行了npm安装，如果没有，请先执行安装：
+在进行配置之前，请确保您已经根据[安装](/components/install.html)中的步骤对 uView 进行了 npm 安装，如果没有，请先执行安装：
 
 ```js
 // 如果您的项目是HX创建的，根目录又没有package.json文件的话，请先执行如下命令：
 // npm init -y
 
-// 安装
+// npm 安装
 npm install uview-pro
+// yarn 安装
+yarn add uview-pro
+// pnpm 安装
+pnpm add uview-pro
 ```
 
 ### 配置步骤
 
-#### 1. 引入uView主JS库
+#### 1. 引入 uView 主库
 
-在项目根目录中的`main.ts`中，引入并使用uView的JS库，注意这两行要放在`import Vue`之后。
+在项目根目录中的`main.ts`中，引入并使用 uView 的工具库，注意这两行要放在`import Vue`之后。
 
 ```js
 // main.ts
-import uViewPro from 'uview-pro';
+import { createSSRApp } from "vue";
+import uViewPro from "uview-pro";
 
 export function createApp() {
-    const app = createSSRApp(App);
-    app.use(uViewPro);
-    // 其他配置
-    return {
-        app
-    };
+  const app = createSSRApp(App);
+  app.use(uViewPro);
+  // 其他配置
+  return {
+    app,
+  };
 }
 ```
 
-
-#### 2. 在引入uView的全局SCSS主题文件
+#### 2. 在引入 uView 的全局 SCSS 主题文件
 
 在项目根目录的`uni.scss`中引入此文件。
 
 ```css
 /* uni.scss */
-@import 'uview-pro/theme.scss';
+@import "uview-pro/theme.scss";
 ```
 
-
-#### 3. 引入uView基础样式
+#### 3. 引入 uView 基础样式
 
 :::danger 注意！
-在`App.vue`中**首行**的位置引入，注意给style标签加入lang="scss"属性
+在`App.vue`中**首行**的位置引入，注意给 style 标签加入 lang="scss"属性
 :::
 
 ```css
@@ -72,26 +75,27 @@ export function createApp() {
 </style>
 ```
 
-
-#### 4. 配置easycom组件模式
+#### 4. 配置 easycom 组件模式
 
 此配置需要在项目根目录的`pages.json`中进行。
 
 :::tip 温馨提示
-1. uni-app为了调试性能的原因，修改`easycom`规则不会实时生效，配置完后，您需要重启HX或者重新编译项目才能正常使用uView的功能。
+
+1. uni-app 为了调试性能的原因，修改`easycom`规则不会实时生效，配置完后，您需要重启 HX 或者重新编译项目才能正常使用 uView 的功能。
 2. 请确保您的`pages.json`中只有一个`easycom`字段，否则请自行合并多个引入规则。
+
 :::
 
 ```json
 // pages.json
 {
-	"easycom": {
-		"^u-(.*)": "uview-pro/components/u-$1/u-$1.vue"
-	},
-	
-	// 此为本身已有的内容
-	"pages": [
-		// ......
-	]
+  "easycom": {
+    "^u-(.*)": "uview-pro/components/u-$1/u-$1.vue"
+  },
+
+  // 此为本身已有的内容
+  "pages": [
+    // ......
+  ]
 }
 ```
