@@ -1,7 +1,7 @@
 {
-  "name": "uview1.0_doc",
+  "name": "uview-pro-docs",
   "version": "1.0.0",
-  "description": "uView document",
+  "description": "uView Pro document",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
