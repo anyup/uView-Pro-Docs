@@ -97,7 +97,7 @@ module.exports = {
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          ['/components/addQQGroup', '加QQ群交流反馈'],
+          ['/components/addQQGroup', '交流反馈'],
           ['/components/intro', '介绍'],
           ['/components/install', '安装'],
           ['/components/setting', '配置'],
@@ -106,7 +106,7 @@ module.exports = {
           ['/components/feature', '注意事项'],
           ['/components/nvue', 'Nvue排错指南'],
           ['/components/changelog', '更新日志'],
-          ['/components/changeGuide', '升级指南']
+          // ['/components/changeGuide', '升级指南']
         ]
       },
       {
@@ -222,9 +222,9 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 0,
           children: [
-            '/components/parse',
+            // '/components/parse',
             '/components/messageInput',
-            '/components/avatarCropper',
+            // '/components/avatarCropper',
             '/components/loadMore',
             '/components/readMore',
             '/components/lazyLoad',
@@ -247,7 +247,7 @@ module.exports = {
           ['/guide/theme', '自定义主题'],
           // ['/guide/i18n', '多语言切换'],
           // ['/guide/globalVariable', '全局变量的实现'],
-          ['/guide/codeHint', 'HBuilder X代码提示'],
+          ['/guide/codeHint', '代码提示'],
           ['/guide/design', '设计理念'],
           ['/guide/note', '注意事项']
         ]
