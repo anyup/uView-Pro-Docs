@@ -21,7 +21,7 @@ uView Pro 是以 uView 1.8.8 为基础重构，所有组件的 API 均已同步�
 - 如果对某一个组件的名称记忆不清，可凭借大概的字符输入，HX 会按模糊搜索的方式进行匹配可能的组件选项，比如`u-alert-tips`组件，我们可以敲`<u-altip`，
   `<u-tips`，或者`<u-aler`等等，都可识别出组件的提示，总的来说，以`<u`，开头，后面可以是组件的部分关键字，前中后部分都可，大家可自行尝试。
 
-<img src="/code_hint/1.png"/>
+<img src="/docs/code_hint/1.png"/>
 
 <br><br>
 
@@ -29,7 +29,7 @@ uView Pro 是以 uView 1.8.8 为基础重构，所有组件的 API 均已同步�
 
 当我们在 HX 匹配到某个组件后，提示框的右边会弹出此组件所在的文档地址，通过鼠标点击，即可在浏览器快速打开对应的文档。
 
-<img src="/code_hint/2.png"/>
+<img src="/docs/code_hint/2.png"/>
 
 <br><br>
 
@@ -37,7 +37,7 @@ uView Pro 是以 uView 1.8.8 为基础重构，所有组件的 API 均已同步�
 
 当我们键入完整的组件结构后，通过`:`开头，即可列出组件的参数，右边有对应的类型和说明提示，还可以通过模糊的匹配的方式(敲出参数名称的部分字符)，快速找到某一个参数。
 
-<img src="/code_hint/3.png"/>
+<img src="/docs/code_hint/3.png"/>
 
 <br><br>
 
@@ -45,4 +45,4 @@ uView Pro 是以 uView 1.8.8 为基础重构，所有组件的 API 均已同步�
 
 某些组件有回调事件，通过`@`开头，即可列出对应的事件名称，右边有事件对应的说明，回车即可自动键入。
 
-<img src="/code_hint/4.png"/>
+<img src="/docs/code_hint/4.png"/>

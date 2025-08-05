@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-6 col-sm-6 col-xs-12 four-0-four">
 				<div class="four-img-wrap">
-					<img src="/common/404.png" />
+					<img src="/docs/common/404.png" />
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-12">

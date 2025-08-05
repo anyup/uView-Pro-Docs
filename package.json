@@ -9,7 +9,8 @@
     "build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
     "eject": "NODE_OPTIONS=--openssl-legacy-provider vuepress eject",
     "deploy": "pnpm build && node deploy",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "preview": "NODE_OPTIONS=--openssl-legacy-provider vuepress preview docs"
   },
   "keywords": [
     "uView Pro"

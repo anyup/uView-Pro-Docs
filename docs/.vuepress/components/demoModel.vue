@@ -51,7 +51,7 @@
 		box-sizing: border-box;
 		overflow-y: auto;
 		/* background-image: url(/iPhone_model.png); */
-		background-image: url(/common/iPhoneX_model.png);
+		background-image: url(/docs/common/iPhoneX_model.png);
         background-repeat: no-repeat;
 		background-size: 100%;
 		/* box-shadow: 0 4px 25px 0 rgba(4, 40, 60, 0.18); */

@@ -1,6 +1,6 @@
 <template>
 	<a :href="'#' + anchor" class="anchor">
-		<img src="/common/to_api.png" />
+		<img src="/docs/common/to_api.png" />
 	</a>
 </template>
 
