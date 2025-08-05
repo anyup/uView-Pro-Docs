@@ -6,8 +6,9 @@
                 v-for="(item, index) in adList"
                 :key="index"
                 :href="item.link ? item.link : 'javascript:;'"
+				target="_blank"
             >
-                <img :alt="item.title" :src="`https://api.uviewui.com${item.imageUrl}`" />
+                <img :alt="item.title" :src="`${item.imageUrl}`" />
             </a>
             <NavLinks />
             <slot name="top" />
@@ -33,17 +34,21 @@ export default {
     },
     data() {
         return {
-            adList: []
+            adList: [{
+				title:'有题记小程序',
+				imageUrl: 'https://ik.imagekit.io/anyup/images/social/youti-item.png?updatedAt=1754376701993',
+				link: 'https://mp.weixin.qq.com/s/bgkhC02WPlEHmGnCbSmDcg'
+			}]
         }
     },
     props: ['items'],
     created() {
-        axios.get(`https://api.uviewui.com/client/ad?code=left-top`).then(({ data }) => {
-            const { data: { list }, code } = data
-            if (code === 0) {
-                this.adList = list
-            }
-        })
+        // axios.get(`https://api.uviewui.com/client/ad?code=left-top`).then(({ data }) => {
+        //     const { data: { list }, code } = data
+        //     if (code === 0) {
+        //         this.adList = list
+        //     }
+        // })
     },
 }
 </script>
