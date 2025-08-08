@@ -171,7 +171,7 @@ uView 所有组件边框相关的(特别说明的除外)，用的都是这一个
 			downThemeFile() {
 				let date = new Date();
 				let content = `// 此自定义uView Pro主题生成于${this.dateTime()}\n`;
-				content += '// 地址：https://uview-pro.anyup.cn/docs/guide/theme.html\n\n';
+				content += '// 地址：https://uview-pro.netlify.app/guide/theme.html\n\n';
 				let i = 0;
 				for(let key in this.color) {
 					// 拼接成"$u-main-color: #303133;"这种形式

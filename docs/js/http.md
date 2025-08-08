@@ -122,7 +122,7 @@ app.$mount()
 
 // 这里的Vue为Vue对象(非创建出来的实例)，vm为main.js中“Vue.use(httpInterceptor, app)”这一句的第二个参数，
 // 为一个Vue的实例，也即每个页面的"this"
-// 如果需要了解这个install方法是什么，请移步：https://uview-pro.anyup.cn/docs/components/vueUse.html
+// 如果需要了解这个install方法是什么，请移步：https://uview-pro.netlify.app/components/vueUse.html
 const install = (Vue, vm) => {
 	// 此为自定义配置参数，具体参数见上方说明
 	Vue.prototype.$u.http.setConfig({
@@ -171,7 +171,7 @@ const install = (Vue, vm) => {
 	Vue.prototype.$u.http.interceptor.request = (config) => {
 		// 引用token
 		// 方式一，存放在vuex的token，假设使用了uView封装的vuex方式
-		// 见：https://uview-pro.anyup.cn/docs/components/globalVariable.html
+		// 见：https://uview-pro.netlify.app/components/globalVariable.html
 		// config.header.token = vm.token;
 		
 		// 方式二，如果没有使用uView封装的vuex方法，那么需要使用$store.state获取
@@ -382,7 +382,7 @@ const install = (Vue, vm) => {
 	Vue.prototype.$u.http.interceptor.request = (config) => {
 		// 引用token
 		// 方式一，存放在vuex的token，假设使用了uView封装的vuex方式
-		// 见：https://uview-pro.anyup.cn/docs/components/globalVariable.html
+		// 见：https://uview-pro.netlify.app/components/globalVariable.html
 		// config.header.token = vm.token;
 		
 		// 方式二，如果没有使用uView封装的vuex方法，那么需要使用$store.state获取
