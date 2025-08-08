@@ -1,7 +1,7 @@
 module.exports = {
   title: 'uView Pro - 多平台快速开发的UI框架 - uni-app UI框架', // 设置网站标题
   description: 'uView Pro，是uni-app生态最优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水',
-  base: '/docs/', 
+  base: '/', 
   dest: 'dist',
   markdown: {
     //lineNumbers: true
