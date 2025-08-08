@@ -24,7 +24,7 @@
 		},
 		computed: {
 			href() {
-				return this.url.indexOf('http') == 0 ? this.url : 'https://uview-pro.anyup.cn/h5/index.html#' + this.url;
+				return this.url.indexOf('http') == 0 ? this.url : 'https://h5-uview-pro.netlify.app/#' + this.url;
 			}
 		},
 		created() {
