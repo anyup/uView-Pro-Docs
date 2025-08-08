@@ -161,7 +161,7 @@ export default {
                 "_id": "6797147e4736aefcf83a0787",
                 "docs": "v1",
                 "version": "0.0.2",
-                "releaseDate": "2024-08-04",
+                "releaseDate": "2025-08-04",
                 "changes": [
                     {
                         "type": "add",
