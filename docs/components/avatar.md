@@ -75,12 +75,12 @@
 | mode | 显示类型，见上方说明 | String  | circle | square |
 | text | 用文字替代图片，级别优先于`src` | String  | - | - |
 | img-mode | 头像图片的裁剪类型，与uni的`image`组件的`mode`参数一致，如效果达不到需求，可尝试传`widthFix`值 | String  | aspectFill | - |
-| show-sex <Badge text="1.5.6" /> | 是否显示右上角的性别图标 | Boolean  | false | true |
-| sex-icon <Badge text="1.5.6" /> | 右上角性别图标，可传入图片路径，或内置图标名 | String  | man | woman |
-| sex-bg-color <Badge text="1.5.6" /> | 性别图标的背景颜色 | String  | man-primary主题，woman-error主题 | - |
-| show-level <Badge text="1.5.6" /> | 是否显示右下角的等级图标 | Boolean  | false | true |
-| level-icon <Badge text="1.5.6" /> | 右下角等级图标，可传入图片路径，或内置图标名 | String  | level | - |
-| level-bg-color <Badge text="1.5.6" /> | 等级图标的背景颜色 | String  | warning主题 | - |
+| show-sex | 是否显示右上角的性别图标 | Boolean  | false | true |
+| sex-icon | 右上角性别图标，可传入图片路径，或内置图标名 | String  | man | woman |
+| sex-bg-color | 性别图标的背景颜色 | String  | man-primary主题，woman-error主题 | - |
+| show-level | 是否显示右下角的等级图标 | Boolean  | false | true |
+| level-icon | 右下角等级图标，可传入图片路径，或内置图标名 | String  | level | - |
+| level-bg-color | 等级图标的背景颜色 | String  | warning主题 | - |
 
 
 

@@ -159,8 +159,8 @@ export default {
 | shape | 形状，见上方说明 | String  | circle | square |
 | active-color | 选中时的颜色，应用到所有子`Checkbox`组件 | String  | #2979ff | - |
 | label-disabled | 是否禁止点击文本操作`checkbox` | Boolean  | false | true |
-| width <Badge text="1.3.0" type="tip"/> | `checkbox`的宽度，需带单位，如`50%`，`150rpx` | String  | auto | - |
-| wrap <Badge text="1.3.0" type="tip"/> | 是否每个`checkbox`占一行 | Boolean  | false | true |
+| width | `checkbox`的宽度，需带单位，如`50%`，`150rpx` | String  | auto | - |
+| wrap | 是否每个`checkbox`占一行 | Boolean  | false | true |
 
 
 ### Checkbox Event

@@ -221,9 +221,9 @@ export default {
 |-------------  |---------------- |---------------|------------------ |-------- |
 | type | 输入框的类型 | String  | text | textarea |
 | icon | `label`左边的图标，限uView的图标名称 | String | - | - |
-| border-bottom <Badge text="1.3.9" /> | 是否显示field的下边框 | Boolean  | true | false |
-| border-top <Badge text="1.3.9" /> | 是否显示field的上边框 | Boolean  | false | true |
-| icon-style <Badge text="1.3.9" /> | icon的样式，对象形式 | Object | - | - |
+| border-bottom | 是否显示field的下边框 | Boolean  | true | false |
+| border-top | 是否显示field的上边框 | Boolean  | false | true |
+| icon-style | icon的样式，对象形式 | Object | - | - |
 | right-icon | 输入框右边的图标名称，限uView的图标名称 | String  | - | - |
 | required | 是否必填，左边显示红色"*"号 | Boolean  | false | true |
 | label | 输入框左边的文字提示 | String  | - | - |
@@ -244,7 +244,7 @@ export default {
 | disabled | 是否不可输入 | Boolean | false | true |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | Number \| String | 140 | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在type="text"时生效 | String | done | - |
-| trim <Badge text="1.5.8" /> | 是否自动去除两端的空格 | Boolean | true | false |
+| trim | 是否自动去除两端的空格 | Boolean | true | false |
 
 
 ### Slot

@@ -1,4 +1,4 @@
-## Image 图片 <Badge text="1.4.0" /> <to-api/>
+## Image 图片 <to-api/>
 
 <demo-model url="/pages/componentsB/image/index"></demo-model>
 
@@ -128,7 +128,7 @@
 | fade                            | 是否需要淡入效果                                              | Boolean          | true         | false  |
 | webp                            | 只支持网络资源，只对微信小程序有效                            | Boolean          | false        | true   |
 | duration                        | 搭配`fade`参数的过渡时间，单位 ms                             | String \| Number | 500          | -      |
-| bg-color <Badge text="1.6.2" /> | 背景颜色                                                      | String           | #f3f4f6      | -      |
+| bg-color | 背景颜色                                                      | String           | #f3f4f6      | -      |
 
 ### Slot
 

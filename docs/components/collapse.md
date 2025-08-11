@@ -197,7 +197,7 @@ export default {
 
 |方法|说明|
 |:-|:-|
-| init  <Badge text="1.3.8" /> | 重新初始化内部高度计算，用于异步获取内容的情形，请结合`this.$nextTick()`使用 |
+| init  | 重新初始化内部高度计算，用于异步获取内容的情形，请结合`this.$nextTick()`使用 |
 
 
 ### Slot
@@ -205,8 +205,8 @@ export default {
 | 名称          | 说明            |
 |-------------  |---------------- |
 | - |  主体部分的内容  |
-| title <Badge text="1.3.5" /> |  头部的内容，不含右边的箭头  |
-| title-all <Badge text="1.3.5" /> |  整个头部的内容，包含右边的箭头  |
+| title |  头部的内容，不含右边的箭头  |
+| title-all |  整个头部的内容，包含右边的箭头  |
 
 
 <style scoped>

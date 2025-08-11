@@ -14,7 +14,7 @@
 ### 基本使用
 
 - 通过`count`参数设置总共有多少颗星星可选择
-- 通过`v-model`双向绑定初始化时默认选中的星星数量 <Badge text="1.4.5新增" />
+- 通过`v-model`双向绑定初始化时默认选中的星星数量
 - ~~通过`current`设置初始化时默认选中的星星数量~~(1.4.5后建议使用v-model的方式，此参数为了向前兼容依然有效，但优先级低于`v-model`)
 
 ```html
@@ -56,7 +56,7 @@
 <u-rate active-icon="heart-fill" inactive-icon="heart"></u-rate>
 ```
 
-### 评分分级分层 <Badge text="1.7.2" />
+### 评分分级分层
 
 - 通过`colors`设置不同颜色区分评分层级
 - 通过`icons`设置不同类型图标区分评分层级
@@ -101,7 +101,7 @@
 
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
-| v-model <Badge text="1.4.5" /> | 双向绑定选择星星的数量 | String \| Number | 0 | - |
+| v-model | 双向绑定选择星星的数量 | String \| Number | 0 | - |
 | count | 最多可选的星星数量 | String \| Number | 5 | - |
 | current | 默认选中的星星数量，1.4.5起建议使用`v-model`方式  | String \| Number | 0 | - |
 | disabled | 是否禁止用户操作 | Boolean | false | true |
@@ -112,9 +112,9 @@
 | min-count | 最少选中星星的个数 | String \| Number | 0 | - |
 | active-icon | 选中时的图标名，只能为uView的内置图标 | String | star-fill | - |
 | inactive-icon | 未选中时的图标名，只能为uView的内置图标 | String | star | - |
-| custom-prefix <Badge text="1.7.2" /> | 自定义字体图标库时，需要写上此值，详见：[扩展自定义图标库](https://www.uviewui.com/guide/customIcon.html) | String  | uicon | - |
-| colors <Badge text="1.7.2" /> | 颜色分级显示，可以用不同颜色区分评分层级 | Array  | - | - |
-| icons <Badge text="1.7.2" /> | 图标分级显示，可以用不同类型的icon区分评分层级 | Array  | - | - |
+| custom-prefix | 自定义字体图标库时，需要写上此值，详见：[扩展自定义图标库](https://www.uviewui.com/guide/customIcon.html) | String  | uicon | - |
+| colors | 颜色分级显示，可以用不同颜色区分评分层级 | Array  | - | - |
+| icons | 图标分级显示，可以用不同类型的icon区分评分层级 | Array  | - | - |
 
 <!-- | allow-half | 是否允许半星选择 | Boolean | false | true | -->
 

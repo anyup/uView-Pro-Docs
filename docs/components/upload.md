@@ -153,7 +153,7 @@
 ```
 
 
-### 上传前的钩子 <Badge text="1.3.7" />
+### 上传前的钩子
 
 某些时候，**每个文件**上传前可能需要动态修改文件名，修改额外参数等，就会需要用到一个叫`before-upload`的钩子(参数注意不要加括号)，也即回调方法，此方法会返回两个参数：
 
@@ -235,7 +235,7 @@
 </script>
 ```
 
-### 移除前的钩子 <Badge text="1.6.8" />
+### 移除前的钩子
 
 某些时候，文件被移除前可能需要进行判断是否可以被移除，就会需要用到一个叫`before-remove`的钩子(参数注意不要加括号)，也即回调方法，此方法会返回两个参数：
 
@@ -393,7 +393,7 @@ lists = [
 | action | 服务器上传地址  | String | - | - |
 | max-count | 最大选择图片的数量 | String \| Number | 99 | - |
 | width | 图片预览区域和添加图片按钮的宽度，单位rpx，不能是百分比，或者`auto` | String \| Number | 200 | - |
-| height <Badge text="1.6.4" /> | 图片预览区域和添加图片按钮的高度，单位rpx，不能是百分比，或者`auto` | String \| Number | 200 | - |
+| height | 图片预览区域和添加图片按钮的高度，单位rpx，不能是百分比，或者`auto` | String \| Number | 200 | - |
 | custom-btn | 如果需要自定义选择图片的按钮，设置为`true` | Boolean | false | true |
 | show-progress | 是否显示进度条 | Boolean  | true | false |
 | disabled | 是否启用(显示/隐藏)组件 | Boolean  | false | true |
@@ -415,10 +415,10 @@ lists = [
 | del-icon | 右上角删除图标名称，只能为uView内置图标 | String  | close | - |
 | del-bg-color | 右上角关闭按钮的背景颜色 | String  | #fa3534 | - |
 | del-color | 右上角关闭按钮图标的颜色 | String  | #ffffff | - |
-| to-json <Badge text="1.3.7" /> | 如果上传后服务端返回的值为`json`字符串的话，是否自动转为`json` | Boolean | true  | false |
-| before-upload <Badge text="1.3.7" /> | 每个文件上传前触发的钩子回调函数，见上方说明，注意不要加括号 | Function | - | - |
-| limitType <Badge text="1.5.5" /> | 允许的图片后缀 | Array | ['png', 'jpg', 'jpeg', 'webp', 'gif'] | - |
-| index  <Badge text="1.6.1" /> | 在各个回调事件中的最后一个参数返回，用于区别是哪一个组件的事件 | String \| Number  | - | - |
+| to-json | 如果上传后服务端返回的值为`json`字符串的话，是否自动转为`json` | Boolean | true  | false |
+| before-upload | 每个文件上传前触发的钩子回调函数，见上方说明，注意不要加括号 | Function | - | - |
+| limitType | 允许的图片后缀 | Array | ['png', 'jpg', 'jpeg', 'webp', 'gif'] | - |
+| index  | 在各个回调事件中的最后一个参数返回，用于区别是哪一个组件的事件 | String \| Number  | - | - |
 
 
 ### Methods
@@ -457,7 +457,7 @@ lists = [
 | on-uploaded | 所有图片上传完毕触发 | (lists, name)，可以通过此事件，将lists参数获取，提交给后端使用，name为通过`props`传递的`index`参数 |
 | on-choose-complete | 每次选择图片后触发，只是让外部可以得知每次选择后，内部的文件列表 | (lists, name)，内部当前的文件列表，name为通过`props`传递的`index`参数 |
 | on-list-change | 当内部文件列表被加入文件、移除文件，或手动调用`clear`方法时触发 | (lists, name)，内部文件变化之后的列表，name为通过`props`传递的`index`参数 |
-| on-choose-fail <Badge text="1.7.0" /> | 选择文件出错时触发，比如选择文件时取消了操作，只在微信和APP有效 | (error)，错误信息 |
+| on-choose-fail | 选择文件出错时触发，比如选择文件时取消了操作，只在微信和APP有效 | (error)，错误信息 |
 
 
 <style scoped>

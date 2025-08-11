@@ -176,8 +176,8 @@
 | open-text | 展开时的提示文字 | String  | 收起 | - |
 | color | 提示文字的颜色 | String  | #2979ff | - |
 | shadow-style | 对阴影的自定义处理，对象形式 | Object  | 见上方说明 | - |
-| text-indent <Badge text="1.5.6" /> | 段落首行缩进的字符个数，无需缩进请设置为0 | String  | 2em | - |
-| index <Badge text="1.5.8" /> | 用于在`open`和`close`事件中当作回调参数返回 | String \| Number  | - | - |
+| text-indent | 段落首行缩进的字符个数，无需缩进请设置为0 | String  | 2em | - |
+| index | 用于在`open`和`close`事件中当作回调参数返回 | String \| Number  | - | - |
 
 
 
@@ -195,8 +195,8 @@
 
 | 事件名 | 说明 | 回调参数 |
 | :- | :- | :- |
-| open <Badge text="1.5.8" /> | 内容被展开时触发 | index - props中传入的`index`参数值 |
-| close <Badge text="1.5.8" /> | 内容被收起时触发 | index - props中传入的`index`参数值 |
+| open | 内容被展开时触发 | index - props中传入的`index`参数值 |
+| close | 内容被收起时触发 | index - props中传入的`index`参数值 |
 
 
 <style scoped>

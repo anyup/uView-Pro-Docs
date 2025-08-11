@@ -30,7 +30,7 @@
 ```
 
 
-### 线条类型 <Badge text="1.3.7" />
+### 线条类型
 
 我们可以通过`border-style`参数设置线条的类型，有如下三种可选项：
 
@@ -59,7 +59,7 @@
 | direction | 线条的方向，`row`-横向，`col`-竖向 | String | row | col |
 | hair-line | 是否显示细线条 | Boolean  | true | false |
 | margin | 线条与上下左右元素的间距，字符串形式，如"30rpx"、"20rpx 30rpx" | String  | - | - |
-| border-style <Badge text="1.3.7" /> | 线条类型，见上方说明 | String  | solid | dashed / dotted |
+| border-style | 线条类型，见上方说明 | String  | solid | dashed / dotted |
 
 
 <style scoped>

@@ -139,17 +139,17 @@
 |-------------  |---------------- |---------------|------------------ |-------- |
 | span | 栅格占据的列数，总12等分  | String \| Number | 0 | 1-12 | 
 | offset | 分栏左边偏移，计算方式与`span`相同  | String \| Number | 0 | - |
-| text-align <Badge text="1.5.5" /> | 文字水平对齐方式  | String | left | center / right | 
+| text-align | 文字水平对齐方式  | String | left | center / right | 
 
 
-### Row Events <Badge text="1.4.3" />
+### Row Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|
 | click | `row`被点击 | - |
 
 
-### Col Events <Badge text="1.4.3" />
+### Col Events
 
 |事件名|说明|回调参数|
 |:-|:-|:-|

@@ -41,13 +41,13 @@
 | title | 左边主标题 | String | - | - |
 | sub-title | 右边副标题 | String  | 更多 | - |
 | right | 是否显示右边的内容 | Boolean  | true | false |
-| show-line <Badge text="1.3.3" /> | 是否显示左边的竖条 | Boolean  | true | false |
+| show-line | 是否显示左边的竖条 | Boolean  | true | false |
 | font-size | 主标题的字体大小 | String \| Number  | 28 | - |
 | bold | 主标题是否加粗 | Boolean  | true | false |
 | color | 主标题颜色 | String  | #303133 | - |
 | sub-color | 右边副标题的颜色(右箭头同此颜色) | String  | #909399 | - |
-| line-color <Badge text="1.5.5" /> | 左边竖线的颜色，默认同`color`参数值 | String  | - | - |
-| arrow <Badge text="1.6.0" /> | 是否显示右边箭头 | Boolean  | true | false |
+| line-color | 左边竖线的颜色，默认同`color`参数值 | String  | - | - |
+| arrow | 是否显示右边箭头 | Boolean  | true | false |
 
 
 ### Events
@@ -62,7 +62,7 @@
 
 | 名称          | 说明            |
 |-------------  |---------------- |
-| right <Badge text="1.6.0" /> | 自定义右侧内容  |
+| right | 自定义右侧内容  |
 
 
 <style scoped>

@@ -35,7 +35,7 @@
 <u-icon name="photo" color="#2979ff" size="28"></u-icon>
 ```
 
-### 图片图标 <Badge text="1.3.0" type="tip"/>
+### 图片图标
 
 这里说的图片图标，指的是小图标，起作用定位为"icon"图标作用，而非大尺寸的图片展示场景，理论上，这个小图标应该为`png`格式的正方形图标。
 
@@ -65,18 +65,19 @@
 | label-size                               | `label`字体大小，单位 rpx                                                                                                    | String \| Number | 28      | -                   |
 | label-color                              | `label`字体颜色                                                                                                              | String           | #606266 | -                   |
 | custom-prefix                            | 自定义字体图标库时，需要写上此值，详见：[扩展自定义图标库](https://www.uviewui.com/guide/customIcon.html)                    | String           | uicon   | -                   |
+| space             | `label`在四周时与图标的距离，单位 rpx，权重高于 margin                                                                        | String \| Number | 0       | -                   |
 | margin-left                              | `label`在右方时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
 | margin-top                               | `label`在下方时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
-| margin-bottom <Badge text="1.4.1" />     | `label`在上方时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
-| margin-right <Badge text="1.4.1" />      | `label`在左侧时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
+| margin-bottom     | `label`在上方时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
+| margin-right      | `label`在左侧时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
 | label-pos                                | `label`相对于图标的位置(left 和 top 为 1.4.1 新增)                                                                           | String           | right   | bottom / top / left |
-| custom-style <Badge text="1.3.0" />      | 图标的样式，可以设置字体大小，颜色等，对象形式，`size`和`color`优先级高于此参数                                              | Object           | -       | -                   |
-| width <Badge text="1.5.6" />             | `name`为图片路径时图片的宽度，单位任意，数值默认为 rpx 单位                                                                  | String \| Number | -       | -                   |
-| height <Badge text="1.5.6" />            | `name`为图片路径时图片的高度，单位任意，数值默认为 rpx 单位                                                                  | String \| Number | -       | -                   |
-| top <Badge text="1.5.6" />               | 如果某些场景，如果图标没有垂直居中，可以调整此参数，单位任意，数值默认为 rpx 单位                                            | String \| Number | 0       | -                   |
-| show-decimal-icon <Badge text="1.7.2" /> | 是否为 DecimalIcon                                                                                                           | Boolean          | false   | true                |
-| inactive-color <Badge text="1.7.2" />    | 背景颜色，可接受主题色，仅 Decimal 时有效                                                                                    | String           | #ececec | -                   |
-| percent <Badge text="1.7.2" />           | 显示的百分比，仅 Decimal 时有效                                                                                              | String \| Number | 50      | -                   |
+| custom-style      | 图标的样式，可以设置字体大小，颜色等，对象形式，`size`和`color`优先级高于此参数                                              | Object           | -       | -                   |
+| width             | `name`为图片路径时图片的宽度，单位任意，数值默认为 rpx 单位                                                                  | String \| Number | -       | -                   |
+| height            | `name`为图片路径时图片的高度，单位任意，数值默认为 rpx 单位                                                                  | String \| Number | -       | -                   |
+| top               | 如果某些场景，如果图标没有垂直居中，可以调整此参数，单位任意，数值默认为 rpx 单位                                            | String \| Number | 0       | -                   |
+| show-decimal-icon | 是否为 DecimalIcon                                                                                                           | Boolean          | false   | true                |
+| inactive-color    | 背景颜色，可接受主题色，仅 Decimal 时有效                                                                                    | String           | #ececec | -                   |
+| percent           | 显示的百分比，仅 Decimal 时有效                                                                                              | String \| Number | 50      | -                   |
 
 ### Events
 

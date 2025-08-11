@@ -1,4 +1,4 @@
-## Form 表单 <Badge text="1.3.0" /> <to-api/>
+## Form 表单 <to-api/>
 
 此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。
 
@@ -524,11 +524,11 @@ export default {
 | model | 表单数据对象  | Object	 | - | - |
 | rules | 通过`ref`设置，见上方说明 | Object | - | - |
 | error-type | 错误的提示方式，数组形式，见上方说明 | Array | ['message'] | - |
-| border-bottom <Badge text="1.4.6" /> | 是否显示表单域的下划线边框 | Boolean | true | - |
-| label-position <Badge text="1.4.6" /> | 表单域提示文字的位置，`left`-左侧，`top`-上方 | String | left | top |
-| label-width <Badge text="1.4.6" /> | 提示文字的宽度，单位rpx | String \| Number | 90 | 数值 / auto |
-| label-style <Badge text="1.4.6" /> | `lable`的样式，对象形式 | Object | - | - |
-| label-align <Badge text="1.4.6" /> | `lable`的对齐方式 | String | left |  center / right |
+| border-bottom | 是否显示表单域的下划线边框 | Boolean | true | - |
+| label-position | 表单域提示文字的位置，`left`-左侧，`top`-上方 | String | left | top |
+| label-width | 提示文字的宽度，单位rpx | String \| Number | 90 | 数值 / auto |
+| label-style | `lable`的样式，对象形式 | Object | - | - |
+| label-align | `lable`的对齐方式 | String | left |  center / right |
 
 
 ### Form Methods
@@ -557,7 +557,7 @@ export default {
 | left-icon | 左侧自定义字体图标(限uView内置图标)或图片地址 | String |  - |
 | left-icon-style | 左侧图标的样式，对象形式 | Object | - | - |
 | right-icon-style | 右侧图标的样式，对象形式 | Object | - | - |
-| required <Badge text="1.3.5" /> | 是否显示左边的"*"号，这里仅起展示作用，如需校验必填，请通过`rules`配置必填规则 | Boolean | false | true |
+| required | 是否显示左边的"*"号，这里仅起展示作用，如需校验必填，请通过`rules`配置必填规则 | Boolean | false | true |
 
 
 ### Form-item Slot

@@ -1,4 +1,4 @@
-## Input 输入框 <Badge text="1.3.0" /> <to-api/>
+## Input 输入框 <to-api/>
 
 <!-- <demo-model url="/pages/componentsA/input/index"></demo-model> -->
 
@@ -196,12 +196,12 @@
 | border-color                           | 输入框的边框颜色 | String | #dcdfe6 | - |
 | auto-height                            | 是否自动增高输入区域，`type`为`textarea`时有效 | Boolean | true | false |
 | height                                 | 高度，单位rpx | Number \| String | text类型时为70，textarea时为100 | - |
-| cursor-spacing <Badge text="1.4.4" />  | 指定光标与键盘的距离，单位**px** | Number \| String | 0 | - |
-| selection-start <Badge text="1.5.6" /> | 光标起始位置，自动聚焦时有效，需与selection-end搭配使用 | Number \| String | -1 | - |
-| selection-end <Badge text="1.5.6" />   | 光标结束位置，自动聚焦时有效，需与selection-start搭配使用 | Number \| String | -1 | - |
-| trim <Badge text="1.5.8" />            | 是否自动去除两端的空格 | Boolean | true | false |
-| show-confirmbar <Badge text="1.6.8" /> | 是否显示键盘上方带有”完成“按钮那一栏 | Boolean | true | false |
-| adjust-position <Badge text="1.8.6" /> | 弹出键盘时是否自动调节高度 | Boolean | true | false |
+| cursor-spacing  | 指定光标与键盘的距离，单位**px** | Number \| String | 0 | - |
+| selection-start | 光标起始位置，自动聚焦时有效，需与selection-end搭配使用 | Number \| String | -1 | - |
+| selection-end   | 光标结束位置，自动聚焦时有效，需与selection-start搭配使用 | Number \| String | -1 | - |
+| trim            | 是否自动去除两端的空格 | Boolean | true | false |
+| show-confirmbar | 是否显示键盘上方带有”完成“按钮那一栏 | Boolean | true | false |
+| adjust-position | 弹出键盘时是否自动调节高度 | Boolean | true | false |
 
 
 <style scoped>

@@ -125,7 +125,7 @@
 | change-text | 倒计时期间的提示语，必须带有字母"x"，见上方说明 | String  | X秒重新获取 | - |
 | end-text | 倒计结束的提示语，见上方说明 | String  | 重新获取 | - |
 | keep-running | 是否在H5刷新或各端返回再进入时继续倒计时 | Boolean  | false | true |
-| unique-key <Badge text="1.3.4" /> | 多个组件之间继续倒计时的区分`key`，见上方说明 | String  | - | - |
+| unique-key | 多个组件之间继续倒计时的区分`key`，见上方说明 | String  | - | - |
 
 
 ### Methods

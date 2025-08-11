@@ -42,7 +42,7 @@
 
 - 通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为1
 
-**注意：** 自`1.4.5`版本起，`step`参数支持小数值，如`1.1`、`0.3`等 <Badge text="1.4.5" />
+**注意：** 自`1.4.5`版本起，`step`参数支持小数值，如`1.1`、`0.3`等
 
 下面示例每次都会加2或者减2
 
@@ -94,9 +94,9 @@
 | index | 事件回调时用以区分当前发生变化的是哪个输入框 | String \| Number | - | - |
 | disabled-input | 是否禁止输入框手动输入值 | Boolean | false | true |
 | cursor-spacing | 指定光标于键盘的距离，避免键盘遮挡输入框，单位rpx | String \| Number | 200 | - |
-| long-press <Badge text="1.4.5" /> | 是否开启长按连续递增或递减 | Boolean | true | false |
-| press-time  <Badge text="1.4.5" /> | 开启长按触发后，每触发一次需要多久，单位ms | String \| Number | 250 | - |
-| positive-integer <Badge text="1.5.6" /> | 是否只能输入正整数 | Boolean | true | false |
+| long-press | 是否开启长按连续递增或递减 | Boolean | true | false |
+| press-time  | 开启长按触发后，每触发一次需要多久，单位ms | String \| Number | 250 | - |
+| positive-integer | 是否只能输入正整数 | Boolean | true | false |
 
 
 ### Events
@@ -107,7 +107,7 @@
 | blur | 输入框失去焦点时触发，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
 | minus | 点击减少按钮时触发(按钮可点击情况下)，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
 | plus | 点击增加按钮时触发(按钮可点击情况下)，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
-| blur <Badge text="1.7.6" />  | 输入框失去焦点时触发，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
+| blur  | 输入框失去焦点时触发，对象形式 | value：输入框当前值，index：通过props传递的`index`值 | - |
 
 
 <style scoped>

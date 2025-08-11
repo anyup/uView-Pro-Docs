@@ -271,9 +271,9 @@ let params = {
 | z-index | 弹出时的`z-index`值 | String \| Number | 10075 | - |
 | range | 自定义选择的数据，mode=selector或mode=multiSelector时有效 | Array | [] | - |
 | range-key | 当`range`参数的元素为对象时，指定Object中的哪个key的值作为选择器显示内容，见上方说明 | String | - | - |
-| title <Badge text="1.3.6" /> | 顶部中间的标题 | String | - | - |
-| confirm-text  <Badge text="1.5.6" /> | 确认按钮的文字 | String | 确认 | - |
-| cancel-text  <Badge text="1.5.6" /> | 取消按钮的文字 | String | 取消 | - |
+| title | 顶部中间的标题 | String | - | - |
+| confirm-text  | 确认按钮的文字 | String | 确认 | - |
+| cancel-text  | 取消按钮的文字 | String | 取消 | - |
 
 
 

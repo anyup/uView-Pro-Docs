@@ -1,4 +1,4 @@
-## Select 列选择器 <Badge text="1.3.0" type="tip"/> <to-api/>
+## Select 列选择器 <to-api/>
 
 <demo-model url="/pages/componentsA/select/index"></demo-model>
 
@@ -308,12 +308,12 @@ res = [
 | default-value | 提供的默认选中的下标，见上方说明  | Array | - | - |
 | mask-close-able | 是否允许通过点击遮罩关闭Picker  | Boolean | true | false |
 | z-index | 弹出时的`z-index`值 | String \| Number | 10075 | - |
-| value-name | 自定义`list`数据的`value`属性名 <Badge text="1.3.6" /> | String | value | - |
-| label-name | 自定义`list`数据的`label`属性名 <Badge text="1.3.6" /> | String | label | - |
-| child-name | 自定义`list`数据的`children`属性名，只对多列联动模式有效 <Badge text="1.3.6" /> | String | children | - |
-| title | 顶部中间的标题 <Badge text="1.3.6" /> | String | - | - |
-| confirm-text  <Badge text="1.5.6" /> | 确认按钮的文字 | String | 确认 | - |
-| cancel-text  <Badge text="1.5.6" /> | 取消按钮的文字 | String | 取消 | - |
+| value-name | 自定义`list`数据的`value`属性名 | String | value | - |
+| label-name | 自定义`list`数据的`label`属性名 | String | label | - |
+| child-name | 自定义`list`数据的`children`属性名，只对多列联动模式有效 | String | children | - |
+| title | 顶部中间的标题 | String | - | - |
+| confirm-text  | 确认按钮的文字 | String | 确认 | - |
+| cancel-text  | 取消按钮的文字 | String | 取消 | - |
 
 
 ### Events

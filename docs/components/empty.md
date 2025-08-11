@@ -56,13 +56,13 @@
 |-------------  |---------------- |---------------|------------------ |-------- |
 | color | 文字颜色 | String | #c0c4cc | - |
 | text | 文字提示 | String  | 无内容 | - |
-| icon-color <Badge text="1.4.2" /> | icon的颜色，字体图标时有效 | String  | #c0c4cc | - |
-| icon-size <Badge text="1.4.2" /> | icon的大小，单位rpx，如果`src`为图片路径，此参数可以设置图片的尺寸 | String \| Number  | 120 | - |
+| icon-color | icon的颜色，字体图标时有效 | String  | #c0c4cc | - |
+| icon-size | icon的大小，单位rpx，如果`src`为图片路径，此参数可以设置图片的尺寸 | String \| Number  | 120 | - |
 | src | 图标名称或者图片路径(绝对路径)，如定义，`mode`参数会失效 | String  | - | - |
 | font-size | 提示文字的大小，单位rpx | String \| Number  | 28 | - |
 | mode | 内置的图标，见上方说明 | String  | data | - |
-| img-width <Badge type="error" text="1.4.2起废弃" /> | 图标的宽度，单位rpx | String \| Number  | 240 | - |
-| img-height <Badge type="error" text="1.4.2起废弃" /> | 图标的高度，单位rpx | String  | auto | - |
+| img-width <Badge type="error" text="已废弃" /> | 图标的宽度，单位rpx | String \| Number  | 240 | - |
+| img-height <Badge type="error" text="已废弃" /> | 图标的高度，单位rpx | String  | auto | - |
 | show | 是否显示组件 | Boolean  | true | false |
 | margin-top | 组件到上一个元素的间距,单位rpx | String \| Number  | 0 | - |
 

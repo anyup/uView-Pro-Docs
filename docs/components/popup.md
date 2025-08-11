@@ -74,7 +74,7 @@
 uView提供了`length`来控制此种情况，此值可以是`数值`(单位rpx)，`auto`，`百分比`等，内部会自动处理对应的逻辑。
 如果为`auto`的时候，表示弹窗的宽度 | 高度由内容撑开。
 
-**1.3.7版本新增`width`和`height`参数：** <Badge text="1.3.7" />
+**1.3.7版本新增`width`和`height`参数：**
 
 1.3.7版本后，优先推荐`width`和`height`参数，并且优先级会高于`length`，这3个参数都可以设置`百分比`、`auto`、`数值`(单位rpx)、或者是带`px`和`rpx`单位的字符串：
 
@@ -172,11 +172,11 @@ uView提供了`length`来控制此种情况，此值可以是`数值`(单位rpx)
 | close-icon-pos | 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角  | String | top-right | top-left / bottom-left / bottom-right |
 | close-icon-color | 关闭图标的颜色  | String | #909399 | - |
 | close-icon-size | 关闭图标的大小，单位rpx  | String \| Number | 30 | - |
-| width  <Badge text="1.3.7" /> | mode = left \| center \| right时有效，优先级高于`length`  | String \| Number | - | - |
-| height  <Badge text="1.3.7" /> | mode = top \| center \| bottom时有效，优先级高于`length`  | String \| Number | - | - |
+| width  | mode = left \| center \| right时有效，优先级高于`length`  | String \| Number | - | - |
+| height  | mode = top \| center \| bottom时有效，优先级高于`length`  | String \| Number | - | - |
 | negative-top | 中部弹出时，以避免可能弹出的键盘重合，往上偏移的值，单位任意，数值则默认为rpx单位  | String \| Number | 0 | - |
-| mask-custom-style <Badge text="1.5.4" /> | 遮罩自定义样式，一般用于修改遮罩透明度对象形式，如：{background: 'rgba(0, 0, 0, 0.5)'}  | Object | - | - |
-| duration  <Badge text="1.6.6" /> | 遮罩打开或收起的动画过渡时间，单位ms | String \| Number | 250 | - |
+| mask-custom-style | 遮罩自定义样式，一般用于修改遮罩透明度对象形式，如：{background: 'rgba(0, 0, 0, 0.5)'}  | Object | - | - |
+| duration  | 遮罩打开或收起的动画过渡时间，单位ms | String \| Number | 250 | - |
 
 
 ### Event

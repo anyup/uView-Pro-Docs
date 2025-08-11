@@ -196,7 +196,7 @@ export default {
 | zoom | 是否开启缩放模式 | Boolean  | true | false |
 | async-close | 是否异步关闭，只对确定按钮有效，见上方说明 | Boolean  | false | true |
 | mask-close-able | 是否允许点击遮罩关闭Modal | Boolean  | false | true |
-| negative-top | 往上偏移的值，以避免可能弹出的键盘重合，单位任意，数值则默认为rpx单位 <Badge text="1.4.4" />  | String \| Number | 0 | - |
+| negative-top | 往上偏移的值，以避免可能弹出的键盘重合，单位任意，数值则默认为rpx单位  | String \| Number | 0 | - |
 
 
 ### Event
@@ -221,7 +221,7 @@ export default {
 | 名称 | 说明 |
 |:-|:-|
 | default | 传入自定义内容，一般为富文本，见上方说明 |
-| confirm-button <Badge text="1.6.0" /> | 传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景 |
+| confirm-button | 传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景 |
 
 
 <style scoped>

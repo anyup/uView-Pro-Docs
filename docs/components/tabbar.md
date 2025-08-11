@@ -1,4 +1,4 @@
-## Tabbar 底部导航栏 <Badge text="1.4.8" type="tip"/> <to-api/>
+## Tabbar 底部导航栏 <to-api/>
 
 <demo-model url="/pages/componentsB/tabbar/index"></demo-model>
 
@@ -225,7 +225,7 @@ let list = [
 
 组件默认带了顶部边框，如果有配置中部凸起按钮的话，此按钮同时也会有外层边框，如果不需要，配置`border-top`为`false`即可。
 
-### 实战教程 <Badge text="1.5.6" />
+### 实战教程
 
 自定义 tabbar 场景，我们不建议在一个页面内通过几个组件，用`v-if`切换去模拟各个页面，而应该使用 uni-app 自带的 tabbar 系统，同时隐藏原生的 tabbar，
 再引入自定导航栏，这样可以保证原有性能，同时又能自定义 tabbar，思路如下：
@@ -258,7 +258,7 @@ let list = [
 | mid-button                          | 是否需要中部凸起的按钮，配置了此值，依然需要配置`list`参数中需凸起项的`midButton`为`true`，见上方说明 | Boolean          | false   | true   |
 | before-switch                       | 切换之前的回调钩子，见上方说明                                                                        | Function         | -       | -      |
 | border-top                          | 是否显示顶部的边框                                                                                    | Boolean          | true    | false  |
-| hide-tab-bar <Badge text="1.5.6" /> | 是否隐藏原生 tabbar                                                                                   | Boolean          | true    | false  |
+| hide-tab-bar | 是否隐藏原生 tabbar                                                                                   | Boolean          | true    | false  |
 
 ### Events
 
