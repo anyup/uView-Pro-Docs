@@ -65,7 +65,7 @@
 | label-size                               | `label`字体大小，单位 rpx                                                                                                    | String \| Number | 28      | -                   |
 | label-color                              | `label`字体颜色                                                                                                              | String           | #606266 | -                   |
 | custom-prefix                            | 自定义字体图标库时，需要写上此值，详见：[扩展自定义图标库](https://www.uviewui.com/guide/customIcon.html)                    | String           | uicon   | -                   |
-| space             | `label`在四周时与图标的距离，单位 rpx，权重高于 margin                                                                        | String \| Number | 0       | -                   |
+| space <Badge text="0.0.4" />            | `label`在四周时与图标的距离，权重高于 margin，单位 rpx                                                                        | String \| Number | -       | -                   |
 | margin-left                              | `label`在右方时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
 | margin-top                               | `label`在下方时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
 | margin-bottom     | `label`在上方时与图标的距离，单位 rpx                                                                                        | String \| Number | 6       | -                   |
