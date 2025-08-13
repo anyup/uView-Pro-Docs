@@ -56,10 +56,12 @@ uView Pro 将`$u`对象同时挂载到了`uni`对象上，这意味着您可以�
 
 ```html
 <template>
-  <u-action-sheet :list="list" v-model="show"></u-action-sheet>
+  <my-action-sheet :list="list" v-model="show"></my-action-sheet>
 </template>
 
 <script setup lang="ts">
+  // 你如果自定义引入的名称，template 中使用组件名称也需要对应
+  import myActionSheet from "@/uni_modules/uview-pro/components/u-action-sheet/u-action-sheet.vue";
   import { ref } from "vue";
 
   interface ListItem {
