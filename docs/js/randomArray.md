@@ -10,14 +10,11 @@
 - `array` <Array\> 一维数组
 
 ```js
-export default{
-	data() {
-		return {
-			array: [1,2,3,4,5]
-		}
-	},
-	onLoad() {
-		console.log(uni.$u.randomArray(this.array));
-	}
-}
+import { ref, onMounted } from 'vue';
+
+const array = ref([1, 2, 3, 4, 5]);
+
+onMounted(() => {
+  console.log(uni.$u.randomArray(array.value));
+});
 ```
