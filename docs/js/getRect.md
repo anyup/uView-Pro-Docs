@@ -7,9 +7,10 @@
 使用复杂度，内部使用`Promise`，可以让用户同步获取节点信息。
 
 
-#### getRect(selector, all = false)
+#### getRect(selector, instance, all)
 
 - `selector` <String\> 此参数为元素节点，可以是`id`或者`class`，比如"#user-name"，".box"
+- `instance` <ComponentInternalInstance\> 此参数为组件实例，通过 `getCurrentInstance()` 获得
 - `all` <Boolean\> 是否返回全部节点信息，当页面有多个相同`selector`的元素时，`all`为`true`，会以数组形式返回所有节点的信息(结果为数组，数组元素为对象)，否则只返回第一个节点的信息(结果为一个对象)
 
 注意：该方法返回的结果，共有如下有用信息：
@@ -38,15 +39,14 @@ res = {
 通过`then`调用即可
 
 ```js
-export default {
-	methods: {
-		getElInfo() {
-			uni.$u.getRect('.user-avatar').then(res => {
-				console.log(res);
-			})
-		}
-	}
+const instance = getCurrentInstance()
+
+getElInfo() {
+	uni.$u.getRect('.user-avatar', instance).then(res => {
+		console.log(res);
+	})
 }
+
 ```
 
 
@@ -56,13 +56,11 @@ export default {
 其前面添加`async`修饰符
 
 ```js
-export default {
-	methods: {
-		async getElInfo() {
-			let rectInfo = await uni.$u.getRect('.user-avatar');
-			console.log(rectInfo);
-		}
-	}
+const instance = getCurrentInstance()
+
+async getElInfo() {
+	let rectInfo = await uni.$u.getRect('.user-avatar', instance);
+	console.log(rectInfo);
 }
 ```
 
@@ -76,34 +74,32 @@ export default {
 <template>
 	<view>
 		<view class="user-name">
-			{{userName}}
+			{{ userName }}
 		</view>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				userName: ''
-			}
-		},
-		onLoad() {
-			this.getElInfo();
-		},
-		methods: {
-			getElInfo() {
-				uni.$u.post('http://www.example.com/user/info').then(res => {
-					this.userName = res.name;
-					this.$nextTick(() => {
-						uni.$u.getRect('.user-avatar').then(rect => {
-							console.log(rect);
-						})
-					})
-				})
-			}
-		}
+<script setup >
+import { ref, onMounted, getCurrentInstance } from 'vue';
+
+const userName = ref('');
+const instance = getCurrentInstance();
+
+onMounted(() => {
+	getElInfo();
+});
+
+async function getElInfo() {
+	try {
+		const res = await uni.$u.post('http://www.example.com/user/info');
+		userName.value = res.name;
+		await nextTick();
+		const rect = await uni.$u.getRect('.user-avatar', instance);
+		console.log(rect);
+	} catch (error) {
+		console.error(error);
 	}
+}
 </script>
 ```
 
@@ -124,20 +120,23 @@ export default {
 	</view>
 </template>
 
-<script>
-	export default {
-		onReady() {
-			this.getElInfo();
-		},
-		methods: {
-			getElInfo() {
-				uni.$u.getRect('.item', true).then(rect => {
-					// rect为一个数组(内有2个元素)，因为页面有2个.item节点
-					console.log(rect);
-				})
-			}
-		}
+<script setup>
+import { ref, onMounted, getCurrentInstance } from 'vue';
+
+const instance = getCurrentInstance();
+
+onMounted(() => {
+	getElInfo();
+});
+
+async function getElInfo() {
+	try {
+		const rect = await uni.$u.getRect('.item', instance, true);
+		console.log(rect); // rect为一个数组(内有2个元素)，因为页面有2个.item节点
+	} catch (error) {
+		console.error(error);
 	}
+}
 </script>
 ```
 
@@ -169,27 +168,26 @@ export default {
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				scrollTop: 0,
-			}
-		},
-		onPageScroll(e) {
-			this.scrollTop = e.scrollTop;
-		},
-		methods: {
-			scrollEl() {
-				uni.$u.getRect('.object-item').then(res => {
-					uni.pageScrollTo({
-						scrollTop: this.scrollTop + res.top,
-						duration: 0
-					})
-				})
-			}
-		}
-	}
+<script setup>
+import { ref, onMounted, getCurrentInstance } from 'vue';
+import { onPageScroll } from '@dcloudio/uni-app';
+
+const instance = getCurrentInstance();
+
+const scrollTop = ref(0);
+
+onPageScroll((e: { scrollTop: number }) => {
+    scrollTop.value = e.scrollTop;
+});
+
+const scrollEl = () => {
+  uni.$u.getRect('.object-item', instance).then(res => {
+    uni.pageScrollTo({
+      scrollTop: scrollTop.value + res.top,
+      duration: 0
+    });
+  });
+}
 </script>
 
 <style lang="scss" scoped>
