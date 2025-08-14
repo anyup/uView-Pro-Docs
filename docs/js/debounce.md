@@ -16,7 +16,7 @@
 结合以上两种情况，回到我们最实际的场景，比如防止表单提交按钮被多次触发，我们应该选择使用`节流`而不是`防抖`方案。
 
 :::tip 温馨提示
-uView内置的按钮组件`u-button`内部已做节流处理(1.5.8版本)，无需外部再做节流处理。配置`throttle-time`参数，可以设置节流的时间，详见[Button 按钮](/components/button.html)
+uView内置的按钮组件`u-button`内部已做节流处理，无需外部再做节流处理。配置`throttle-time`参数，可以设置节流的时间，详见[Button 按钮](/components/button.html)
 :::
 
 ### 节流
@@ -44,21 +44,18 @@ uView内置的按钮组件`u-button`内部已做节流处理(1.5.8版本)，无�
     </view>
 </template>
 
-<script>
-    export default {
-        methods: {
-            btnAClick() {
-				console.log('btnClick');
-			},
-			btnBClick() {
-				// 此处用法为在js中调用，需要写this.$u.throttle()
-				uni.$u.throttle(this.toNext, 500)
-			},
-			toNext() {
-				console.log('btnBClick');
-			}
-        }
-    }
+<script setup lang="ts">
+import { $u } from 'uview-pro'
+
+function btnAClick() {
+	console.log('btnClick');
+},
+function btnBClick() {
+	$u.throttle(toNext, 500)
+},
+function toNext() {
+	console.log('btnBClick');
+}
 </script>
 
 <style lang="scss">
@@ -99,21 +96,18 @@ uView内置的按钮组件`u-button`内部已做节流处理(1.5.8版本)，无�
     </view>
 </template>
 
-<script>
-    export default {
-        methods: {
-            btnAClick() {
-				console.log('btnClick');
-			},
-			btnBClick() {
-				// 此处用法为在js中调用，需要写this.$u.debounce()
-				uni.$u.debounce(this.toNext, 500)
-			},
-			toNext() {
-				console.log('btnBClick');
-			}
-        }
-    }
+<script setup lang="ts">
+import { $u } from 'uview-pro'
+
+function btnAClick() {
+	console.log('btnClick');
+},
+function btnBClick() {
+	$u.debounce(toNext, 500)
+},
+function toNext() {
+	console.log('btnBClick');
+}
 </script>
 
 <style lang="scss">
