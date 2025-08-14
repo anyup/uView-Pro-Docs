@@ -150,11 +150,11 @@
 ```html
 <template>
 	<u-calendar v-model="show" :mode="mode" @change="change">
-		<view slot="tooltip">
+		<template #tooltip>
 			<view class="title">
 				请选择住店/离店时间
 			</view>
-		</view>
+		</template>
 	</u-calendar>
 </template>
 

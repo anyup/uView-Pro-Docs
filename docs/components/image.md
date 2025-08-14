@@ -62,7 +62,9 @@
 
 ```html
 <u-image src="https://cdn.uviewui.com/uview/example/fade.jpg">
-  <u-loading slot="loading"></u-loading>
+  <template #loading>
+    <u-loading></u-loading>
+  </template>
 </u-image>
 ```
 
@@ -72,7 +74,9 @@
 
 ```html
 <u-image src="https://cdn.uviewui.com/uview/example/fade.jpg">
-  <view slot="error" style="font-size: 24rpx;">加载失败</view>
+  <template #error>
+    <view style="font-size: 24rpx;">加载失败</view>
+  </template>
 </u-image>
 ```
 

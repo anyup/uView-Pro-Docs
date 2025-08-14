@@ -121,7 +121,9 @@
 			label="验证码"
 			placeholder="请填写验证码"
 		>
-			<u-button size="mini" slot="right" type="success" @click="getCode">{{codeText}}</u-button>
+			<template #right>
+				<u-button size="mini" type="success" @click="getCode">{{codeText}}</u-button>
+			</template>
 		</u-field>
 		<u-verification-code ref="uCode" @change="codeChange"></u-verification-code>
 	</view>

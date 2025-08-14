@@ -264,9 +264,11 @@
 
 ```html
 <u-upload :custom-btn="true">
-	<view slot="addBtn" class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
-		<u-icon name="photo" size="60" :color="$u.color['lightColor']"></u-icon>
-	</view>
+	<template #addBtn>
+		<view class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
+			<u-icon name="photo" size="60" color="#2979ff"></u-icon>
+		</view>
+	</template>
 </u-upload>
 
 <style>
@@ -314,10 +316,12 @@ lists = [
 				<image class="pre-item-image" :src="item.url" mode="aspectFill"></image>
 			</view>
 		</view>
-		<u-upload :custom-btn="true" ref="uUpload" :show-upload-list="showUploadList" :action="action"> 
-			<view slot="addBtn" class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
-				<u-icon name="photo" size="60" color="#c0c4cc"></u-icon>
-			</view>
+		<u-upload :custom-btn="true" ref="uUpload" :show-upload-list="showUploadList" :action="action">
+			<template #addBtn>
+				<view class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
+					<u-icon name="photo" size="60" color="#c0c4cc"></u-icon>
+				</view>
+			</template>
 		</u-upload>
 	</view>
 </template>

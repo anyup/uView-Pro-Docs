@@ -146,14 +146,15 @@ uView Pro 为文字对齐定义了 3 个类，分别如下：
 <template>
   <view>
     <u-modal v-model="show" content="点击确定进行授权">
-      <button
-        open-type="getUserInfo"
-        class="u-reset-button"
-        slot="confirm-button"
-        @getuserinfo="getUserInfo"
-      >
-        确定
-      </button>
+      <template #confirm-button>
+        <button
+          open-type="getUserInfo"
+          class="u-reset-button"
+          @getuserinfo="getUserInfo"
+        >
+          确定
+        </button>
+      </template>
     </u-modal>
     <u-button @click="show = true">打开modal</u-button>
   </view>

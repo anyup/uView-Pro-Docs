@@ -6,8 +6,8 @@
 方式分开说明：
 
 - [npm方式安装的配置](/components/npmSetting.html)
+- [uni_modules安装的配置](/components/uniModulesSetting.html)
 - [下载方式安装的配置](/components/downloadSetting.html)
-
 
 ### 原理
 您可能会好奇为什么需要这样配置，详见：[配置说明](/components/settingDesc.html)

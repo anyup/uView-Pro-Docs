@@ -38,15 +38,18 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 ```html
 <u-cell-group>
 	<u-cell-item  title="夕阳无限好" arrow-direction="down">
-		<u-icon slot="icon" size="32" name="search"></u-icon>
-		<!-- <u-badge count="99" :absolute="false" slot="right-icon"></u-badge> -->
-		<u-switch slot="right-icon" v-model="checked"></u-switch>
+		<template #icon>
+			<u-icon size="32" name="search"></u-icon>
+		</template>
+		<template #right-icon>
+			<u-switch v-model="checked"></u-switch>
+		</template>
 	</u-cell-item>
 	<u-cell-item icon="setting-fill" title="只是近黄昏"></u-cell-item>
 </u-cell-group>
 ```
 
-如上所示，可以给`cell-item`组件通过`slot="right-icon"`设定右边uView自带的`badge`或者`switch`组件：
+如上所示，可以给`cell-item`组件通过`<template #right-icon></template>`设定右边uView自带的`badge`或者`switch`组件：
 - 如果搭配的是`badge`组件，注意设置`absolute`参数为`false`去掉绝对定位，否则其位于右侧的恰当位置，详见[Badge 徽标数](/components/badge.html)。
 - 如果搭配的是`switch`组件，注意要通过`v-model`绑定一个内容为布尔值的变量，否则无法操作`switch`，详见[Switch 开关选择器](/components/switch.html)。
 
