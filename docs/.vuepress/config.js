@@ -55,10 +55,10 @@ module.exports = {
         text: '组件',
         link: '/components/intro'
       }, 
-      // {
-      //   text: 'JS',
-      //   link: '/js/intro'
-      // }, 
+      {
+        text: '工具',
+        link: '/js/intro'
+      }, 
       // {
       //   text: '模板',
       //   link: '/layout/intro'
@@ -71,10 +71,10 @@ module.exports = {
         text: '关于我',
         link: '/cooperation/about'
       },
-      // {
-      //   text: '捐赠名单',
-      //   link: '/cooperation/donation'
-      // },
+      {
+        text: '捐赠名单',
+        link: '/cooperation/donation'
+      },
       // {
       //   text: '1.X',
       //   items: [{
@@ -282,7 +282,8 @@ module.exports = {
           ['/layout/citySelect', '城市选择']
         ]
       }],
-      '/js': [{
+      '/js': [
+        {
         title: '开发指南',
         collapsable: false,
         sidebarDepth: 0,
@@ -290,15 +291,17 @@ module.exports = {
           ['/js/intro', '介绍'],
           ['/js/fastUse', '便捷工具']
         ]
-      }, {
-        title: '网络',
-        collapsable: false,
-        sidebarDepth: 0,
-        children: [
-          ['/js/http', 'Http请求'],
-          ['/js/apiManage', 'API集中管理']
-        ]
-      }, {
+      }, 
+      // {
+      //   title: '网络',
+      //   collapsable: false,
+      //   sidebarDepth: 0,
+      //   children: [
+      //     ['/js/http', 'Http请求'],
+      //     ['/js/apiManage', 'API集中管理']
+      //   ]
+      // }, 
+      {
         title: '工具库',
         collapsable: false,
         sidebarDepth: 0,
@@ -318,7 +321,7 @@ module.exports = {
           ['/js/random', '随机数值'],
           ['/js/trim', '去除空格'],
           ['/js/getRect', '节点布局信息'],
-          ['/js/mpShare', '小程序分享']
+          // ['/js/mpShare', '小程序分享']
         ]
       }],
       '/course': [{
