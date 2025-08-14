@@ -12,16 +12,14 @@
 - `rgb` <String\> RGB颜色值，如`rgb(230, 231, 233)`
 
 ```js
-export default{
-	data() {
-		return {
-			rgb: 'rgb(13, 145, 20)'
-		}
-	},
-	onLoad() {
-		console.log(uni.$u.rgbToHex(this.rgb));
-	}
-}
+import { ref, onMounted } from 'vue';
+import { $u } from 'uview-pro';
+
+const rgb = ref('rgb(13, 145, 20)');
+
+onMounted(() => {
+  console.log($u.rgbToHex(rgb.value));
+});
 ```
 
 
@@ -34,16 +32,14 @@ export default{
 - `hex` <String\> HEx颜色值，如`#0afdce`
 
 ```js
-export default{
-	data() {
-		return {
-			hex: '#0afdce'
-		}
-	},
-	onLoad() {
-		console.log(uni.$u.hexToRgb(this.hex));
-	}
-}
+import { ref, onMounted } from 'vue';
+import { $u } from 'uview-pro';
+
+const hex = ref('#0afdce');
+
+onMounted(() => {
+  console.log($u.hexToRgb(hex.value));
+});
 ```
 
 
