@@ -22,18 +22,20 @@ Object参数说明：
 <br>
 
 ```js
-export default{
-	onLoad() {
-		setTimeout(() => {
-			uni.$u.route({
-				url: 'pages/components/empty/index',
-				params: {
-					name: 'lisa'
-				}
-			})
-		}, 2000)
-	}
-}
+import { ref, onMounted } from 'vue';
+
+const route = ref(null);
+
+onMounted(() => {
+  setTimeout(() => {
+    uni.$u.route({
+      url: 'pages/components/empty/index',
+      params: {
+        name: 'lisa'
+      }
+    });
+  }, 2000);
+});
 ```
 
 
