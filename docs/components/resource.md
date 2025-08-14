@@ -33,7 +33,7 @@
 
 <div class="cards">
     <ul class="container">   
-        <li >
+        <!-- <li >
             <div class="card">
                 <img src="https://cdn.uviewui.com/uview/docs/8bfdfc21701f891066ad24b8cc57049.png" alt="">
                 <h3>I18n多语言示例</h3>
@@ -56,7 +56,7 @@
                 <p>请注意配合文档说明使用此组件，这里为组件的使用示例工程，下载即可使用</p>
                 <a href="https://cdn.uviewui.com/uview/resources/Tabbar.zip">下载</a>
             </div>
-        </li>
+        </li> -->
         <li >
             <div class="card">
                 <img src="https://cdn.uviewui.com/uview/docs/425b2a05e181894a8e3f09f4d95af4e.png" alt="">
