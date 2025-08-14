@@ -63,10 +63,10 @@ module.exports = {
       //   text: '模板',
       //   link: '/layout/intro'
       // },
-      // {
-      //   text: '资源',
-      //   link: '/components/resource'
-      // },
+      {
+        text: '资源',
+        link: '/components/resource'
+      },
       {
         text: '关于我',
         link: '/cooperation/about'
@@ -84,11 +84,13 @@ module.exports = {
       // }, 
       {
         text: 'GitHub',
-        link: 'https://github.com/anyup/uView-Pro'
+        link: 'https://github.com/anyup/uView-Pro',
+        target:'_blank' 
       }, 
       {
         text: 'Gitee',
-        link: 'https://gitee.com/anyup/uView-Pro'
+        link: 'https://gitee.com/anyup/uView-Pro',
+        target:'_blank'
       }
     ],
     sidebar: {

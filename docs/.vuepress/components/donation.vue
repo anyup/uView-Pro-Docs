@@ -25,7 +25,7 @@
     <br />
     <br />
 
-    <div class="table-header">
+    <!-- <div class="table-header">
       <el-select
         v-model="order"
         placeholder="排序方式"
@@ -35,7 +35,7 @@
         <el-option label="按日期排序" value="donationDate"></el-option>
         <el-option label="按金额排序" value="amount"></el-option>
       </el-select>
-    </div>
+    </div> -->
 
     <el-table :data="donationList" border size="small">
       <el-table-column prop="name" label="姓名" />
@@ -74,17 +74,17 @@ export default {
   data() {
     return {
       donationList: [],
-      baseUrl: 'https://api.uviewui.com',
+      baseUrl: 'https://uview-pro.anyup.cn/static/uview-pro/api',
       order: 'donationDate',
     };
   },
   created() {
-    // this.fetchDonationList();
+    this.fetchDonationList();
   },
   methods: {
     fetchDonationList() {
       axios
-        .get(`${this.baseUrl}/client/donation?order=${this.order}`)
+        .get(`${this.baseUrl}/donation.json?updateAt=${Date.now()}`)
         .then(({ data }) => {
           const {
             data: { list },
