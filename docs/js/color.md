@@ -14,11 +14,13 @@
 该主题颜色值，一共有5个，分别是`primary`、`error`、`success`、`info`、`warning`
 
 ```js
-export default{
-	onLoad() {
-		console.log(uni.$u.color['error']);
-	}
-}
+import { ref, onMounted } from 'vue';
+
+const errorColor = ref('');
+
+onMounted(() => {
+  errorColor.value = uni.$u.color['error'];
+});
 ```
 
 
@@ -28,11 +30,7 @@ uView一共提供了四个颜色值，具体请见组件部分[Color色彩](/com
 分别有：`mainColor`、`contentColor`、`tipsColor`、`lightColor`、`borderColor`(边框颜色值)
 
 ```js
-export default{
-	onLoad() {
-		console.log(uni.$u.color['contentColor']);
-	}
-}
+console.log(uni.$u.color['contentColor']);
 ```
 
 
@@ -41,10 +39,6 @@ export default{
 uView提供了一个浅灰的背景颜色值，该值为`#f3f4f6`
 
 ```js
-export default{
-	onLoad() {
-		console.log(uni.$u.color['bgColor']);
-	}
-}
+console.log(uni.$u.color['bgColor']);
 ```
 
