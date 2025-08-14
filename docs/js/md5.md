@@ -10,11 +10,14 @@
 使用方法：
 
 ```js
+import { ref, onMounted } from 'vue';
 import md5Libs from "uview-pro/libs/function/md5";
-export default{
-	onLoad() {
-		console.log(md5Libs.md5('uView'))
-		// 结果为：55c859b4750225eb1cdbd9e0403ee274
-	}
-}
+
+const md5Result = ref('');
+
+onMounted(() => {
+  md5Result.value = md5Libs.md5('uView');
+  console.log(md5Result.value);
+  // 结果为：55c859b4750225eb1cdbd9e0403ee274
+});
 ```
