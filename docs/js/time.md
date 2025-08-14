@@ -8,7 +8,7 @@
 #### timeFormat | date(timestamp, format = "yyyy-mm-dd")
 
 
-**注意**：`1.7.9`之前的版本只能传入`秒`或`毫秒`时间戳，date和timeFormat为同功能不同名函数，无论用哪个方法名，都是一样的。
+**注意**：date和timeFormat为同功能不同名函数，无论用哪个方法名，都是一样的。
 
 
 该函数必须传入第一个参数，第二个参数是可选的，函数返回一个格式化好的时间。
@@ -21,57 +21,30 @@
 <template>
 	<view>
 		<view>
-			时间为：{{$u.timeFormat(timestamp, 'yyyy年mm月dd日')}}
+			时间为：{{ $u.timeFormat(timestamp, 'yyyy年mm月dd日') }}
 		</view>
 		<view>
-			时间为：{{time}}
+			时间为：{{ time }}
 		</view>
 	</view>
 </template>
 
-<script>
-	export default{
-		data() {
-			return {
-				time: null,
-				timestamp: '1581170184'
-			}
-		},
-		onLoad() {
-			this.time = uni.$u.timeFormat(this.timestamp, 'yyyy-mm-dd');
-		}
-	}
+<script setup>
+import { $u } from 'uview-pro'
+import { ref, onMounted } from 'vue';
+
+const time = ref(null);
+const timestamp = ref('1581170184');
+
+onMounted(() => {
+  time.value = $u.timeFormat(timestamp.value, 'yyyy-mm-dd');
+});
 </script>
 ```
-
-### 过滤器式写法
-
-uView同时把timeFormat()注册到了全局过滤器中，方便您在模板中使用：
-
-```html
-<view>
-	<!-- 因为默认参数为yyyy-mm-dd，所以这里可以不用写时间格式 -->
-	时间为：{{'1585926095536' | date}}
-</view>
-
-<view>
-	时间为：{{'1585926095536' | date('yyyy-mm')}}
-</view>
-```
-
-注意过滤器的特殊点，上面的"'1585926095536' | date('yyyy-mm')"，会把'1585926095536'当作`date`的第一个参数传入，'yyyy-mm'作为第二个参数，
-也即实际表现为：
-
-```js
-uni.$u.date('1585926095536', 'yyyy-mm')
-```
-
 
 ### 多久以前
 
 #### timeFrom(time, format = String | false)
-
-**注意** `1.7.9`之前的版本只能传入`秒`或`毫秒`时间戳
 
 该函数必须传入第一个参数，格式为任何合法的时间格式、`秒`或`毫秒`的时间戳，第二个参数是可选的，返回的值类似`刚刚`，`25分钟前`，`3小时前`，`7天前`的结果。
 如果第二个参数是时间的格式，当前和传入时间戳相差大于一个月时，返回格式化好的时间；如果第二个参数为`false`，则不会返回格式化好的时间，而是诸如"xxx年前"的结果。
@@ -85,41 +58,23 @@ uni.$u.date('1585926095536', 'yyyy-mm')
 <template>
 	<view>
 		<view>
-			时间为：{{$u.timeFrom(timestamp, 'yyyy年mm月dd日')}}
+			时间为：{{ $u.timeFrom(timestamp, 'yyyy年mm月dd日') }}
 		</view>
 		<view>
-			时间为：{{time}}
+			时间为：{{ time }}
 		</view>
 	</view>
 </template>
 
-<script>
-	export default{
-		data() {
-			return {
-				time: null,
-				timestamp: '1581170184'
-			}
-		},
-		onLoad() {
-			this.time = uni.$u.timeFrom(this.timestamp);
-		}
-	}
+<script setup>
+import { ref, onMounted } from 'vue';
+import { $u } from 'uview-pro';
+
+const time = ref(null);
+const timestamp = ref('1581170184');
+
+onMounted(() => {
+  time.value = $u.timeFrom(timestamp.value, 'yyyy年mm月dd日');
+});
 </script>
-```
-
-### 过滤器式写法
-
-uView同时把timeFrom()注册到了全局过滤器中，方便您在模板中使用：
-
-```html
-<view>
-	<!-- 因为默认参数为yyyy-mm-dd，所以这里可以不用写时间格式 -->
-	时间为：{{'1585926095536' | timeFrom}}
-</view>
-
-<view>
-	<!-- 因为默认参数为yyyy-mm-dd，所以这里可以不用写时间格式 -->
-	时间为：{{'1585926095536' | timeFrom('yyyy-mm')}}
-</view>
 ```
