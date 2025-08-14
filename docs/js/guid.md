@@ -24,13 +24,14 @@
 	</view>
 </template>
 
-<script>
-	export default{
-		data() {
-			return {
-				elClass: uni.$u.guid(20),
-			}
-		}
-	}
+<script setup>
+import { ref, onMounted } from 'vue';
+import { $u } from 'uview-pro';
+
+const elClass = ref('');
+
+onMounted(() => {
+  elClass.value = $u.guid(20);
+});
 </script>
 ```
