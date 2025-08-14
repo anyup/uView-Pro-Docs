@@ -23,7 +23,7 @@ uni.$u.toast('Hello uView!');
 
 此属性用于返回平台的名称，为小写的`ios`或`android`  
 
-**注意：** 1.5.8起，改为方法形式调用
+**注意：** 以方法形式调用
 
 ```js
 console.log(uni.$u.os())
@@ -34,7 +34,7 @@ console.log(uni.$u.os())
 
 此属性用于获取设备的信息，相当于uni.getSystemInfoSync()的效果  
 
-**注意：** 1.5.8起，改为方法形式调用，因为属性方式调用，结果可能会不准确
+**注意：** 以方法形式调用，因为属性方式调用，结果可能会不准确
 
 ```js
 console.log(uni.$u.sys())
