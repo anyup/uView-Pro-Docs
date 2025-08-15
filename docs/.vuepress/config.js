@@ -59,10 +59,10 @@ module.exports = {
         text: '工具',
         link: '/js/intro'
       }, 
-      // {
-      //   text: '模板',
-      //   link: '/layout/intro'
-      // },
+      {
+        text: '模板',
+        link: '/layout/intro'
+      },
       {
         text: '资源',
         link: '/components/resource'

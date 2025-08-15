@@ -3,10 +3,10 @@
 		<div class="custom-block tip">
 			<p class="custom-block-title">提示</p>
 			<p>
-				页面模板源码免费开源，在uni-app的插件市场uView的
+				页面模板源码免费开源，在uni-app的插件市场uView Pro的
 				<a style="color: #409eff!important;" target="_blank" href="https://ext.dcloud.net.cn/plugin?id=24633">示例项目</a>
 				中，在右上角选择"使用 HBuilderX 导入示例项目" 或者 "下载示例项目ZIP"，
-				在HX运行项目即可看到和使用模板。
+				在VSCode/HX中运行项目即可看到和使用模板。
 			</p>
 		</div>
 	</div>
