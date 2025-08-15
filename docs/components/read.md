@@ -55,7 +55,10 @@ Vue.use(uView);
 // pages.json
 {
 	"easycom": {
-		"^u-(.*)": "uview-pro/components/u-$1/u-$1.vue"
+		// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+		"custom": {
+			"^u-(.*)": "uview-pro/components/u-$1/u-$1.vue"
+		}
 	},
 	// 此为本身已有的内容
 	"pages": [

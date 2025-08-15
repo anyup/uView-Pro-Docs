@@ -71,6 +71,7 @@ export function createApp() {
 
 1. uni-app 为了调试性能的原因，修改`easycom`规则不会实时生效，配置完后，您需要重启 HX 或者重新编译项目才能正常使用 uView 的功能。
 2. 请确保您的`pages.json`中只有一个`easycom`字段，否则请自行合并多个引入规则。
+3. 注意一定要放在`custom`里，否则无效，https://ask.dcloud.net.cn/question/131175
 
 :::
 
@@ -78,9 +79,11 @@ export function createApp() {
 // pages.json
 {
   "easycom": {
-    "^u-(.*)": "@/uview-pro/components/u-$1/u-$1.vue"
+    // 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+    "custom": {
+      "^u-(.*)": "@/uview-pro/components/u-$1/u-$1.vue"
+    }
   },
-
   // 此为本身已有的内容
   "pages": [
     // ......
