@@ -20,7 +20,7 @@
             <div class="card">
                 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/resource/axure-template.png" alt="">
                 <h3>Axure Template</h3>
-                <p>通过在Axure中导入uView组件库，可以在交互设计阶段方便地调用常用的组件，需要Axure9.0版本打开</p>
+                <p>通过在Axure中导入uView组件库，可以在交互设计阶段方便地调用常用的组件</p>
                 <a href="https://cdn.uviewui.com/uview/resources/axure.rp">下载</a>
             </div>
         </li>
