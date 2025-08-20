@@ -68,7 +68,7 @@ module.exports = {
         link: '/components/resource'
       },
       {
-        text: '关于我',
+        text: '交流反馈',
         link: '/cooperation/about'
       },
       {
@@ -294,15 +294,15 @@ module.exports = {
           ['/js/fastUse', '便捷工具']
         ]
       }, 
-      // {
-      //   title: '网络',
-      //   collapsable: false,
-      //   sidebarDepth: 0,
-      //   children: [
-      //     ['/js/http', 'Http请求'],
-      //     ['/js/apiManage', 'API集中管理']
-      //   ]
-      // }, 
+      {
+        title: '网络',
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          ['/js/http', 'Http请求'],
+          ['/js/apiManage', 'API集中管理']
+        ]
+      }, 
       {
         title: '工具库',
         collapsable: false,

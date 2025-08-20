@@ -15,7 +15,7 @@ uView Pro，是[uni-app](https://uniapp.dcloud.io/)全面兼容Vue3的uni-app生
 - [官方文档](https://uview-pro.netlify.app/)
 - [更新日志](https://uview-pro.netlify.app/components/changelog.html)
 - [升级指南](https://uview-pro.netlify.app/components/changelog.html)
-- [关于我](https://uview-pro.netlify.app/cooperation/about.html)
+- [交流反馈](https://uview-pro.netlify.app/cooperation/about.html)
 
 ## 交流反馈
 
