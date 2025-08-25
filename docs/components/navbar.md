@@ -102,10 +102,6 @@
 </style>
 ```
 
-:::tip 温馨提示
-uView 有写一个完善的导航栏自定义内容案例，如右侧演示区域所示，如果想要看到具体的案例代码，请下载[uView 演示项目](http://uviewui.com/components/install.html#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE)查看。
-:::
-
 ### 自定义导航栏背景颜色
 
 uView 提供了一个`background`参数(需对象形式)，可以自定义导航栏的背景颜色：

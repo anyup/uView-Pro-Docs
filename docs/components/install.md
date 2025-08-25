@@ -93,20 +93,6 @@ pnpm run dev:h5
 <br>
 <br>
 
-<!-- ### 空白项目
-
-此方式为一个完整的 uni-app 示例工程(使用 Hbuilder X 创建，非[vue-cli](https://uniapp.dcloud.io/quickstart?id=_2-%e9%80%9a%e8%bf%87vue-cli%e5%91%bd%e4%bb%a4%e8%a1%8c)模式创建)，
-它适用于新启动的项目，其中已包含了 uView，并且做好了所有配置，让您无需任何配置，开箱即用。
-
-**使用方法：** 在资源下载页中找到"脚手架空白工程"下载解压，并在`Hbuilder X`中运行即可。
-
-<br>
-<div @click="downloadPost(1)" class="download-link">
-	下载地址：<a target="_blank" href="http://uviewui.com/components/resource.html">http://uviewui.com/components/resource</a>
-</div> -->
-<br>
-<br>
-
 <script>
 import axios from "axios";
 export default {

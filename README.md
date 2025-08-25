@@ -19,8 +19,6 @@ uView Pro，是[uni-app](https://uniapp.dcloud.io/)全面兼容Vue3的uni-app生
 
 ## 交流反馈
 
-<!-- 欢迎加入我们的 QQ 群交流反馈：[点此跳转](https://www.uviewui.com/components/addQQGroup.html) -->
-
 欢迎加入 uView Pro QQ 交流群： [点击进入](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=98nSVDldWEbDdq4lxiP4aL7uATfMSlI6&authKey=G2yQJ5MQiKzMldaxBsIfKt17NuJuUw8Fr6zdKLggc6NZXgw4BVbqkU2U3EE994yd&noverify=0&group_code=811732166)
 
 ## 关于 PR
