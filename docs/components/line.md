@@ -56,7 +56,7 @@
 |-------------  |---------------- |---------------|------------------ |-------- |
 | color | 线条的颜色 | String | #e4e7ed | - |
 | length | 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带rpx单位的值等 | String | 100% | - |
-| direction | 线条的方向，`row`-横向，`col`-竖向 | String | row | col |
+| direction | 线条的方向，`row`-横向，`column`-竖向 | String | row | column |
 | hair-line | 是否显示细线条 | Boolean  | true | false |
 | margin | 线条与上下左右元素的间距，字符串形式，如"30rpx"、"20rpx 30rpx" | String  | - | - |
 | border-style | 线条类型，见上方说明 | String  | solid | dashed / dotted |
