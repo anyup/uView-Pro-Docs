@@ -481,7 +481,7 @@ onMounted(() => {
 |-------------  |---------------- |---------------|------------------ |-------- |
 | model | 表单数据对象  | Object	 | - | - |
 | rules | 通过`ref`设置，见上方说明 | Object | - | - |
-| error-type | 错误的提示方式，数组形式，见上方说明 | Array | ['message'] | - |
+| error-type | 错误的提示方式，数组形式，见上方说明 | Array | ['message', 'toast'] | - |
 | border-bottom | 是否显示表单域的下划线边框 | Boolean | true | - |
 | label-position | 表单域提示文字的位置，`left`-左侧，`top`-上方 | String | left | top |
 | label-width | 提示文字的宽度，单位rpx | String \| Number | 90 | 数值 / auto |
