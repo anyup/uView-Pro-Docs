@@ -2,9 +2,7 @@
 
 此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。
 
-
 <demo-model url="/pages/componentsA/form/index"></demo-model>
-
 
 ### 平台差异说明
 
@@ -12,33 +10,42 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|
 
-
 ### 基本使用
 
 此组件一般是用于表单验证使用，每一个表单域由一个`u-form-item`组成，表单域中可以放置`u-input`、`u-checkbox`、`u-radio`、`u-switch`等。
 
 - 在表单组中，通过`model`参数绑定一个对象，这个对象的属性为各个`u-form-item`内组件的对应变量。
-- 由于表单验证和绑定表单规则时，需要通过`ref`操作，故这里需要给`form`组件声明`ref="uForm"`属性。
+- 由于表单验证和绑定表单规则时，需要通过`ref`操作，故这里需要给`form`组件声明`ref="uFormRef"`属性。
 - 关于`u-from-item`内其他可能包含的诸如`input`、`radio`等组件，请见各自组件的相关文档说明。
 
 下方为一个经典表单的示例，包含`input`、`textarea`、`radio`、`checkbox`、`switch`的组合使用：
 
-```html
+```vue
 <template>
-	<u-form :model="form" ref="uForm">
+	<u-form :model="form" ref="uFormRef">
 		<u-form-item label="姓名"><u-input v-model="form.name" /></u-form-item>
 		<u-form-item label="简介"><u-input v-model="form.intro" /></u-form-item>
 		<u-form-item label="性别"><u-input v-model="form.sex" type="select" /></u-form-item>
 		<u-form-item label="水果">
 			<u-checkbox-group>
-				<u-checkbox v-model="item.checked" v-for="(item, index) in checkboxList" :key="index" :name="item.name">
+				<u-checkbox
+					v-for="(item, index) in checkboxList"
+					:key="index"
+					v-model="item.checked"
+					:name="item.name"
+				>
 					{{ item.name }}
 				</u-checkbox>
 			</u-checkbox-group>
 		</u-form-item>
 		<u-form-item label="味道">
 			<u-radio-group v-model="radio">
-				<u-radio v-for="(item, index) in radioList" :key="index" :name="item.name" :disabled="item.disabled">
+				<u-radio
+					v-for="(item, index) in radioList"
+					:key="index"
+					:name="item.name"
+					:disabled="item.disabled"
+				>
 					{{ item.name }}
 				</u-radio>
 			</u-radio-group>
@@ -51,50 +58,28 @@
 	</u-form>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			form: {
-				name: '',
-				intro: '',
-				sex: ''
-			},
-			checkboxList: [
-				{
-					name: '苹果',
-					checked: false,
-					disabled: false
-				},
-				{
-					name: '雪梨',
-					checked: false,
-					disabled: false
-				},
-				{
-					name: '柠檬',
-					checked: false,
-					disabled: false
-				}
-			],
-			radioList: [
-				{
-					name: '鲜甜',
-					disabled: false
-				},
-				{
-					name: '麻辣',
-					disabled: false
-				}
-			],
-			radio: '',
-			switchVal: false
-		};
-	}
-};
+<script setup lang="ts">
+import { ref, reactive } from 'vue';
+
+const uFormRef = ref();
+const form = reactive({
+	name: '',
+	intro: '',
+	sex: ''
+});
+const checkboxList = reactive([
+	{ name: '苹果', checked: false, disabled: false },
+	{ name: '雪梨', checked: false, disabled: false },
+	{ name: '柠檬', checked: false, disabled: false }
+]);
+const radioList = reactive([
+	{ name: '鲜甜', disabled: false },
+	{ name: '麻辣', disabled: false }
+]);
+const radio = ref('');
+const switchVal = ref(false);
 </script>
 ```
-
 
 ### Form-item组件说明
 
@@ -105,7 +90,6 @@ export default {
 - `border-bottom`是否显示表单域的下划线，如果给`Input`组件配置了边框，可以将此属性设置为`false`，从而隐藏默认的下划线。
 - 如果想在表单域配置左右的图标(或小图片，1.3.0开始，[Icon 图标](/components/icon.html)可以配置图片)，可以通过`left-icon`和`right-icon`参数实现。
 
-
 ### 表单验证
 
 uView Pro的表单组件具备完整的验证功能，在开始之前，需要了解如下几个注意事项，方面您快速上手：
@@ -113,12 +97,12 @@ uView Pro的表单组件具备完整的验证功能，在开始之前，需要�
 #### `Form`组件绑定`model`参数
 
 - `model`参数为一个对象，对象属性为需要验证的变量名。
-- 通过`ref`，在`onReady`生命周期调用组件的`setRules`方法绑定验证规则，无法通过`props`传递变量，是因为微信小程序会过滤掉对象中的方法，导致自定义验证规则无效。
+- 通过`ref`，在`onMounted`生命周期调用组件的`setRules`方法绑定验证规则，无法通过`props`传递变量，是因为微信小程序会过滤掉对象中的方法，导致自定义验证规则无效。
 
-```html
+```vue
 <template>
-	<view class="">
-		<u-form :model="form" ref="uForm">
+	<view>
+		<u-form :model="form" ref="uFormRef">
 			<u-form-item label="姓名" prop="name">
 				<u-input v-model="form.name" />
 			</u-form-item>
@@ -130,54 +114,49 @@ uView Pro的表单组件具备完整的验证功能，在开始之前，需要�
 	</view>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			form: {
-				name: '',
-				intro: '',
-			},
-			rules: {
-				name: [
-					{ 
-						required: true, 
-						message: '请输入姓名', 
-						// 可以单个或者同时写两个触发验证方式 
-						trigger: ['change','blur'],
-					}
-				],
-				intro: [
-					{
-						min: 5, 
-						message: '简介不能少于5个字', 
-						trigger: 'change'
-					}
-				]
-			}
-		};
-	},
-	methods: {
-		submit() {
-			this.$refs.uForm.validate(valid => {
-				if (valid) {
-					console.log('验证通过');
-				} else {
-					console.log('验证失败');
-				}
-			});
+<script setup lang="ts">
+import { ref, reactive, onMounted } from 'vue';
+
+const uFormRef = ref();
+const form = reactive({
+	name: '',
+	intro: ''
+});
+const rules = {
+	name: [
+		{
+			required: true,
+			message: '请输入姓名',
+			// 可以单个或者同时写两个触发验证方式 
+			trigger: ['change', 'blur']
 		}
-	},
-	// 必须要在onReady生命周期，因为onLoad生命周期组件可能尚未创建完毕
-	onReady() {
-		this.$refs.uForm.setRules(this.rules);
-	}
+	],
+	intro: [
+		{
+			min: 5,
+			message: '简介不能少于5个字',
+			trigger: 'change'
+		}
+	]
 };
+
+function submit() {
+	uFormRef.value?.validate((valid: boolean) => {
+		if (valid) {
+			console.log('验证通过');
+		} else {
+			console.log('验证失败');
+		}
+	});
+}
+
+onMounted(() => {
+	uFormRef.value?.setRules(rules);
+});
 </script>
 ```
 
-
-#### U-form-item绑定`label`和`prop`
+#### u-form-item绑定`label`和`prop`
 
 此组件最大的作用是与`u-form`和`u-input`等组件进行交互，在表单验证时，需要绑定`prop`参数，此参数为`u-form`组件的`model`对象中的属性名，
 目的是在验证时，通过这个`prop`属性名将父组件`u-form`的`model`和`rules`规则关联起来。
@@ -185,11 +164,11 @@ export default {
 注意点：
 
 - 通过`prop`绑定对应的属性名，这里是字符串，而不是一个变量。
-- 通过`lable`参数设置左边显示的提示文字，另外通过`label-position`可以配置`label`在左边还是上方。
+- 通过`label`参数设置左边显示的提示文字，另外通过`label-position`可以配置`label`在左边还是上方。
 
-```html
+```vue
 <template>
-	<u-form :model="form">
+	<u-form :model="form" ref="uFormRef">
 		<u-form-item label="姓名" prop="name">
 			<u-input v-model="form.name" />
 		</u-form-item>
@@ -199,52 +178,48 @@ export default {
 	</u-form>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			form: {
-				name: '',
-				intro: ''
-			},
-			rules: {
-				name: [
-					{
-						required: true,
-						message: '请输入姓名',
-						// 可以单个或者同时写两个触发验证方式
-						trigger: 'blur,change'
-					}
-				],
-				intro: [
-					{
-						min: 5,
-						message: '简介不能少于5个字',
-						trigger: 'change'
-					}
-				]
-			}
-		};
-	},
-	// 必须要在onReady生命周期，因为onLoad生命周期组件可能尚未创建完毕
-	onReady() {
-		this.$refs.uForm.setRules(this.rules);
-	}
+<script setup lang="ts">
+import { ref, reactive, onMounted } from 'vue';
+
+const uFormRef = ref();
+const form = reactive({
+	name: '',
+	intro: ''
+});
+const rules = {
+	name: [
+		{
+			required: true,
+			message: '请输入姓名',
+			// 可以单个或者同时写两个触发验证方式
+			trigger: ['blur', 'change']
+		}
+	],
+	intro: [
+		{
+			min: 5,
+			message: '简介不能少于5个字',
+			trigger: 'change'
+		}
+	]
 };
+
+onMounted(() => {
+	uFormRef.value?.setRules(rules);
+});
 </script>
 ```
 
 从上面的示例我们可以看到，`rules`中的属性名和`form`的属性名是一致的，同时传递给`u-form-item`的`prop`参数绑定的也是相同的属性名，注意这里`prop`参数绑定的是
 字符串(属性名)，而不是一个变量。
 
-
 #### 验证规则
 
 组件验证部分采用了[async-validator](https://github.com/yiminghe/async-validator)，一个字段可以设置多个内置规则，以及自定义规则，触发方式等，
 每个字段的验证规则为一个数组，数组的每一个元素对象为其中一条规则(一个字段的验证可以配置多个规则)，如下：
 
-```js
-rules: {
+```ts
+const rules = {
 	name: [
 		// 对name字段进行长度验证
 		{
@@ -256,12 +231,11 @@ rules: {
 		{
 			required: true,
 			message: '请填写姓名',
-			trigger: ['change','blur']
-		},
+			trigger: ['change', 'blur']
+		}
 	]
-}
+};
 ```
-
 
 #### 验证规则属性
 
@@ -327,9 +301,7 @@ rules: {
 	- `value`：当前校验字段的值
 	- `callback`：校验完成时的回调，执行完异步操作(比如向后端请求数据验证)，如果不通过，需要callback(new Error('提示错误信息'))，如果校验通过，执行callback()即可
 
-
-
-#### uView自带验证规则
+#### uView Pro自带验证规则
 
 uView在JS板块的[Test 规则校验](/js/test.html)中有大量内置的验证规则，这些规则对表单验证来说，属于**自定义规则**，故需要用到上方规则属性的
 `validator`自定义验证函数，这里做一个详细说明。  
@@ -337,31 +309,27 @@ uView在JS板块的[Test 规则校验](/js/test.html)中有大量内置的验证
 我们知道uView有自带的判断手机号的验证方法`uni.$u.test.mobile(value)`，但是[async-validator](https://github.com/yiminghe/async-validator)没有
 内置判断手机号的规则，所以将二者结合使用：
 
-```js
-rules: {
+```ts
+const rules = {
 	// 字段名称
 	mobile: [
 		{
-			required: true, 
+			required: true,
 			message: '请输入手机号',
-			trigger: ['change','blur'],
+			trigger: ['change', 'blur']
 		},
 		{
 			// 自定义验证函数，见上说明
-			validator: (rule, value, callback) => {
-				// 上面有说，返回true表示校验通过，返回false表示不通过
+			validator: (rule: any, value: string, callback: Function) => {
 				// uni.$u.test.mobile()就是返回true或者false的
 				return uni.$u.test.mobile(value);
 			},
 			message: '手机号码不正确',
-			// 触发器可以同时用blur和change
-			trigger: ['change','blur'],
+			trigger: ['change', 'blur']
 		}
 	]
-}
+};
 ```
-
-
 
 #### 综合实战
 
@@ -374,24 +342,23 @@ rules: {
 4. 需要包含字母"A"：使用uView的`uni.$u.test.contains()`方法，并结合`validator`自定义函数实现
 5. 异步校验，输入完账号，输入框失去焦点时，向后端请求该账号是否已存在：通过上方的`asyncValidator`异步函数进行验证。
 
-
 综上，我们可以得出如下的一个配置规则(仅为综合演示，非最优做法)：
 
-```js
-rules: {
+```ts
+const rules = {
 	name: [
 		// 必填规则
 		{
 			required: true,
-			message: '此为必填字段'，
+			message: '此为必填字段',
 			// blur和change事件触发检验
-			trigger: ['blur', 'change'],
+			trigger: ['blur', 'change']
 		},
 		// 正则判断为字母或数字
 		{
 			pattern: /^[0-9a-zA-Z]*$/g,
 			// 正则检验前先将值转为字符串
-			transform(value) {
+			transform(value: any) {
 				return String(value);
 			},
 			message: '只能包含字母或数字'
@@ -404,31 +371,30 @@ rules: {
 		},
 		// 自定义规则判断是否包含字母"A"
 		{
-			validator: (rule, value, callback) => {
+			validator: (rule: any, value: string, callback: Function) => {
 				return uni.$u.test.contains(value, "A");
 			},
 			message: '必须包含字母"A"'
 		},
 		// 校验用户是否已存在
 		{
-			asyncValidator: (rule, value, callback) => {
-				uni.$u.post('/xxx/xxx', {name: value}).then(res => {
+			asyncValidator: (rule: any, value: string, callback: Function) => {
+				uni.$u.post('/xxx/xxx', { name: value }).then((res: any) => {
 					// 如果验证不通过，需要在callback()抛出new Error('错误提示信息')
-					if(res.error) {
+					if (res.error) {
 						callback(new Error('姓名重复'));
 					} else {
 						// 如果校验通过，也要执行callback()回调
 						callback();
 					}
-				})
-			},
+				});
+			}
 			// 如果是异步校验，无需写message属性，错误的信息通过Error抛出即可
 			// message: 'xxx'
 		}
 	]
-}
+};
 ```
-
 
 #### 校验错误提示方式
 
@@ -439,39 +405,33 @@ uView提供了多种校验的错误提示方式，这些值需要包含在数组
 - `border`：配置输入框的边框为红色进行提示 -- 如果有配置显示`Input`组件显示边框的话
 - `toast`：以"toast"提示的方式弹出错误信息，每次只弹出最前面的那个表单域的错误信息(1.3.5新增)
 
-```html
+```vue
 <template>
 	<u-form :error-type="errorType">
-		......
+		<!-- ... -->
 	</u-form>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			// 文字提示
-			errorType: ['message'],
-			// 不提示
-			// errorType: ['none'],
-			// 文字和下划线提示
-			// errorType: ['message', 'border-bottom'],
-		};
-	}
-};
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const errorType = ref(['message']);
+// 不提示
+// const errorType = ref(['none']);
+// 文字和下划线提示
+// const errorType = ref(['message', 'border-bottom']);
 </script>
 ```
-
 
 #### 校验
 
 进行了上方的配置和讲解后，进入到最后一步，执行验证：  
 需要通过`ref`调用`Form`组件的`validate`方法，该方法回调函数的参数为一个布尔值，`true`为校验通过，否则反之。
 
-```html
+```vue
 <template>
-	<view class="">
-		<u-form :model="form" ref="uForm">
+	<view>
+		<u-form :model="form" ref="uFormRef">
 			<u-form-item label="姓名" prop="name">
 				<u-input v-model="form.name" />
 			</u-form-item>
@@ -480,44 +440,38 @@ export default {
 	</view>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			form: {
-				name: '',
-			},
-			rules: {
-				name: [
-					{
-						required: true,
-						message: '请输入姓名',
-						trigger: ['blur', 'change']
-					}
-				]
-			}
-		};
-	},
-	methods: {
-		submit() {
-			this.$refs.uForm.validate(valid => {
-				if (valid) {
-					console.log('验证通过');
-				} else {
-					console.log('验证失败');
-				}
-			});
+<script setup lang="ts">
+import { ref, reactive, onMounted } from 'vue';
+
+const uFormRef = ref();
+const form = reactive({
+	name: ''
+});
+const rules = {
+	name: [
+		{
+			required: true,
+			message: '请输入姓名',
+			trigger: ['blur', 'change']
 		}
-	},
-	// 必须要在onReady生命周期，因为onLoad生命周期组件可能尚未创建完毕
-	onReady() {
-		this.$refs.uForm.setRules(this.rules);
-	}
+	]
 };
+
+function submit() {
+	uFormRef.value?.validate((valid: boolean) => {
+		if (valid) {
+			console.log('验证通过');
+		} else {
+			console.log('验证失败');
+		}
+	});
+}
+
+onMounted(() => {
+	uFormRef.value?.setRules(rules);
+});
 </script>
 ```
-
-
 
 ### API
 
@@ -534,7 +488,6 @@ export default {
 | label-style | `lable`的样式，对象形式 | Object | - | - |
 | label-align | `lable`的对齐方式 | String | left |  center / right |
 
-
 ### Form Methods
 
 此方法如要通过ref手动调用
@@ -544,7 +497,6 @@ export default {
 | setRules | 调用此方法，设置校验规则  | Function(rules) |
 | resetFields | 对整个表单进行重置，将所有字段值重置为初始值并移除校验结果  | - |
 | validate | 对整个表单进行校验的方法  | Function(callback: Function(boolean)) |
-
 
 ### Form-item Props
 
@@ -563,17 +515,12 @@ export default {
 | right-icon-style | 右侧图标的样式，对象形式 | Object | - | - |
 | required | 是否显示左边的"*"号，这里仅起展示作用，如需校验必填，请通过`rules`配置必填规则 | Boolean | false | true |
 
-
 ### Form-item Slot
 
 |名称|说明|
 |:-|:-|
 | - | Form Item 的内容 |
 | right | 右侧自定义内容，可以在此传入一个按钮，用于获取验证码等场景 |
-
-
-
-
 
 <style scoped>
 h3[id=props] + table thead tr th:nth-child(2){
