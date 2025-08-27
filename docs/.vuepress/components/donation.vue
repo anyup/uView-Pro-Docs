@@ -74,7 +74,7 @@ export default {
   data() {
     return {
       donationList: [],
-      baseUrl: 'https://uview-pro.anyup.cn/static/uview-pro/api',
+      baseUrl: 'https://uview-pro.anyup.cn/api',
       order: 'donationDate',
     };
   },
