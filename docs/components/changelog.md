@@ -1,4 +1,64 @@
+## 0.0.14（2025-08-28）
+
+### 🐛 Bug Fixes | Bug 修复
+
+-   修复使用 u-swipe-action 右边会出现一条背景线的 bug ([a5b60c6](https://gitee.com/anyup/uView-Pro/commit/a5b60c6485120e164c0e0c29eea3b765c10f9aac))
+
+## 0.0.13（2025-08-27）
+
+### 🐛 Bug Fixes | Bug 修复
+
+-   修复 count-down 组件暴露 start 和 end 方法 ([0f42a01](https://gitee.com/anyup/uView-Pro/commit/0f42a01f55aa6799f57eb93dc5d029b06115b154))
+
+## 0.0.12（2025-08-27）
+
+### 🐛 Bug Fixes | Bug 修复
+
+-   优化 async-validator 文件多余注释导致的问题 ([f06c80d](https://gitee.com/anyup/uView-Pro/commit/f06c80d57e61e7b75f1384fe89f309b8a0e379fa))
+
+## 0.0.11（2025-08-26）
+
+### ♻️ Code Refactoring | 代码重构
+
+-   取消 async-validator ts 检查 ([772a729](https://gitee.com/anyup/uView-Pro/commit/772a729164f2cb268a886b6749e4a58846ebb3dc))
+-   移除 u-tr 未使用的类型导入和属性定义 ([46ce459](https://gitee.com/anyup/uView-Pro/commit/46ce4590166a30a0eb048110efc046095a87f6e8))
+
+### 🐛 Bug Fixes | Bug 修复
+
+-   修复 u-count-down 倒计时符号显示逻辑 ([a4c9498](https://gitee.com/anyup/uView-Pro/commit/a4c94986b020c5ac0fdf92bde3c7b79cdfbedbe8))
+
+## 0.0.10（2025-08-26）
+
+### ✨ Features | 新功能
+
+-   添加 easycom 组件自动扫描 ([b125039](https://gitee.com/anyup/uView-Pro/commit/b1250390a4f594f5deaa133d7a92bd6e72707890))
+-   增强 u-select 组件的类型安全和功能 ([38635e9](https://gitee.com/anyup/uView-Pro/commit/38635e963f9eff6e4c730692e8c97f10b3a092c5))
+
+## 0.0.9（2025-08-25）
+
+### ♻️ Code Refactoring | 代码重构
+
+-   优化全局工具导出方式 ([7a80b6f](https://gitee.com/anyup/uView-Pro/commit/7a80b6f99ad3022ca995f99f8ec6803af7941eb9))
+
+## 0.0.8（2025-08-25）
+
+### ♻️ Code Refactoring | 代码重构
+
+-   重构组件 Props 属性定义，每个组件具有完善的 ts 类型定义 ([8cc0de7](https://gitee.com/anyup/uView-Pro/commit/8cc0de7c1527b48dd223d89207135eea01766294))
+-   重构类型定义并统一到全局类型文件 global types ([b0fd010](https://gitee.com/anyup/uView-Pro/commit/b0fd0107289eb1c6df2f58d91b63d9b25902caee))
+
+## 0.0.7（2025-08-21）
+
+### 🐛 Bug Fixes | Bug 修复
+
+-   修复中 tabbar 布局高度计算错误的问题 ([5c1342c](https://gitee.com/anyup/uView-Pro/commit/5c1342cb3fb6dd2c7c84fe785953fcaed13e809f))
+
+### 📦‍ Build System | 打包构建
+
+-   更新项目依赖并优化打包构建 ([c172d36](https://gitee.com/anyup/uView-Pro/commit/c172d368d82404564650756a872cd7c7e29ebfa2))
+
 ## 0.0.5（2025-08-19）
+
 ### ✨ Features | 新功能
 
 -   新增 u-city-select 城市选择器组件 ([0eb4806](https://gitee.com/anyup/uView-Pro/commit/0eb4806db3be39e1a6c6f33c9ea511d8445da884))
@@ -25,8 +85,6 @@
 -   添加模板示例页面 ([3336af4](https://gitee.com/anyup/uView-Pro/commit/3336af406161648d18578c988d9b3ad79b86059a))
 -   新增模版相关页面 ([8925a02](https://gitee.com/anyup/uView-Pro/commit/8925a02f9fa88f4742d984f2ff02909afc6ad0d7))
 -   重构 request 类，优化泛型支持 ([d7b2e6a](https://gitee.com/anyup/uView-Pro/commit/d7b2e6a224d96f717e5bdbaf09edb19b712ced47))
-
-完整更新日志请查看 [CHANGELOG.md](https://github.com/anyup/uView-Pro/blob/master/CHANGELOG.md)
 
 ## 0.0.4（2025-08-14）
 
