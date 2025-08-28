@@ -8,7 +8,7 @@
 
 <table class="table" style="width: 700px;">
     <tr>
-        <td align="center"><img src="https://ik.imagekit.io/anyup/images/social/weixin-chat.png?updatedAt=1756355426929" width="250" height="345" ></td>
+        <td align="center"><img src="https://ik.imagekit.io/anyup/images/social/weixin-chat-2.png?updatedAt=1756355426929" width="250" height="345" ></td>
         <td align="center"><img src="https://ik.imagekit.io/anyup/images/social/qq-chat.png" width="250" height="345" ></td>
     </tr>
     <tr>
