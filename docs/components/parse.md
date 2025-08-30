@@ -1,4 +1,8 @@
-## Parse 富文本解析器 <to-api/>
+ ## Parse 富文本解析器 <Badge text="该组件已废弃" type="error" />
+
+ 建议使用 `mp-html` 或其他，`mp-html` 开源地址：(https://github.com/jin-yufeng/mp-html)[https://github.com/jin-yufeng/mp-html]
+
+<!-- ## Parse 富文本解析器 <to-api/>
 
 <demo-model url="/pages/componentsA/parse/index"></demo-model>
 
@@ -213,4 +217,4 @@ h3[id=event] + table thead tr th:nth-child(2){
 h3[id=event] + table thead tr th:nth-child(3){
 	width: 60%;
 }
-</style>
+</style> -->
