@@ -99,7 +99,7 @@ module.exports = {
         collapsable: false,
         sidebarDepth: 0,
         children: [
-          ['/components/addQQGroup', '交流反馈'],
+          ['/components/chatGroup', '交流反馈'],
           ['/components/intro', '介绍'],
           ['/components/install', '安装'],
           ['/components/setting', '配置'],
