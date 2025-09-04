@@ -251,7 +251,8 @@ module.exports = {
           // ['/guide/globalVariable', '全局变量的实现'],
           ['/guide/codeHint', '代码提示'],
           ['/guide/design', '设计理念'],
-          ['/guide/note', '注意事项']
+          ['/guide/note', '注意事项'],
+          ['/guide/faq', 'FAQ'],
         ]
       }],
       '/layout': [{
