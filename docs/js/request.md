@@ -37,15 +37,21 @@ put/delete 在某些小程序平台的限制：
 
 ```ts
 import { createSSRApp } from 'vue'
-import http from 'uview-pro'
-import { httpInterceptor, httpRequestConfig } from '@/http/http.interceptor'
+import uViewPro, { httpPlugin } from 'uview-pro'
+import { httpInterceptor, httpRequestConfig } from 'http.interceptor'
 
 export function createApp() {
   const app = createSSRApp(App)
-  app.use(http, {
+
+  // 注册uView-pro
+  app.use(uViewPro)
+  
+  // 注册http插件
+  app.use(httpPlugin, {
     interceptor: httpInterceptor,
     requestConfig: httpRequestConfig,
   })
+
   return { app }
 }
 ```
@@ -62,9 +68,9 @@ import { http } from 'uview-pro'
 http.setConfig({
   baseUrl: 'https://api.example.com',
   meta: {
-    toast: true, // 全局开启错误toast，默认false关闭
-    loading: true, // 全局开启loading，默认false关闭
-    originalData: true, // 是否在拦截器中返回服务端的原始数据，默认true返回的是原始数据
+    toast: true, // 全局开启错误toast，默认为false关闭
+    loading: true, // 全局开启loading，默认为false关闭
+    originalData: true, // 是否在拦截器中返回服务端的原始数据，默认为true返回的是原始数据
   },
 })
 ```
@@ -153,9 +159,11 @@ export const httpInterceptor: RequestInterceptor = {
       // 隐藏loading
     }
 
-    // 错误toast、登录失效等处理
-    if (meta.toast) {
-      // 接口返回错误码，根据业务处理，可以弹出toast
+    // 根据业务处理错误、例如登录失效等处理接口返回错误码，
+    if (response.data.code !== 401) {
+      if (meta.toast) {
+        // 可以弹出错误toast
+      }
       throw new Error('接口返回错误码，根据业务处理，可以弹出toast')
     }
     return response.data
@@ -167,13 +175,18 @@ export const httpInterceptor: RequestInterceptor = {
 
 ### $u 工具库用法
 
-> 需 import { $u } from 'uview-pro'，$u.http.get/post/put/delete 参数与 http 保持一致。
+> 需 import { $u } from 'uview-pro'
+> 
+> $u.http.get/post/put/delete 参数与 http 保持一致
 
 ```ts
 import { $u } from 'uview-pro'
 
 $u.http.get('/api/user', { id: 1 }, { meta: { toast: true } })
 $u.http.post('/api/login', { username: 'xx' }, { meta: { loading: true } })
+
+// 或
+uni.$u.http.get('/api/user', { id: 1 }, { meta: { toast: true } })
 ```
 
 ---
