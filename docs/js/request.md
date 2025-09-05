@@ -45,7 +45,7 @@ export function createApp() {
 
   // 注册uView-pro
   app.use(uViewPro)
-  
+
   // 注册http插件
   app.use(httpPlugin, {
     interceptor: httpInterceptor,
@@ -159,8 +159,8 @@ export const httpInterceptor: RequestInterceptor = {
       // 隐藏loading
     }
 
-    // 根据业务处理错误、例如登录失效等处理接口返回错误码，
-    if (response.data.code !== 401) {
+    // 根据业务处理错误、例如登录失效等处理接口返回错误码
+    if (response.data.code !== 200) {
       if (meta.toast) {
         // 可以弹出错误toast
       }
