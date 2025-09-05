@@ -1,6 +1,6 @@
 <demo-model url="/pages/library/http/index"></demo-model>
 
-## uni-app 轻量级 Http 请求库
+## uni-app 轻量级 Http 请求库 <Badge text="0.0.19及以上支持" />
 
 支持 TypeScript、Vue3、组合式 API，插件化、全局配置、请求/响应拦截器、toast/loading 灵活控制，开箱即用，适合中小型项目。目前不适用于其他的请求形式，比如上传，下载等。
 
