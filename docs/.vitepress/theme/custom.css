@@ -1,0 +1,24 @@
+.demo-preview .aside {
+  display: none !important;
+}
+
+.demo-preview .aside {
+  display: none !important;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1700px) {
+  .demo-preview .content-container {
+    margin: 0 !important;
+  }
+}
+/* 自定义 sidebar 样式 */
+.VPSidebarItem.is-link > .item .link > .text {
+  font-size: 12px;
+}
+
+.VPSidebarItem.is-active > .item .link > .text {
+  color: #fff !important;
+  background-color: #5892f7;
+  border-radius: 7px;
+  padding: 0 5px;
+}
