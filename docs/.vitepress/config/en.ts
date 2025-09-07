@@ -8,7 +8,7 @@ const menu = new Menu('zh')
 export const en = defineConfig({
   lang: 'en-US',
 
-  description: 'Colorful Design is solution-driven and includes project best practices.',
+  description: 'uView Pro is solution-driven and includes project best practices.',
 
   themeConfig: {
     nav: menu.nav(),
@@ -22,7 +22,7 @@ export const en = defineConfig({
 
     footer: {
       message: 'Released under <a style="color:#4e6e8e;" rel="noopener noreferrer" target="_blank" href="https://beian.miit.gov.cn/">鲁ICP备2021040594号-1</a>',
-      copyright: `Copyright © 2020 - ${new Date().getFullYear()} <a target="_blank" href="https://github.com/anyup"> Colorful Design </a>`
+      copyright: `Copyright © 2020 - ${new Date().getFullYear()} <a target="_blank" href="https://github.com/anyup"> uView Pro </a>`
     }
   }
 })

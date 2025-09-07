@@ -16,10 +16,25 @@ import ArticleFooter from '../components/ArticleFooter.vue'
 import CustomIcon from '../components/CustomIcon.vue'
 import SitePV from '../components/SitePV.vue'
 import ProjectInfo from '../components/ProjectInfo.vue'
+import ColorPicker from '../components/ColorPicker.vue'
+import DemoModel from '../components/DemoModel.vue'
+import ChatGroup from '../components/ChatGroup.vue'
+import Donation from '../components/Donation.vue'
+import ThemeGenerate from '../components/ThemeGenerate.vue'
+import TemplateDownload from '../components/TemplateDownload.vue'
+import HomeStar from '../components/HomeStar.vue'
+import BadgeVersion from '../components/BadgeVersion.vue'
+import { h } from 'vue'
 
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
+    Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'home-hero-info-after':()=>h(HomeStar),
+      'nav-bar-title-after': () => h(BadgeVersion),
+    })
+  },
   enhanceApp({ app }) {
     // 注册ElementPlus
     app.use(ElementPlus, {
@@ -32,6 +47,12 @@ export default {
       app.component('ArticleFooter', ArticleFooter),
       app.component('CustomIcon', CustomIcon),
       app.component('SitePV', SitePV),
-      app.component('ProjectInfo', ProjectInfo)
+      app.component('ColorPicker', ColorPicker),
+      app.component('ProjectInfo', ProjectInfo),
+      app.component('DemoModel', DemoModel)
+      app.component('ChatGroup', ChatGroup)
+      app.component('Donation', Donation)
+      app.component('ThemeGenerate', ThemeGenerate)
+      app.component('TemplateDownload', TemplateDownload)
   }
 }

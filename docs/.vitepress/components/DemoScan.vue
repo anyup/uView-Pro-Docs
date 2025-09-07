@@ -23,7 +23,7 @@ import { computed } from 'vue'
 const props = defineProps({
   type: {
     type: String,
-    default: '1'
+    default: '4'
   },
   borderColor: {
     type: String,
@@ -32,6 +32,10 @@ const props = defineProps({
 })
 
 const list = [
+  { name: '微信小程序', img: 'https://ik.imagekit.io/anyup/images/social/qr_uview_pro_wx.jpg', type: '4', tips: '微信扫码' },
+  { name: 'H5', img: 'https://ik.imagekit.io/anyup/images/social/qr_uview_pro_h5.png', type: '4', tips: '浏览器扫码' },
+  { name: '安卓', img: 'https://ik.imagekit.io/anyup/images/social/qr_uview_pro_android.png', type: '4', tips: '浏览器扫码' },
+
   { img: '/uview/images/thumb.png', type: '0', fullscreen: true },
   { name: '微信小程序', img: '/uview/images/qr_uview_pro_wx.jpg', tips: '微信扫码', type: '0', url: '' },
   { name: '浏览器 H5', img: '/uview/images/qr_uview_pro_h5.png', tips: '浏览器扫码', type: '0', url: 'https://h5-uview-pro.netlify.app/' },
@@ -71,7 +75,7 @@ const currentList = computed(() => {
 }
 
 .demo-scan-col {
-  width: 25%;
+  width: 33%;
   float: left;
 }
 

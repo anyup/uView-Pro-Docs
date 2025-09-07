@@ -29,15 +29,15 @@ export const shared = defineConfig({
 
   /* prettier-ignore */
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/anyup/images/logo-heart-transparent.png' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'stylesheet', href: '//at.alicdn.com/t/c/font_4522599_t4534k2ng8.css' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
-    ['meta', { name: 'keywords', content: 'anyup,Colorful Design,Colorful App,JavaScript,TypeScript,Vue3,uni-app,前端工具库,博客,blog' }],
+    ['meta', { name: 'keywords', content: 'anyup,uView Pro,Colorful App,JavaScript,TypeScript,Vue3,uni-app,前端工具库,博客,blog' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh' }],
-    ['meta', { property: 'og:title', content: 'Colorful Design | Vite & Vue Powered Static Site Generator' }],
-    ['meta', { property: 'og:site_name', content: 'Colorful Design' }],
+    ['meta', { property: 'og:title', content: 'uView Pro | Vite & Vue Powered Static Site Generator' }],
+    ['meta', { property: 'og:site_name', content: 'uView Pro' }],
     ['meta', { property: 'og:image', content: '/anyup/images/vitepress-og.png' }],
     ['meta', { property: 'og:url', content: 'https://www.anyup.cn' }],
     ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }],
@@ -62,7 +62,7 @@ export const shared = defineConfig({
   ],
 
   themeConfig: {
-    logo: { src: '/anyup/images/logo1.png', width: 65, height: 24 },
+    logo: { src: '/images/logo.png', width: 24, height: 24 },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/anyup' },

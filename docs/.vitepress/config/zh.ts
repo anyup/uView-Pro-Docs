@@ -8,7 +8,7 @@ const menu = new Menu('zh')
 export const zh = defineConfig({
   lang: 'zh-Hans',
 
-  description: 'Colorful Design 是以解决方案为驱动，包含项目的最佳实践，最佳的组件实现和便捷的工具类封装',
+  description: 'uView Pro 是以解决方案为驱动，包含项目的最佳实践，最佳的组件实现和便捷的工具类封装',
 
   themeConfig: {
     nav: menu.nav(),
@@ -22,7 +22,7 @@ export const zh = defineConfig({
 
     footer: {
       message: '备案许可：<a style="color:#4e6e8e;" rel="noopener noreferrer" target="_blank" href="https://beian.miit.gov.cn/">鲁ICP备2021040594号-1</a>',
-      copyright: `Copyright © 2020 - ${new Date().getFullYear()} <a target="_blank" href="https://github.com/anyup"> Colorful Design </a>`
+      copyright: `Copyright © 2020 - ${new Date().getFullYear()} <a target="_blank" href="https://github.com/anyup"> uView Pro </a>`
     },
 
     docFooter: {

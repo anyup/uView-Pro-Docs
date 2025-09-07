@@ -1,6 +1,6 @@
 <template>
   <div class="footer-info">
-    Copyright © 2021 Colorful Design |
+    Copyright © 2021 uView Pro |
     <a
       href="https://beian.miit.gov.cn/"
       target="_blank"

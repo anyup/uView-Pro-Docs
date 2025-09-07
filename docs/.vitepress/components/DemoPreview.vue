@@ -29,7 +29,7 @@ const currentTime = () => {
 <style scoped>
 .demo-preview-wrap {
   position: fixed;
-  z-index: 10;
+  z-index: 99;
   right: 20px;
   top: calc(50vh - 300px + 1.8rem);
   width: 330px;
@@ -59,7 +59,7 @@ const currentTime = () => {
 .demo-preview-wrap iframe {
   position: relative;
   /* padding: 48px 16px 28px 16px; */
-  padding: 65px 19px;
+  padding: 40px 19px;
   width: 100%;
   height: 100%;
   overflow-y: auto;
