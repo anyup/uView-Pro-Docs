@@ -7,7 +7,7 @@ export const shared = defineConfig({
   lastUpdated: true,
   cleanUrls: false, // 简洁的 URL，需要服务器支持
   metaChunk: true, // 将页面元数据提取到单独的 JavaScript 块中，而不是内联在初始 HTML 中
-
+  ignoreDeadLinks: true,
   markdown: {
     math: true,
     codeTransformers: [
