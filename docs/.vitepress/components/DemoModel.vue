@@ -7,6 +7,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
 const props = defineProps({
   url: {
     type: String,
@@ -24,6 +25,21 @@ const currentTime = () => {
   const m = d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes()
   return `${h}:${m}`
 }
+
+onMounted(() => {
+  console.log('mounted')
+  const appDiv = document.getElementById('app')
+  if (appDiv && !appDiv.classList.contains('demo-preview')) {
+    appDiv.classList.add('demo-preview')
+  }
+})
+onUnmounted(() => {
+  console.log('unmounted')
+  const appDiv = document.getElementById('app')
+  if (appDiv && appDiv.classList.contains('demo-preview')) {
+    appDiv.classList.remove('demo-preview')
+  }
+})
 </script>
 
 <style scoped>

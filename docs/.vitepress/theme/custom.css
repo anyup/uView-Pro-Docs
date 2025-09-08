@@ -1,9 +1,6 @@
 :root {
   --vp-layout-max-width: 100%;
-  --vp-sidebar-bg-color: #ffffff;
-}
-
-:root {
+  --vp-sidebar-bg-color: var(--vp-c-bg);
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
@@ -31,22 +28,10 @@
   }
 }
 
-.demo-preview .aside {
-  display: none !important;
-}
-
-.demo-preview .aside {
-  display: none !important;
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1700px) {
-  .demo-preview .content-container {
-    margin: 0 !important;
-  }
-}
 /* 自定义 sidebar 样式 */
 .VPSidebar {
   border-right: 1px solid #eaeefb;
+  /* background-color: var(--vp-c-bg) !important; */
 }
 .VPSidebarItem > .item > .text {
   font-size: 16px;
@@ -71,6 +56,7 @@
   font-size: 14px;
 }
 
+/* 布局样式 */
 .VPDoc {
   padding: 0 !important;
 }
@@ -85,12 +71,21 @@
   max-width: 100% !important;
 }
 
-.VPDoc .aside {
-  max-width: 350px !important;
+@media (max-width: 1920px) {
+  .VPDoc .aside {
+    max-width: 350px !important;
+  }
+  .demo-preview .VPDoc .aside {
+    visibility: hidden;
+  }
 }
 
 @media (min-width: 1920px) {
   .VPDoc .aside {
+    min-width: 350px !important;
+  }
+  .demo-preview .VPDoc .aside {
+    visibility: visible;
     min-width: 600px !important;
   }
 }

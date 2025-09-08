@@ -29,4 +29,5 @@ yarn.lock
 
 deploy
 /json/
-/docs/.vitepress/cache/
+/docs/.vitepress/cache/*
+build/
