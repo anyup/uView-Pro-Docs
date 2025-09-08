@@ -183,7 +183,7 @@ uni-app 中使用`less`、`stylus`等。
 </style>
 ```
 
-我们在页面中引入上方的`item`组件，并且想修改它的`border`边框为颜色(blue)，一般通过`v-deep`或`/deep/`指令修改，如下写法：
+我们在页面中引入上方的`item`组件，并且想修改它的`border`边框为颜色(blue)，一般通过`:deep`或`/deep/`指令修改，如下写法：
 
 ```html
 <template>
@@ -191,13 +191,13 @@ uni-app 中使用`less`、`stylus`等。
 </template>
 
 <style scoped>
-  ::v-deep .item {
+  :deep(.item) {
     border: 1px solid blue;
   }
 </style>
 ```
 
-上面的写法，在`App`和`H5`正常，但是在微信小程序无效，它要求`::v-deep`或`/deep/`前面必须还要有父元素的类名存在，如下：
+上面的写法，在`App`和`H5`正常，但是在微信小程序无效，它要求`:deep`或`/deep/`前面必须还要有父元素的类名存在，如下：
 
 ```html
 <template>
@@ -207,7 +207,7 @@ uni-app 中使用`less`、`stylus`等。
 </template>
 
 <style scoped>
-  .wrap ::v-deep .item {
+  .wrap :deep(.item) {
     border: 1px solid blue;
   }
 </style>

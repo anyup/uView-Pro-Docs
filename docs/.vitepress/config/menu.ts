@@ -88,14 +88,13 @@ class Menu<T> {
   sidebarComponents(): DefaultTheme.SidebarItem[] {
     return [
       {
-        text: '组件',
+        text: '',
         base: `/${this.locale}/components/`,
         items: [
           {
             text: '起步',
             collapsed: false,
             items: [
-              { text: '交流反馈', link: 'chatGroup' },
               { text: '介绍', link: 'intro' },
               { text: '安装', link: 'install' },
               { text: '配置', link: 'setting' },

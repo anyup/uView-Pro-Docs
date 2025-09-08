@@ -75,7 +75,7 @@ export default {
 	&__tool {
 		margin-top: 10px;
 
-		&__picker ::v-deep .el-color-picker__trigger {
+		&__picker :deep(.el-color-picker__trigger) {
 			height: 35px;
 		}
 
@@ -84,7 +84,7 @@ export default {
 		}
 	}
 
-	&__input ::v-deep input {
+	&__input :deep(input) {
 		cursor: pointer;
 		height: 35px;
 		padding: 0 10px;

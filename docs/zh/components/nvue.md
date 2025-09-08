@@ -59,7 +59,7 @@
 
 ## 样式穿透
 
-在`weex`(`nvue`)中有如此描述：[在 Weex 里， 每一个 Vue 组件的样式都是 scoped](https://weex.apache.org/zh/guide/use-vue-in-weex.html#%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%B7%AE%E5%BC%82)，这说明`vue`中的的`/deep/`和`::v-deep`在`nvue`中都是无效，修改子组件样式只能通过传参进行，而不能进行样式穿透。
+在`weex`(`nvue`)中有如此描述：[在 Weex 里， 每一个 Vue 组件的样式都是 scoped](https://weex.apache.org/zh/guide/use-vue-in-weex.html#%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%B7%AE%E5%BC%82)，这说明`vue`中的的`/deep/`和`:deep`在`nvue`中都是无效，修改子组件样式只能通过传参进行，而不能进行样式穿透。
 
 ## 字体引入不能加引号
 
