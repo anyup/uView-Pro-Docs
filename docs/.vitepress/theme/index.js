@@ -7,7 +7,7 @@ import './custom.css'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
-
+import { h } from 'vue'
 // 自定义组件
 import DemoScan from '../components/DemoScan.vue'
 import DemoPreview from '../components/DemoPreview.vue'
@@ -25,7 +25,9 @@ import TemplateDownload from '../components/TemplateDownload.vue'
 import HomeStar from '../components/HomeStar.vue'
 import BadgeVersion from '../components/BadgeVersion.vue'
 import BadgeNpm from '../components/BadgeNpm.vue'
-import { h } from 'vue'
+import ToApi from '../components/ToApi.vue'
+import Icon from '../components/Icon.vue'
+import CustomBlock from '../components/CustomBlock.vue'
 
 /** @type {import('vitepress').Theme} */
 export default {
@@ -56,5 +58,8 @@ export default {
       app.component('ThemeGenerate', ThemeGenerate)
       app.component('TemplateDownload', TemplateDownload)
       app.component('BadgeVersion', BadgeVersion)
+      app.component('ToApi', ToApi)
+      app.component('Icon', Icon)
+      app.component('CustomBlock', CustomBlock)
   }
 }

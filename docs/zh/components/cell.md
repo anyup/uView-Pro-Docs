@@ -108,7 +108,7 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 |-------------  |---------------- |---------------|------------------ |-------- |
 | title | 分组标题  | String | - | - |
 | border | 是否显示外边框 | Boolean  | true | false |
-| title-style | 分组标题的的样式，对象形式，如{'font-size': '24rpx'} 或 {'fontSize': '24rpx'} | object  | - | - |
+| title-style | 分组标题的的样式，对象形式，如`{'font-size': '24rpx'}` 或 `{'fontSize': '24rpx'}` | object  | - | - |
 
 ## CellItem Props
 
@@ -148,7 +148,7 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 ## CellItem Event
 
 |事件名|说明|回调参数|
-|:-|:-|:-|:-|
+|:-|:-|:-|
 | click | 点击cell列表时触发 | index: 通过`props`传递的`index`参数 |
 
 

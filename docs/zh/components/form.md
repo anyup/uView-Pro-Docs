@@ -241,7 +241,7 @@ const rules = {
 
 每一个验证规则中，可以配置多个属性，下面对常用的属性进行讲解，更具体的可以查看[async-validator](https://github.com/yiminghe/async-validator)的文档说明：
 
-- `trigger`{String | Array}：触发校验的方式有2种：
+- `trigger`{`String | Array`}：触发校验的方式有2种：
 	- change：字段值发生变化时校验
 	- blur：输入框失去焦点时触发
 	- 如果同时监听两种方式，需要写成数组形式：`['change', 'blur']`

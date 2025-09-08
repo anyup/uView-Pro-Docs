@@ -1,4 +1,4 @@
-<p align="center">
+<!-- <p align="center">
     <img alt="logo" src="https://ik.imagekit.io/anyup/uview-pro/common/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 <h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">uView</h3>
@@ -94,12 +94,6 @@ Vue.use(uView);
 <br>
 <img src="https://uview-pro.netlify.app/common/weixin_mini_qrcode.png" width="220" height="220" >
 
-<!-- ## 捐赠uView的研发
 
-uView文档和源码全部开源免费，如果您认为uView帮到了您的开发工作，您可以捐赠uView的研发工作，捐赠无门槛，哪怕是一杯可乐也好(相信这比打赏主播更有意义)。
-
-<img src="https://uview-pro.netlify.app/common/wechat.png" width="220" >
-<img style="margin-left: 100px;" src="https://uview-pro.netlify.app/common/alipay.png" width="220" >
- -->
 ## 版权信息
-uView Pro遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView应用到您的产品中。
+uView Pro遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView应用到您的产品中。 -->
