@@ -24,6 +24,7 @@ import ThemeGenerate from '../components/ThemeGenerate.vue'
 import TemplateDownload from '../components/TemplateDownload.vue'
 import HomeStar from '../components/HomeStar.vue'
 import BadgeVersion from '../components/BadgeVersion.vue'
+import BadgeNpm from '../components/BadgeNpm.vue'
 import { h } from 'vue'
 
 /** @type {import('vitepress').Theme} */
@@ -32,7 +33,7 @@ export default {
     Layout() {
     return h(DefaultTheme.Layout, null, {
       'home-hero-info-after':()=>h(HomeStar),
-      'nav-bar-title-after': () => h(BadgeVersion),
+      'nav-bar-title-after': () => h(BadgeNpm),
     })
   },
   enhanceApp({ app }) {
@@ -54,5 +55,6 @@ export default {
       app.component('Donation', Donation)
       app.component('ThemeGenerate', ThemeGenerate)
       app.component('TemplateDownload', TemplateDownload)
+      app.component('BadgeVersion', BadgeVersion)
   }
 }
