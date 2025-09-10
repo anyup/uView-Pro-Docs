@@ -302,7 +302,7 @@ res = [
 | mode | 模式选择，"single-column"-单列模式，"mutil-column"-多列模式，"mutil-column-auto"-多列联动模式  | String	 | single-column | mutil-column / mutil-column-auto |
 | list | 列数据，数组形式，见上方说明 | Array | - | - |
 | v-model | 布尔值变量，用于控制选择器的弹出与收起 | Boolean | false | true |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](/zh/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
 | cancel-color | 取消按钮的颜色  | String | #606266 | - |
 | confirm-color | 确认按钮的颜色  | String | #2979ff | - |
 | default-value | 提供的默认选中的下标，见上方说明  | Array | - | - |

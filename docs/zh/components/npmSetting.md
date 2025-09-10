@@ -18,7 +18,7 @@ npm i sass-loader -D
 
 ## 准备工作
 
-在进行配置之前，请确保您已经根据[安装](/components/install.html)中的步骤对 uView 进行了 npm 安装，如果没有，请先执行安装：
+在进行配置之前，请确保您已经根据[安装](/zh/components/install.html)中的步骤对 uView 进行了 npm 安装，如果没有，请先执行安装：
 
 ```js
 // 如果您的项目是HX创建的，根目录又没有package.json文件的话，请先执行如下命令：

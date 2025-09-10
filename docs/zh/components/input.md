@@ -2,9 +2,9 @@
 
 <demo-model url="/pages/componentsA/input/index"></demo-model>
 
-此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件[u-form](/components/form.html)而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能。  
+此组件为一个输入框，默认没有边框和样式，是专门为配合表单组件[u-form](/zh/components/form.html)而设计的，利用它可以快速实现表单验证，输入内容，下拉选择等功能。  
 
-**注意：** 当您仅是需要一个输入框的话，可以考虑使用[u-field](/components/field.html)组件，而如果是一个表单组，比如有多个输入框一起，且需要验证功能的时候，
+**注意：** 当您仅是需要一个输入框的话，可以考虑使用[u-field](/zh/components/field.html)组件，而如果是一个表单组，比如有多个输入框一起，且需要验证功能的时候，
 应该在`u-form`中嵌套`u-form-item`，再嵌套`u-input`去实现。
 
 ## 平台差异说明
@@ -126,8 +126,8 @@
 ### Select下拉选择模式
 
 如果将`type`设置为`select`，此时组件将会在外观上呈现出Select选择器的形态，主要体现在右侧多了一个下三角图标，但是此时组件并没有内置下拉的功能，
-主要是考虑到移动端的特殊性和uView内置组件的关联性，因为想实现下拉选择，不同场景可能会使用不同的组件，比如uView的[Picker 选择器](/components/picker.html)、
-[ActionSheet 操作菜单](/components/actionSheet.html)、[Select 列选择器](/components/select.html)等，您可以根据情况自由选择合适的组件做搭配。
+主要是考虑到移动端的特殊性和uView内置组件的关联性，因为想实现下拉选择，不同场景可能会使用不同的组件，比如uView的[Picker 选择器](/zh/components/picker.html)、
+[ActionSheet 操作菜单](/zh/components/actionSheet.html)、[Select 列选择器](/zh/components/select.html)等，您可以根据情况自由选择合适的组件做搭配。
 
 - 以上说的可以配合的组件，它们都有一个共同的通过`v-model`绑定弹出与收起的参数，可以同时将此参数赋值给`Input`组件的`select-open`参数，
 当此参数为`true`(也即`Select`选择器打开时)，右侧的下三角图标会翻转，为`false`时，恢复原位。

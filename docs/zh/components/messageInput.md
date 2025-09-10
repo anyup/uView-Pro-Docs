@@ -3,7 +3,7 @@
 <demo-model url="/pages/componentsC/messageInput/index"></demo-model>
 
 
-该组件一般用于验证用户短信验证码的场景，也可以结合uView的[键盘组件](/components/keyboard.html)使用
+该组件一般用于验证用户短信验证码的场景，也可以结合uView的[键盘组件](/zh/components/keyboard.html)使用
 
 ## 平台差异说明
 
@@ -58,7 +58,7 @@
 
 ## 禁止唤起系统键盘
 
-uView有[键盘](/components/keyboard.html)组件，如果您想结合键盘组件进行自定义的输入效果，就需要设置`disabled-keyboard`为`true`，来保证点击
+uView有[键盘](/zh/components/keyboard.html)组件，如果您想结合键盘组件进行自定义的输入效果，就需要设置`disabled-keyboard`为`true`，来保证点击
 输入框时不会触发系统自带的键盘，否则会造成冲突。
 
 ## 事件回调

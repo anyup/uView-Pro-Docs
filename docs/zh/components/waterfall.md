@@ -5,7 +5,7 @@
 
 这是一个瀑布流形式的组件，内容分为左右两列，结合uView的`懒加载`组件效果更佳。  
 相较于某些只是奇偶数左右分别，或者没有利用vue作用域插槽的做法，uView Pro的瀑布流实现了真正的
-组件化，搭配[LazyLoad 懒加载](/components/lazyLoad.html)和[loadMore 加载更多](/components/loadMore.html)组件，让您开箱即用，眼前一亮。
+组件化，搭配[LazyLoad 懒加载](/zh/components/lazyLoad.html)和[loadMore 加载更多](/zh/components/loadMore.html)组件，让您开箱即用，眼前一亮。
 
 <custom-block></custom-block>
 
@@ -318,7 +318,7 @@ let arr = [
 
 ## 注意事项
 
-1. 上方的示例中，结合了uView的[lazyload懒加载](/components/lazyLoad.html)和[loadmore加载更多](/components/loadmore.html)组件，具体用法，请见文档。  
+1. 上方的示例中，结合了uView的[lazyload懒加载](/zh/components/lazyLoad.html)和[loadmore加载更多](/zh/components/loadmore.html)组件，具体用法，请见文档。  
 2. 需要通过`v-model`传递参数，将数据传递给组件，组件内部将每次新增的数据，通过动态查询左右列的高度
 添加到高度低的一列。  
 3. 组件有一个`add-time`参数，用于将单条数据添加到队列的时间间隔，因为图片加载是需要时间的，所以瀑布流左右列

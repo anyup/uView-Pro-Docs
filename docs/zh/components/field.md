@@ -110,7 +110,7 @@
 
 ### 在输入框尾部插入按钮
 
-此为在表单填写时，可能需要用户发送验证码的场景，可以通过`slot`插入一个uView的[button](/components/button.html)组件，通过结合uView的[VerificationCode](/components/verificationCode.html)，
+此为在表单填写时，可能需要用户发送验证码的场景，可以通过`slot`插入一个uView的[button](/zh/components/button.html)组件，通过结合uView的[VerificationCode](/zh/components/verificationCode.html)，
 可以简单，迅速的将功能集成
 
 ```html
@@ -165,7 +165,7 @@
 
 ### 如何与Picker或者actionSheet等组件结合
 
-某些场景，比如需要用用户选择性别，或者时间，地区选择等，我们可以结合uView的[ActionSheet](/components/actionSheet.html)和[Picker](/components/picker.html)组件解决，
+某些场景，比如需要用用户选择性别，或者时间，地区选择等，我们可以结合uView的[ActionSheet](/zh/components/actionSheet.html)和[Picker](/zh/components/picker.html)组件解决，
 这种情况，一般都是要求`field`组件是不可输入内容的，我们需要设置`disabled`参数为`true`，既然是需要弹出选择框，`field`组件右边应该要有一个实心向下的
 三角形图标，配置为`right-icon`为`arrow-down-fill`，同时监听`click`即可。这一切，uView都帮您想到，并且做好了。  
 

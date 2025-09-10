@@ -6,7 +6,7 @@
 通过基础的 12 分栏，迅速简便地创建布局  
 
 ::: warning 注意
-如需实现类似宫格的布局，请使用uView的[Grid宫格组件](/components/grid.html)，可以设置角标，功能更完善和灵活
+如需实现类似宫格的布局，请使用uView的[Grid宫格组件](/zh/components/grid.html)，可以设置角标，功能更完善和灵活
 :::
 
 ## 平台差异说明

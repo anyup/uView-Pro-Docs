@@ -238,7 +238,7 @@ let list = [
 - 要在`list`参数中配置`pagePath`路径，此路径为`pages.json`中定义的 tabbar 字段的路径
 - 此种方式，无需通过`v-model`绑定活动项，内部会自动进行判断和跳转
 
-我们为此做了一个演示`demo`，您可以在下载页找到对应的资源，下载运行即可，[点此跳转下载页](/components/resource.html)
+我们为此做了一个演示`demo`，您可以在下载页找到对应的资源，下载运行即可，[点此跳转下载页](/zh/components/resource.html)
 
 ## API
 

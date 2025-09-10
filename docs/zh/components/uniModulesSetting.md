@@ -4,7 +4,7 @@ uView Pro 提供了多种安装方式，本文将介绍如何使用 uni_modules 
 
 ## 准备工作
 
-在进行配置之前，请确保您已经根据[安装](/components/install.html)中的步骤对 uView Pro 进行了下载安装，如果没有，请先下载安装。
+在进行配置之前，请确保您已经根据[安装](/zh/components/install.html)中的步骤对 uView Pro 进行了下载安装，如果没有，请先下载安装。
 
 ## 配置步骤
 

@@ -155,7 +155,7 @@
 | mask | 是否显示遮罩 | Boolean  | true | false |
 | z-index | 弹出键盘的`z-index`值 | Number \| String  | 1075 | - |
 | random | 是否打乱键盘按键的顺序 | Boolean  | false | true |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](/zh/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
 | mask-close-able | 是否允许点击遮罩收起键盘 | Boolean  | true | false |
 | confirm-text  | 确认按钮的文字 | String | 取消 | - |
 | cancel-text  | 取消按钮的文字 | String | 确认 | - |
@@ -173,7 +173,7 @@
 
 |名称|说明|版本|
 |:-|:-|:-|
-| default | 内容将会显示键盘的工具条上面，可以结合[MessageInput 验证码输入](/components/messageInput.html)组件实现类似支付宝输入密码时，上方显示输入内容的功能 |  - |
+| default | 内容将会显示键盘的工具条上面，可以结合[MessageInput 验证码输入](/zh/components/messageInput.html)组件实现类似支付宝输入密码时，上方显示输入内容的功能 |  - |
 
 
 <style scoped>

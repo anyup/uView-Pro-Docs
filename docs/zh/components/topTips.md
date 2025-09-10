@@ -44,7 +44,7 @@
 需要注意的是，这个`navbar-height`参数是您自定义导航栏的整个高度，比如在APP和各家小程序上，是“导航栏”+“状态栏”的高度，H5中，“状态栏”无法自定义，高度为0。
 
 :::tip 温馨提示
-uView 有推出[Navbar 自定义导航栏](/components/navbar.html)组件，此组件有一个`height`参数(**单位px**，默认44)，这个高度是不包含状态栏的高度的，
+uView 有推出[Navbar 自定义导航栏](/zh/components/navbar.html)组件，此组件有一个`height`参数(**单位px**，默认44)，这个高度是不包含状态栏的高度的，
 所以您使用uView的自定义导航栏组件的话，您还需要通过"uni.getSystemInfoSync().statusBarHeight"(字节跳动小程序不支持)去获得状态栏的高度，
 加上你需要的导航栏高度(也即uView的`navbar`组件的`height`)，即为需要传入`u-top-tips`组件的`navbar-height`参数值。
 :::

@@ -5,7 +5,7 @@
 ## 说明
 
 uView Pro 组件功能的实现，并不依赖全局样式，内置的一些类名，只是提供一些基础且常用的样式，仅此而已。  
-注意：请根据[快速上手](/components/quickstart.html)中的说明，引入 uView Pro 提供的 scss 文件。
+注意：请根据[快速上手](/zh/components/quickstart.html)中的说明，引入 uView Pro 提供的 scss 文件。
 
 :::warning 温馨提示
 由于 uView Pro 的内置样式均是写在 scss 文件中的，您在使用的时候，请确保要给页面的`style`标签加上`lang="scss"`属性，否则可能会报错。
@@ -384,7 +384,7 @@ uni-app，iOS 和少数设备使用`1rpx`是能够得到类似`0.5px`的半像�
 
 ## 文字颜色
 
-uView 提供了四个关于文字的颜色，具体详见文档的[Color 色彩](/components/color.html)部分，分别是：
+uView 提供了四个关于文字的颜色，具体详见文档的[Color 色彩](/zh/components/color.html)部分，分别是：
 
 - `main-color`主要颜色，可以用于标题等需要重颜色的场景
 - `content-color`内容颜色，可以用于一般性内容的场景
@@ -404,7 +404,7 @@ uView 提供了四个关于文字的颜色，具体详见文档的[Color 色彩]
 
 ### **2. SCSS 变量名方案**
 
-uView 提供了四个关于文字颜色的 scss 变量名，具体详见文档的[Color 色彩](/components/color.html)部分，分别是：
+uView 提供了四个关于文字颜色的 scss 变量名，具体详见文档的[Color 色彩](/zh/components/color.html)部分，分别是：
 
 - `$u-main-color`
 - `$u-content-color`
@@ -426,7 +426,7 @@ uView 提供了四个关于文字颜色的 scss 变量名，具体详见文档�
 
 ## 主题色
 
-uView 提供五个关于主题的 scss 颜色变量，如有需要，可合理使用。具体详见文档的[Color 色彩](/components/color.html)部分，分别是：
+uView 提供五个关于主题的 scss 颜色变量，如有需要，可合理使用。具体详见文档的[Color 色彩](/zh/components/color.html)部分，分别是：
 
 - `$u-type-primary`为蓝色，uView 的主色彩，代表热情，友好，积极，向上之意。
 - `$u-type-warning`为黄色，代表警告之意。

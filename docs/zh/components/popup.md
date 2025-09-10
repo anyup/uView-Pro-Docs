@@ -162,7 +162,7 @@ uView提供了`length`来控制此种情况，此值可以是`数值`(单位rpx)
 | mask | 是否显示遮罩  | Boolean | true | false |
 | length | mode=left \| 见上方说明 | String \| Number | auto | - |
 | zoom | 是否开启缩放动画，只在`mode`为`center`时有效  | Boolean | true | false |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](/zh/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
 | mask-close-able | 点击遮罩是否可以关闭弹出层  | Boolean | true | false |
 | custom-style | 用户自定义样式  | Object | - | - |
 | border-radius | 弹窗圆角值  | Number \| String | 0 | - |

@@ -26,24 +26,27 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [{
-					text: '点赞',
-					color: 'blue',
-					fontSize: 28,
-					subText: '感谢您的点赞'
-				}, {
-					text: '分享'
-				}, {
-					text: '评论' 
-				}],
-				show: false
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义列表数据
+const list = ref([
+	{
+		text: '点赞',
+		color: 'blue',
+		fontSize: 28,
+		subText: '感谢您的点赞'
+	},
+	{
+		text: '分享'
+	},
+	{
+		text: '评论'
 	}
+])
+
+// 控制 ActionSheet 显示状态
+const show = ref(false)
 </script>
 ```
 
@@ -57,24 +60,25 @@
 	<u-action-sheet :list="list" v-model="show" :tips="tips" :cancel-btn="true"></u-action-sheet>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				tips: {
-					text: '在水一方',
-					color: '#909399',
-					fontSize: 24
-				},
-				list: [{
-					text: '点赞',
-					color: 'blue',
-					fontSize: 28
-				}],
-				show: true
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 顶部提示信息
+const tips = ref({
+	text: '在水一方',
+	color: '#909399',
+	fontSize: 24
+})
+
+// 按钮列表
+const list = ref([{
+	text: '点赞',
+	color: 'blue',
+	fontSize: 28
+}])
+
+// 控制显示状态
+const show = ref(true)
 </script>
 ```
 
@@ -86,31 +90,34 @@
 
 ```html
 <template>
-	<u-action-sheet :list="list" @click="click" v-model="show"></u-action-sheet>
+	<u-action-sheet :list="list" @click="handleClick" v-model="show"></u-action-sheet>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [{
-					text: '点赞',
-					color: 'blue',
-					fontSize: 28
-				}, {
-					text: '分享'
-				}, {
-					text: '评论'
-				}],
-				show: true
-			}
-		},
-		methods: {
-			click(index) {
-				console.log(`点击了第${index + 1}项，内容为：${this.list[index].text}`)
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 按钮列表
+const list = ref([
+	{
+		text: '点赞',
+		color: 'blue',
+		fontSize: 28
+	},
+	{
+		text: '分享'
+	},
+	{
+		text: '评论'
 	}
+])
+
+// 控制显示状态
+const show = ref(true)
+
+// 处理点击事件
+const handleClick = (index: number) => {
+	console.log(`点击了第${index + 1}项，内容为：${list.value[index].text}`)
+}
 </script>
 ```
 
@@ -128,7 +135,7 @@
 | cancel-btn | 是否显示底部的取消按钮 | Boolean  | true | false |
 | border-radius | 弹出部分顶部左右的圆角值，单位rpx | Number \ String  | 0 | - |
 | mask-close-able | 点击遮罩是否可以关闭 | Boolean  | true | false |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](/zh/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
 | z-index | `z-index`值 | Number \ String  | 1075 | - |
 | cancel-text | 取消按钮的提示文字 | String  | 取消 | - |
 

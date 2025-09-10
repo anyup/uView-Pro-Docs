@@ -4,7 +4,7 @@
 
 :::tip 说明
 
-1. 由于 uView Pro 使用`easycom`模式，让您无需引入组件即可直接使用，但是此功能需要 Hbuilder X 2.5.5 及以上版本才支持，详见[配置 easycom 组件模式](/components/quickstart.html#_3-配置easycom组件模式)。
+1. 由于 uView Pro 使用`easycom`模式，让您无需引入组件即可直接使用，但是此功能需要 Hbuilder X 2.5.5 及以上版本才支持，详见[配置 easycom 组件模式](/zh/components/quickstart.html#_3-配置easycom组件模式)。
    `easycom`打包的时候是**按需引入**的，您可以放心引入 uView Pro 的整个组件库，发布打包时会自动剔除您没有使用的组件(注意：调试时仍然是全部引入的)
 
 2. 请确保您下载的[Hbuilder X](https://www.dcloud.io/hbuilderx.html)为`APP开发版`，而非`标准版`，并且在"工具-插件安装"中安装了"scss/sass 编译"插件
@@ -18,7 +18,7 @@
 - 如果您的项目是通过[vue-cli](https://uniapp.dcloud.io/quickstart?id=_2-%e9%80%9a%e8%bf%87vue-cli%e5%91%bd%e4%bb%a4%e8%a1%8c)模式创建的，
   无需手动 npm 安装`scss`，因为已内置`scss`。
 
-**注意：** 此安装方式必须要按照[npm 方式安装的配置](/components/npmSetting.html)中的说明配置了才可用，且项目名称不能有**中文**字符。
+**注意：** 此安装方式必须要按照[npm 方式安装的配置](/zh/components/npmSetting.html)中的说明配置了才可用，且项目名称不能有**中文**字符。
 
 ```js
 // 如果您的项目是HX创建的，根目录又没有package.json文件的话，请先执行如下命令：
@@ -46,7 +46,7 @@ pnpm add uview-pro
 - 如果您的项目是由 HBuilder X 创建的标准 uni-app 项目，将下载后的`uview-pro`文件夹，复制到项目`uni_modules`目录。
 - 如果您的项目是由[vue-cli](https://uniapp.dcloud.io/quickstart?id=_2-%e9%80%9a%e8%bf%87vue-cli%e5%91%bd%e4%bb%a4%e8%a1%8c)模式创建的，请将下载后的`uview-pro`文件夹放到项目的`src`的 `uni_modules`文件夹中即可。
 
-**注意：** 此安装方式必须要按照[下载方式安装的配置](/components/downloadSetting.html)中的说明配置了才可用。
+**注意：** 此安装方式必须要按照[下载方式安装的配置](/zh/components/downloadSetting.html)中的说明配置了才可用。
 
 <br>
 <div @click="downloadPost(2)" class="download-link">

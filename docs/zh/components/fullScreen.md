@@ -71,9 +71,9 @@ export default {
 ## 定义压窗屏内容
 
 当我们触发(打开)了压窗屏页面之后，将会有一个新的，背景透明的页面覆盖在本页面上，由于我们的终极目标就是要做一个弹窗，让其遮罩盖住"父页面"的导航栏和
-Tabbar栏，所以这里我们可以使用uView的[Popup 弹出层](/components/popup.html)组件，并且将`popup`组件的`mode`参数设置`center`，即中部弹出的形式。
+Tabbar栏，所以这里我们可以使用uView的[Popup 弹出层](/zh/components/popup.html)组件，并且将`popup`组件的`mode`参数设置`center`，即中部弹出的形式。
 
-下方示例为打开一个[Modal 模态框](/components/modal.html)组件的示例，此组件内部用的也是`popup`组件。
+下方示例为打开一个[Modal 模态框](/zh/components/modal.html)组件的示例，此组件内部用的也是`popup`组件。
 
 ```html
 <template>

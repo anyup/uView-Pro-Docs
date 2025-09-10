@@ -88,7 +88,7 @@ const switchVal = ref(false);
 - `prop`为传入`Form`组件的`model`中的属性字段，如果需要表单验证，此属性是必填的。
 - `label-position`可以配置左侧"label"的对齐方式，可选为`left`和`top`。
 - `border-bottom`是否显示表单域的下划线，如果给`Input`组件配置了边框，可以将此属性设置为`false`，从而隐藏默认的下划线。
-- 如果想在表单域配置左右的图标(或小图片，1.3.0开始，[Icon 图标](/components/icon.html)可以配置图片)，可以通过`left-icon`和`right-icon`参数实现。
+- 如果想在表单域配置左右的图标(或小图片，1.3.0开始，[Icon 图标](/zh/components/icon.html)可以配置图片)，可以通过`left-icon`和`right-icon`参数实现。
 
 ## 表单验证
 
@@ -247,7 +247,7 @@ const rules = {
 	- 如果同时监听两种方式，需要写成数组形式：`['change', 'blur']`
 
 - `type`{String}  
-内置校验规则，如这些规则无法满足需求，可以使用正则匹配、或者使用`validator`自定义方法并结合uView自带[验证规则](/js/test.html)。  
+内置校验规则，如这些规则无法满足需求，可以使用正则匹配、或者使用`validator`自定义方法并结合uView自带[验证规则](/zh/tools/test.html)。  
 	- string：必须是 `string` 类型，默认类型  
 	- number：必须是 `number` 类型  
 	- boolean：必须是 `boolean` 类型  
@@ -303,7 +303,7 @@ const rules = {
 
 ### uView Pro自带验证规则
 
-uView在JS板块的[Test 规则校验](/js/test.html)中有大量内置的验证规则，这些规则对表单验证来说，属于**自定义规则**，故需要用到上方规则属性的
+uView在JS板块的[Test 规则校验](/zh/tools/test.html)中有大量内置的验证规则，这些规则对表单验证来说，属于**自定义规则**，故需要用到上方规则属性的
 `validator`自定义验证函数，这里做一个详细说明。  
 
 我们知道uView有自带的判断手机号的验证方法`uni.$u.test.mobile(value)`，但是[async-validator](https://github.com/yiminghe/async-validator)没有

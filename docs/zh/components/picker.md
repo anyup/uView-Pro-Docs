@@ -11,7 +11,7 @@
 4. 四是多列模式
 
 ::: warning 说明
-从`1.3.0`版本起，不建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/components/select.html)组件，
+从`1.3.0`版本起，不建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/zh/components/select.html)组件，
 以后此组件将专注于时间和地区的选择。
 :::
 
@@ -166,7 +166,7 @@ let params = {
 
 ## 二、单列和多列模式
 
-**从`1.3.0`版本起，不建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/components/select.html)组件。**
+**从`1.3.0`版本起，不建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/zh/components/select.html)组件。**
 
 ### 1. 设置默认值
 
@@ -244,7 +244,7 @@ let params = {
 `column`表示第几列发生了变化(从0开始)，`index`表示当前的下标值，如`{column: 1, index: 2}`表示第二列(从0开始)发生了变化，下标变成了`2`，您可以
 根据这个回调，对应的修改`default-selector`参数，让多列中的其他列联动起来。
 
-此处演示较为复杂，请见uView的演示代码，在[安装](/components/install.html)页下载`演示项目`方式，内有所有演示的示例，是一个完整的HX工程。
+此处演示较为复杂，请见uView的演示代码，在[安装](/zh/components/install.html)页下载`演示项目`方式，内有所有演示的示例，是一个完整的HX工程。
 
 
 ## API
@@ -259,7 +259,7 @@ let params = {
 | mode | 模式选择，region-地区模式，time-时间模式，selector-单列模式，multiSelector-多列模式  | String	 | time | region / selector / multiSelector |
 | start-year | 可选的开始年份，mode=time时有效 | String \| Number | 1950 | - |
 | end-year | 可选的结束年份，mode=time时有效 | String \| Number | 2050 | - |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](/zh/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
 | cancel-color | 取消按钮的颜色  | String | #606266 | - |
 | confirm-color | 确认按钮的颜色  | String | #2979ff | - | 6
 | default-time | 默认选中的时间，mode=time时有效，需在`onReady`生命周期赋值，见顶部说明  | String | - | - |

@@ -5,7 +5,7 @@
 
 此组件用于单个选择日期，范围选择日期等，日历被包裹在底部弹起的容器中。
 
-**注意：** 此组件与[Picker 选择器](/components/picker.html)的日期选择模式有一定的重合之处，区别在于本组件为更专业的日期选择场景，能选择日期范围等。
+**注意：** 此组件与[Picker 选择器](/zh/components/picker.html)的日期选择模式有一定的重合之处，区别在于本组件为更专业的日期选择场景，能选择日期范围等。
 另外`Picker`组件的日期模式可以配置更多的参数，如时、分、秒等，可以根据不同的使用场景进行选择。
 
 
@@ -193,7 +193,7 @@
 |-------------  |---------------- |---------------|------------------ |-------- |
 | mode | 选择日期的模式，date-为单个日期，range-为选择日期范围 | String | date | range |
 | v-model | 布尔值变量，用于控制日历的弹出与收起 | Boolean | false | true |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](/zh/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明) | Boolean  | false | true |
 | change-year | 是否显示顶部的切换年份方向的按钮  | Boolean | true | false |
 | change-month | 是否显示顶部的切换月份方向的按钮  | Boolean | true | false |
 | max-year | 可切换的最大年份 | Number \| String | 2050 | - |

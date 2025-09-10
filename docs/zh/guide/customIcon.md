@@ -93,7 +93,7 @@ uView Pro 已通过大量的实践中，收集了用户最有可能需要用到�
 </style>
 ```
 
-8. 在页面通过 uView 的[Icon](/components/icon.html)组件使用图标，图标名称为您在阿里图标库中点击"编辑图标"时的"Font Class / Symbol"(该值可修改，每次修改都需重新下载"iconfont.css"放到 uni-app 目中，
+8. 在页面通过 uView 的[Icon](/zh/components/icon.html)组件使用图标，图标名称为您在阿里图标库中点击"编辑图标"时的"Font Class / Symbol"(该值可修改，每次修改都需重新下载"iconfont.css"放到 uni-app 目中，
    覆盖原来的"iconfont.css")
 
 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/custom_icon/custom_icon_7.png" />

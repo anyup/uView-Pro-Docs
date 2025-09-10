@@ -2,16 +2,16 @@
 
 ## uView Pro 对 nvue 的支持
 
-什么是`nvue`？见[关于 nvue](/guide/design.html#关于nvue)  
+什么是`nvue`？见[关于 nvue](/zh/guide/design.html#关于nvue)  
 目前 uView 是`vue`版本，uView Pro 目前没有兼容 nvue，未来应该也不会兼容
 
 ## 技术点要求
 
-1. uView Pro 依赖`SCSS`预处理器，所以您需要给 HBuilder X 安装 “sass/scss 编译” 插件，详见[快速上手](/components/quickstart.html)
+1. uView Pro 依赖`SCSS`预处理器，所以您需要给 HBuilder X 安装 “sass/scss 编译” 插件，详见[快速上手](/zh/components/quickstart.html)
 2. uView Pro 目前没有兼容 nvue，未来应该也不会兼容
 3. uView Pro 基于 VSCode+Vue3 开发，旧版本可能会不兼容
 4. uView 要求项目开启 uniapp 的 V3 版本，V3 有很大的优势，详见[V3 版本介绍](https://ask.dcloud.net.cn/article/36599)
-5. HX2.5.5 稳定版正式引入`easycom`，建议开发者升级 HX 到 2.5.1 及以上的稳定版，详见[关于 easycom](/components/quickstart.html#_3-配置easycom组件模式)
+5. HX2.5.5 稳定版正式引入`easycom`，建议开发者升级 HX 到 2.5.1 及以上的稳定版，详见[关于 easycom](/zh/components/quickstart.html#_3-配置easycom组件模式)
 
 ## 关于 VSCode
 
@@ -40,7 +40,7 @@ uView Pro 也可以使用 HX 作为编辑器：
 
 在 iPhone X 等机型，底部带有指示条，如果配置了`safearea`则会在底部生成一个原生的白色区块，好处是不会导致
 误触，缺点是颜色无法修改，有时候也影响美观。  
-uView Pro 在各个可能会受到指示条影响的地方都做了特别处理，比如弹窗，键盘组件等，详见[底部安全区适配](/components/safeAreaInset.html)
+uView Pro 在各个可能会受到指示条影响的地方都做了特别处理，比如弹窗，键盘组件等，详见[底部安全区适配](/zh/components/safeAreaInset.html)
 
 ## 为什么 uView Pro 的源码中会有那么多的注释？
 

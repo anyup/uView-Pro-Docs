@@ -3,7 +3,7 @@
 <demo-model url="/pages/componentsC/grid/index"></demo-model>
 
 
-宫格组件一般用于同时展示多个同类项目的场景，可以给宫格的项目设置徽标组件([badge](/components/badge.html))，或者图标等，也可以扩展为左右滑动的轮播形式。
+宫格组件一般用于同时展示多个同类项目的场景，可以给宫格的项目设置徽标组件([badge](/zh/components/badge.html))，或者图标等，也可以扩展为左右滑动的轮播形式。
 
 ## 平台差异说明
 
@@ -46,7 +46,7 @@
 
 ## 给宫格设置右上角的角标和图标
 
-可以通过uView的`badge`(注意Badge在此需要设置相关定位属性，详见[Badge](/components/badge.html))或者`image`设置宫格有右上角的内容
+可以通过uView的`badge`(注意Badge在此需要设置相关定位属性，详见[Badge](/zh/components/badge.html))或者`image`设置宫格有右上角的内容
 
 ```html
 <template>

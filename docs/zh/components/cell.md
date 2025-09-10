@@ -15,7 +15,7 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 
 - 该组件需要搭配`cell-group`使用，并由它实现列表组的上下边框，如不需要上下边框，配置`cellGroup`的`border`参数为`false`即可。
 - 通过`title`设置左侧标题，`value`设置右侧内容。
-- 通过`icon`字段设置图标，值为uView自带的[Icon 图标](/components/icon.html)名。
+- 通过`icon`字段设置图标，值为uView自带的[Icon 图标](/zh/components/icon.html)名。
 
 **注意：** 由于`cell`组件需要由`cellGroup`组件提供参数值，这些父子组件间通过Vue的"provide/inject"特性注入依赖，
 所以您必须使用`cellGroup`包裹`cell`组件才能正常使用。
@@ -50,8 +50,8 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 ```
 
 如上所示，可以给`cell-item`组件通过`<template #right-icon></template>`设定右边uView自带的`badge`或者`switch`组件：
-- 如果搭配的是`badge`组件，注意设置`absolute`参数为`false`去掉绝对定位，否则其位于右侧的恰当位置，详见[Badge 徽标数](/components/badge.html)。
-- 如果搭配的是`switch`组件，注意要通过`v-model`绑定一个内容为布尔值的变量，否则无法操作`switch`，详见[Switch 开关选择器](/components/switch.html)。
+- 如果搭配的是`badge`组件，注意设置`absolute`参数为`false`去掉绝对定位，否则其位于右侧的恰当位置，详见[Badge 徽标数](/zh/components/badge.html)。
+- 如果搭配的是`switch`组件，注意要通过`v-model`绑定一个内容为布尔值的变量，否则无法操作`switch`，详见[Switch 开关选择器](/zh/components/switch.html)。
 
 ## 展示右箭头
 
@@ -115,7 +115,7 @@ cell单元格一般用于一组列表的情况，比如个人中心页，设置�
 | 参数          | 说明            | 类型            | 默认值             |  可选值   |
 |-------------  |---------------- |---------------|------------------ |-------- |
 | title | 左侧标题  | String | - | - |
-| icon | 左侧图标名，只支持uView内置图标，见[Icon 图标](/components/icon.html) | String  | - | - |
+| icon | 左侧图标名，只支持uView内置图标，见[Icon 图标](/zh/components/icon.html) | String  | - | - |
 | icon-style | icon的样式，对象形式 | Object | - | - |
 | value | 右侧内容 | String  | - | - |
 | label | 标题下方的描述信息 | String | - | - |

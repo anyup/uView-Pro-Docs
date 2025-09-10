@@ -38,7 +38,7 @@
 
 <!-- ## 兼容性
 
-由于一些微信小程序平台的渲染能力的问题，在解析[u-parse](/components/readMore.html)组件内容时会比较耗时，导致`read-more`组件内部无法准确得知
+由于一些微信小程序平台的渲染能力的问题，在解析[u-parse](/zh/components/readMore.html)组件内容时会比较耗时，导致`read-more`组件内部无法准确得知
 内容的高度，而出现计算错误，这种情况下，我们需要借助`u-parse`组件的`@load`(内容多为文字时)或者`@ready`(内容多为图片时，可能会有较大延时)事件，通过`ref`
 重新初始化`read-more`组件的高度，如下：
 
@@ -187,7 +187,7 @@
 
 | 名称          | 说明            |
 |-------------  |---------------- |
-| init | 重新初始化组件内部高度计算过程，如果内嵌[u-parse](/components/readMore.html)组件时可能需要用到 |
+| init | 重新初始化组件内部高度计算过程，如果内嵌[u-parse](/zh/components/readMore.html)组件时可能需要用到 |
 
 
 ## Events

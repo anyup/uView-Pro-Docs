@@ -3,7 +3,7 @@
 <demo-model url="/pages/componentsB/loading/index"></demo-model>
 
 
-此组件为一个小动画，目前用在uView的[loadmore加载更多](/components/loadMore.html)和[switch开关](/components/switch.html)等组件的正在加载状态场景。
+此组件为一个小动画，目前用在uView的[loadmore加载更多](/zh/components/loadMore.html)和[switch开关](/zh/components/switch.html)等组件的正在加载状态场景。
 
 ## 平台差异说明
 
