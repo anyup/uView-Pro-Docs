@@ -450,7 +450,7 @@ lists = [
 回调参数中的`lists`参数，为目前组件内的所有图片数组，`index`为当前操作的图片的索引，`name`为通过`props`传递的`index`参数(1.6.1加入)
 
 |事件名|说明|回调参数|
-|:-|:-|:-|:-|
+|:-|:-|:-|
 | on-oversize | 图片大小超出最大允许大小 | (file, lists, name), name为通过`props`传递的`index`参数 |
 | on-preview | 全屏预览图片时触发 | (url, lists, name)，url为当前选中的图片地址，index为通过`props`传递的`index`参数 |
 | on-remove | 移除图片时触发 | (index, lists, name)，name为通过`props`传递的`index`参数 |
