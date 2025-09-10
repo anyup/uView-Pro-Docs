@@ -26,7 +26,7 @@ import HomeStar from '../components/HomeStar.vue'
 import BadgeVersion from '../components/BadgeVersion.vue'
 import BadgeNpm from '../components/BadgeNpm.vue'
 import ToApi from '../components/ToApi.vue'
-import Icon from '../components/Icon.vue'
+import IconList from '../components/IconList.vue'
 import CustomBlock from '../components/CustomBlock.vue'
 
 /** @type {import('vitepress').Theme} */
@@ -59,7 +59,7 @@ export default {
       app.component('TemplateDownload', TemplateDownload)
       app.component('BadgeVersion', BadgeVersion)
       app.component('ToApi', ToApi)
-      app.component('Icon', Icon)
+      app.component('IconList', IconList)
       app.component('CustomBlock', CustomBlock)
   }
 }

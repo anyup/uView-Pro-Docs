@@ -50,10 +50,17 @@
 
 .VPSidebarItem.is-active > .item .link > .text {
   color: #fff !important;
-  background-color: #5892f7;
+  background-color: var(--vp-c-brand-1);
   border-radius: 7px;
   padding: 4px 5px;
   font-size: 14px;
+  margin-left: -3px;
+}
+
+/* 自定义 Navbar */
+.VPNavBarMenuLink.active {
+  margin-bottom: -2px;
+  border-bottom: 2px solid var(--vp-c-brand-1);
 }
 
 /* 布局样式 */

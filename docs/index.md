@@ -11,12 +11,12 @@ hero:
     alt: uView Pro
   actions:
     - theme: brand
-      text: 🚀 起步
+      text: 🚀 指南
       link: /zh/guide/demo
-    - theme: alt
-      text: 🎯 组件
-      link: /zh/components/intro
     - theme: brand
+      text: 🎯 快速起步
+      link: /zh/components/intro
+    - theme: alt
       text: 💪 交流反馈
       link: /zh/resource/about
     - theme: alt

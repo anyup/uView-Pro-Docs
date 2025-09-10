@@ -13,55 +13,57 @@ function addTextIndex(array): DefaultTheme.SidebarItem[] {
 
 class Menu<T> {
   locale: string
+  localeStr: string
   constructor(locale: string) {
     this.locale = locale
+    this.localeStr = `/${this.locale}`
   }
   // 导航栏
   nav(): DefaultTheme.NavItem[] {
     return [
       {
         text: '指南',
-        activeMatch: `/${this.locale}/guide`,
-        link: `/${this.locale}/guide/demo`
-        // items: [{ text: '效果演示', link: `/${this.locale}/guide/demo` }]
+        activeMatch: `${this.localeStr}/guide`,
+        link: `${this.localeStr}/guide/demo`
+        // items: [{ text: '效果演示', link: `${this.localeStr}/guide/demo` }]
       },
       {
         text: '组件',
-        activeMatch: `/${this.locale}/components`,
-        link: `/${this.locale}/components/intro`
+        activeMatch: `${this.localeStr}/components`,
+        link: `${this.localeStr}/components/intro`
       },
       {
         text: '工具',
-        activeMatch: `/${this.locale}/tools`,
-        link: `/${this.locale}/tools/intro`
+        activeMatch: `${this.localeStr}/tools`,
+        link: `${this.localeStr}/tools/intro`
       },
       {
         text: '模版',
-        activeMatch: `/${this.locale}/layout`,
-        link: `/${this.locale}/layout/intro`
+        activeMatch: `${this.localeStr}/layout`,
+        link: `${this.localeStr}/layout/intro`
       },
       {
         text: '资源',
-        link: `/${this.locale}/resource/intro`
+        link: `${this.localeStr}/resource/intro`
       },
       {
         text: '交流反馈',
-        link: `/${this.locale}/resource/about`
+        link: `${this.localeStr}/resource/about`
       },
       {
         text: '捐赠',
-        link: `/${this.locale}/resource/donation`
+        link: `${this.localeStr}/resource/donation`
       },
     ]
   }
   // 侧边栏
   sidebar(): DefaultTheme.Sidebar {
     return {
-      '/zh/guide/': { base: '/zh/guide/', items: this.sidebarGuide() },
-      '/zh/tools/': { base: '/zh/guide/', items: this.sidebarTools() },
-      '/zh/layout/': { base: '/zh/layout/', items: this.sidebarLayout() },
+      '/zh/guide/': { base: `${this.localeStr}/guide/`, items: this.sidebarGuide() },
+      '/zh/tools/': { base: `${this.localeStr}/guide/`, items: this.sidebarTools() },
+      '/zh/layout/': { base: `${this.localeStr}/layout/`, items: this.sidebarLayout() },
       '/zh/components/': {
-        base: '/zh/components/',
+        base: `${this.localeStr}/components/`,
         items: this.sidebarComponents()
       },
     }
@@ -71,7 +73,7 @@ class Menu<T> {
     return [
       {
         text: '指南',
-        base: `/${this.locale}/guide/`,
+        base: `${this.localeStr}/guide/`,
         items: [
           { text: '效果演示', link: 'demo' },
           { text: '扩展自定义图标库', link: 'customIcon' },
@@ -89,7 +91,7 @@ class Menu<T> {
     return [
       {
         text: '',
-        base: `/${this.locale}/components/`,
+        base: `${this.localeStr}/components/`,
         items: [
           {
             text: '起步',
@@ -216,7 +218,8 @@ class Menu<T> {
               { text: 'LazyLoad 懒加载', link: 'lazyLoad' },
               { text: 'Gap 间隔槽', link: 'gap' },
               { text: 'Avatar 头像', link: 'avatar' },
-              { text: 'Loading 加载动画', link: 'loading' }
+              { text: 'Loading 加载动画', link: 'loading' },
+              { text: 'safeAreaInset 底部安全区', link: 'safeAreaInset' }
             ]
           }
         ]
@@ -228,7 +231,7 @@ class Menu<T> {
     return [
       {
         text: '工具',
-        base: `/${this.locale}/tools/`,
+        base: `${this.localeStr}/tools/`,
         items: [
           {
             text: '指南',
@@ -242,7 +245,7 @@ class Menu<T> {
             text: '网络',
             collapsed: false,
             items: [
-              { text: 'Request请求', link: 'request' },
+              { text: 'Http请求', link: 'http' },
             ]
           },
           {
@@ -275,7 +278,7 @@ class Menu<T> {
     return [
       {
         text: '模版',
-        base: `/${this.locale}/layout/`,
+        base: `${this.localeStr}/layout/`,
         items: [
           {
             text: '起步',
