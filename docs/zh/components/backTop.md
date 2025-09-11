@@ -25,17 +25,16 @@
 	</view>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			scrollTop: 0
-		}
-	},
-	onPageScroll(e) {
-		this.scrollTop = e.scrollTop;
-	}
-};
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const scrollTop = ref(0)
+
+// 页面滚动事件处理
+onPageScroll: function(e) {
+	console.log("滚动距离为：" + e.scrollTop);
+	scrollTop.value = e.scrollTop
+}
 </script>
 
 <style lang="scss" scoped>
@@ -81,22 +80,20 @@ export default {
 	</view>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			scrollTop: 0,
-			mode: 'square',
-			iconStyle: {
-				fontSize: '32rpx',
-				color: '#2979ff'
-			}
-		}
-	},
-	onPageScroll(e) {
-		this.scrollTop = e.scrollTop;
-	}
-};
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+const scrollTop = ref(0)
+const mode = ref('square')
+const iconStyle = reactive({
+	fontSize: '32rpx',
+	color: '#2979ff'
+})
+
+// 页面滚动事件处理
+onPageScroll: function(e) => {
+	scrollTop.value = e.scrollTop
+}
 </script>
 
 <style lang="scss" scoped>

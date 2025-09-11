@@ -25,13 +25,11 @@
 	<u-alert-tips type="warning" :title="title" :description="description"></u-alert-tips>
 </template>
 
-<script>
-	export default {
-		data() {
-			title: '登高望远',
-			description: '欲穷千里目，更上一层楼'
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const title = ref('登高望远')
+const description = ref('欲穷千里目，更上一层楼')
 </script>
 ```
 
@@ -62,14 +60,12 @@
 	<u-alert-tips type="error" :title="title" close-text="close" :description="description" :close-able="true"></u-alert-tips>
 </template>
 
-<script>
-	export default {
-		data() {
-			title: '寻隐者不遇',
-			description: '松下问童子，言师采药去。只在此山中，云深不知处。',
-			show: true
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const title = ref('寻隐者不遇')
+const description = ref('松下问童子，言师采药去。只在此山中，云深不知处。')
+const show = ref(true)
 </script>
 ```
 

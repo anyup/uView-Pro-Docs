@@ -58,29 +58,27 @@
 
 ```html
 <template>
-	<u-count-to ref="uCountTo" :end-val="endVal" :autoplay="autoplay"></u-count-to>
+	<u-count-to ref="uCountToRef" :end-val="endVal" :autoplay="autoplay"></u-count-to>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				endVal: 5000.55,
-				autoplay: false
-			};
-		},
-		methods: {
-			start() {
-				this.$refs.uCountTo.start();
-			},
-			paused() {
-				this.$refs.uCountTo.paused();
-			},
-			reStart() {
-				this.$refs.uCountTo.reStart();
-			},
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const endVal = ref(5000.55)
+const autoplay = ref(false)
+const uCountToRef = ref()
+
+const start = () => {
+  uCountToRef.value.start()
+}
+
+const paused = () => {
+  uCountToRef.value.paused()
+}
+
+const reStart = () => {
+  uCountToRef.value.reStart()
+}
 </script>
 ```
 

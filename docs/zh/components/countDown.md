@@ -20,12 +20,10 @@
 	<u-count-down :timestamp="timestamp"></u-count-down>
 </template>
 
-<script>
-	export default {
-		data() {
-			timestamp: 86400,
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const timestamp = ref(86400)
 </script>
 ```
 
@@ -70,17 +68,19 @@
 
 ```html
 <template>
-	<u-count-down ref="uCountDown" :timestamp="86400" :autoplay="false"></u-count-down>
+	<u-count-down ref="uCountDownRef" :timestamp="86400" :autoplay="false"></u-count-down>
 </template>
 
-<script>
-	export default {
-		onLoad() {
-			setTimeout(() => {
-				this.$refs.uCountDown.start();
-			}, 2000)
-		}
-	}
+<script setup lang="ts">
+import { onMounted } from 'vue'
+
+const uCountDownRef = ref()
+
+onMounted(() => {
+  setTimeout(() => {
+    uCountDownRef.value.start()
+  }, 2000)
+})
 </script>
 ```
 
@@ -95,27 +95,24 @@
 
 ```html
 <template>
-	<u-count-down ref="uCountDown" :timestamp="timestamp" @change="change"></u-count-down>
+	<u-count-down ref="uCountDownRef" :timestamp="timestamp" @change="change"></u-count-down>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				timestamp: 86400
-			}
-		},
-		methods: {
-			// 事件触发，每秒一次
-			change(timestamp) {
-				console.log(timestamp);
-			},
-			// ref形式获取内部的值
-			getSeconds() {
-				console.log(this.$refs.uCountDown.seconds);
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const timestamp = ref(86400)
+const uCountDownRef = ref()
+
+// 事件触发，每秒一次
+const change = (timestamp: number) => {
+  console.log(timestamp)
+}
+
+// ref形式获取内部的值
+const getSeconds = () => {
+  console.log(uCountDownRef.value.seconds)
+}
 </script>
 ```
 

@@ -28,47 +28,51 @@
   </view>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        avatar: "https://ik.imagekit.io/anyup/uview-pro/common/logo.png",
-      };
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const avatar = ref("https://ik.imagekit.io/anyup/uview-pro/common/logo.png")
+
+// 监听从裁剪页发布的事件，获得裁剪结果
+const handleAvatarCropper = (path) => {
+  avatar.value = path
+  // 可以在此上传到服务端
+  uni.uploadFile({
+    url: "http://www.example.com/upload",
+    filePath: path,
+    name: "file",
+    complete: (res) => {
+      console.log(res)
     },
-    created() {
-      // 监听从裁剪页发布的事件，获得裁剪结果
-      uni.$on("uAvatarCropper", (path) => {
-        this.avatar = path;
-        // 可以在此上传到服务端
-        uni.uploadFile({
-          url: "http://www.example.com/upload",
-          filePath: path,
-          name: "file",
-          complete: (res) => {
-            console.log(res);
-          },
-        });
-      });
+  })
+}
+
+onMounted(() => {
+  // 监听裁剪事件
+  uni.$on("uAvatarCropper", handleAvatarCropper)
+})
+
+onUnmounted(() => {
+  // 移除事件监听
+  uni.$off("uAvatarCropper", handleAvatarCropper)
+})
+
+const chooseAvatar = () => {
+  // 此为uView的跳转方法，详见"文档-JS"部分，也可以用uni的uni.navigateTo
+  uni.$u.route({
+    // 关于此路径，请见下方"注意事项"
+    url: "/uview-pro/components/u-avatar-cropper/u-avatar-cropper",
+    // 内部已设置以下默认参数值，可不传这些参数
+    params: {
+      // 输出图片宽度，高等于宽，单位px
+      destWidth: 300,
+      // 裁剪框宽度，高等于宽，单位px
+      rectWidth: 200,
+      // 输出的图片类型，如果'png'类型发现裁剪的图片太大，改成"jpg"即可
+      fileType: "jpg",
     },
-    methods: {
-      chooseAvatar() {
-        // 此为uView的跳转方法，详见"文档-JS"部分，也可以用uni的uni.navigateTo
-        uni.$u.route({
-          // 关于此路径，请见下方"注意事项"
-          url: "/uview-pro/components/u-avatar-cropper/u-avatar-cropper",
-          // 内部已设置以下默认参数值，可不传这些参数
-          params: {
-            // 输出图片宽度，高等于宽，单位px
-            destWidth: 300,
-            // 裁剪框宽度，高等于宽，单位px
-            rectWidth: 200,
-            // 输出的图片类型，如果'png'类型发现裁剪的图片太大，改成"jpg"即可
-            fileType: "jpg",
-          },
-        });
-      },
-    },
-  };
+  })
+}
 </script>
 
 <style lang="scss" scoped>

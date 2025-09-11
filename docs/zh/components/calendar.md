@@ -30,15 +30,11 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: false,
-				mode: 'date'
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const show = ref(false)
+const mode = ref('date')
 </script>
 ```
 
@@ -72,20 +68,15 @@
 	<u-calendar v-model="show" :mode="mode" @change="change"></u-calendar>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				mode: 'date'
-			}
-		},
-		methods: {
-			change(e) {
-				console.log(e);
-			}
-		}
-	}
+<script setup>
+import { ref } from 'vue'
+
+const show = ref(true)
+const mode = ref('date')
+
+const change = (e) => {
+	console.log(e)
+}
 </script>
 ```
 
@@ -125,20 +116,15 @@
 	<u-calendar v-model="show" :mode="mode" @change="change"></u-calendar>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				mode: 'range'
-			}
-		},
-		methods: {
-			change(e) {
-				console.log(e);
-			}
-		}
-	}
+<script setup>
+import { ref } from 'vue'
+
+const show = ref(true)
+const mode = ref('range')
+
+const change = (e) => {
+	console.log(e)
+}
 </script>
 ```
 
@@ -158,20 +144,15 @@
 	</u-calendar>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				mode: 'range'
-			}
-		},
-		methods: {
-			change(e) {
-				console.log(e);
-			}
-		}
-	}
+<script setup>
+import { ref } from 'vue'
+
+const show = ref(true)
+const mode = ref('range')
+
+const change = (e) => {
+	console.log(e)
+}
 </script>
 
 <style lang="scss" scoped>

@@ -37,16 +37,12 @@
 	</u-card>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			title: '素胚勾勒出青花，笔锋浓转淡',
-			subTitle: '2020-05-15',
-			thumb: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg',
-		};
-	}
-};
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const title = ref('素胚勾勒出青花，笔锋浓转淡')
+const subTitle = ref('2020-05-15')
+const thumb = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg')
 </script>
 
 <style scoped lang="scss">

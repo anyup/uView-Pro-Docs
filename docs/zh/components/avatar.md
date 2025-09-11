@@ -26,15 +26,11 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				src: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg',
-				text: '无头像'
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const src = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg')
+const text = ref('无头像')
 </script>
 ```
 
@@ -47,14 +43,10 @@
 	<u-avatar :src="src" mode="square"></u-avatar>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				src: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg'
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const src = ref('http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg')
 </script>
 ```
 
