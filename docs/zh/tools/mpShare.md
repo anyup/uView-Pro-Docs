@@ -57,12 +57,14 @@ uni.$u.mpShare = {
 
 以上这些，uView已通过`mixin`集成，当某一个页面您需要自定义分享信息时，可以通过"uni.$u.mpShare"对进行修改，在页面的`onLoad`生命周期修改即可。
 
-```js
-export default {
-	onLoad() {
-		uni.$u.mpShare.title = '天苍苍野茫茫，风吹草低见牛羊';
-	}
-}
+```vue
+<script setup lang="ts">
+import { onLoad } from '@dcloudio/uni-app'
+
+onLoad(() => {
+  uni.$u.mpShare.title = '天苍苍野茫茫，风吹草低见牛羊';
+})
+</script>
 ```
 
 
@@ -70,19 +72,19 @@ export default {
 
 如果您基于自己的一些业务逻辑，需要更加自定义的实现逻辑，可以在页面中重写`onShareAppMessage`生命周期即可覆盖uView通过`mixin`监听的`onShareAppMessage`生命周期。
 
-```js
-export default {
-	// 这里如果写成onShareAppMessage: res => { ... }形式的箭头函数，在内部会无法获得this
-	onShareAppMessage(res) {
-		if (res.from === 'button') {// 来自页面内分享按钮
-			console.log(res.target)
-		}
-		return {
-			title: '自定义分享标题',
-			path: '/pages/test/test?id=123'
-		}
-    }
+```vue
+<script setup lang="ts">
+// 这里如果写成onShareAppMessage: res => { ... }形式的箭头函数，在内部会无法获得this
+export function onShareAppMessage(res: any) {
+  if (res.from === 'button') {// 来自页面内分享按钮
+    console.log(res.target)
+  }
+  return {
+    title: '自定义分享标题',
+    path: '/pages/test/test?id=123'
+  }
 }
+</script>
 ```
 
 ## 分享到朋友圈
@@ -91,18 +93,18 @@ export default {
 
 同理，你也可以在页面中重写`onShareTimeline`生命周期即可覆盖uView通过`mixin`监听的`onShareTimeline`生命周期。
 
-```js
-export default {
-	onShareTimeline(res) {
-		if (res.from === 'button') {// 来自页面内分享按钮
-			console.log(res.target)
-		}
-		return {
-			title: '自定义分享标题',
-			path: '/pages/test/test?id=123'
-		}
-    }
+```vue
+<script setup lang="ts">
+export function onShareTimeline(res: any) {
+  if (res.from === 'button') {// 来自页面内分享按钮
+    console.log(res.target)
+  }
+  return {
+    title: '自定义分享标题',
+    path: '/pages/test/test?id=123'
+  }
 }
+</script>
 ```
 
 <!-- ## 如何取消全局分享

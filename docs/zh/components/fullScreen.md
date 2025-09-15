@@ -59,12 +59,15 @@
 我们在父页面(当前页面)通过路由方法，打开一个新页面(上面配置的压窗屏页面)，由于它是一个普通的页面，故可以通过常规方法传递参数。
 
 ```js
-export default {
-	onLoad() {
-		// 也可以在onShow生命周期打开，此为uView封装的请求方法
-		uni.$u.route("/uview-pro/components/u-full-screen/u-full-screen?id=1");
-	}
-}
+<script setup lang="ts">
+import { onLoad } from '@dcloudio/uni-app'
+
+// 页面加载时触发
+onLoad(() => {
+  // 也可以在onShow生命周期打开，此为uView封装的请求方法
+  uni.$u.route("/uview-pro/components/u-full-screen/u-full-screen?id=1")
+})
+</script>
 ```
 
 
@@ -86,48 +89,50 @@ Tabbar栏，所以这里我们可以使用uView的[Popup 弹出层](/zh/componen
 	</u-modal>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				// 传递给uni-app"rich-text"组件的内容，可以使用"<br>"进行换行
-				content: `
-					1. 修复badge组件的size参数无效问题<br>
-					2. 新增Modal模态框组件<br>
-					3. 新增压窗屏组件，可以在APP上以弹窗的形式遮盖导航栏和底部tabbar<br>
-					4. 修复键盘组件在微信小程序上遮罩无效的问题
-				`,
-			}
-		},
-		onReady() {
-			this.show = true;
-		},
-		methods: {
-			cancel() {
-				this.closeModal();
-			},
-			confirm() {
-				this.closeModal();
-			},
-			closeModal() {
-				uni.navigateBack();
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(true)
+
+// 传递给uni-app"rich-text"组件的内容，可以使用"<br>"进行换行
+const content = ref<string>(`
+	1. 修复badge组件的size参数无效问题<br>
+	2. 新增Modal模态框组件<br>
+	3. 新增压窗屏组件，可以在APP上以弹窗的形式遮盖导航栏和底部tabbar<br>
+	4. 修复键盘组件在微信小程序上遮罩无效的问题
+`)
+
+// 页面准备完成时触发
+onMounted(() => {
+	show.value = true
+})
+
+// 定义事件处理函数
+const cancel = () => {
+	closeModal()
+}
+
+const confirm = () => {
+	closeModal()
+}
+
+const closeModal = () => {
+	uni.navigateBack()
+}
 </script>
 
 <style scoped lang="scss">
-	.u-full-content {
-		background-color: #00C777;
-	}
-	
-	.u-update-content {
-		font-size: 26rpx;
-		color: $u-content-color;
-		line-height: 1.7;
-		padding: 30rpx;
-	}
+.u-full-content {
+	background-color: #00C777;
+}
+
+.u-update-content {
+	font-size: 26rpx;
+	color: $u-content-color;
+	line-height: 1.7;
+	padding: 30rpx;
+}
 </style>
 ```
 

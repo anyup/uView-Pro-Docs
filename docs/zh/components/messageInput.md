@@ -73,17 +73,16 @@ uView有[键盘](/zh/components/keyboard.html)组件，如果您想结合键盘�
 	</view>
 </template>
 
-<script>
-	export default {
-		methods: {
-			change(e) {
-				console.log('内容改变，当前值为：' + e);
-			},
-			finish(e) {
-				console.log('输入结束，当前值为：' + e);
-			},
-		}
-	}
+<script setup lang="ts">
+// 定义 change 事件处理函数
+const change = (e: string) => {
+	console.log('内容改变，当前值为：' + e)
+}
+
+// 定义 finish 事件处理函数
+const finish = (e: string) => {
+	console.log('输入结束，当前值为：' + e)
+}
 </script>
 ```
 

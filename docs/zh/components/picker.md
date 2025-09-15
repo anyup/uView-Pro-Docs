@@ -36,14 +36,11 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: false
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
 </script>
 ```
 
@@ -79,22 +76,21 @@
 	<u-picker mode="time" v-model="show" :params="params"></u-picker>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				params: {
-					year: true,
-					month: true,
-					day: true,
-					hour: false,
-					minute: false,
-					second: false
-				},
-				show: false
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+
+// 定义响应式参数对象
+const params = reactive({
+	year: true,
+	month: true,
+	day: true,
+	hour: false,
+	minute: false,
+	second: false
+})
 </script>
 ```
 
@@ -192,38 +188,40 @@ let params = {
 ```html
 <template>
 	<view class="">
-		<u-picker mode="selector" v-model="show"  :default-selector="[0]" :range="selector"></u-picker>
+		<u-picker mode="selector" v-model="show" :default-selector="[0]" :range="selector"></u-picker>
 		
-		<u-picker mode="selector" v-model="show"  :default-selector="[0]" :range="selectorObj" range-key="cateName"></u-picker>
+		<u-picker mode="selector" v-model="show" :default-selector="[0]" :range="selectorObj" range-key="cateName"></u-picker>
 		
-		<u-picker mode="multiSelector" v-model="show"  :default-selector='[0, 1]' :range="multiSelector"></u-picker>
+		<u-picker mode="multiSelector" v-model="show" :default-selector="[0, 1]" :range="multiSelector"></u-picker>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				selector: [1, 2, 3],
-				multiSelector: [
-					[1, 2, 3], 
-					[4, 5, 6]
-				],
-				// 这种情况需要指定range-key为cateName，否则组件不知道该显示对象的哪个属性
-				selectorObj: [
-					{
-						cateName: '1',
-						id: 1
-					},
-					{
-						cateName: '2',
-						id: 2
-					}
-				]
-			}
-		}
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(true)
+
+// 定义选择器数据
+const selector = ref<number[]>([1, 2, 3])
+
+// 定义多列选择器数据
+const multiSelector = ref<number[][]>([
+	[1, 2, 3], 
+	[4, 5, 6]
+])
+
+// 定义对象选择器数据
+const selectorObj = reactive([
+	{
+		cateName: '1',
+		id: 1
+	},
+	{
+		cateName: '2',
+		id: 2
 	}
+])
 </script>
 ```
 

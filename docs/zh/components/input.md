@@ -25,16 +25,13 @@
 	<u-input v-model="value" :type="type" :border="border" />
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value: '',
-				type: 'text',
-				border: true
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<string>('')
+const type = ref<string>('text')
+const border = ref<boolean>(true)
 </script>
 ```
 
@@ -59,18 +56,15 @@
 	<u-input v-model="value" :type="type" :border="border" :height="height" :auto-height="autoHeight" />
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value: '',
-				type: 'textarea',
-				border: true,
-				height: 100,
-				autoHeight: true,
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<string>('')
+const type = ref<string>('textarea')
+const border = ref<boolean>(true)
+const height = ref<number>(100)
+const autoHeight = ref<boolean>(true)
 </script>
 ```
 
@@ -80,19 +74,16 @@
 
 ```html
 <template>
-	<u-input v-model="value" :type="type" :border="border"  />
+	<u-input v-model="value" :type="type" :border="border" />
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value: '',
-				type: 'text',
-				border: true,
-			}
-		},
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<string>('')
+const type = ref<string>('text')
+const border = ref<boolean>(true)
 </script>
 ```
 
@@ -108,17 +99,14 @@
 	<u-input v-model="value" :type="type" :border="border" :password-icon="passwordIcon" />
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value: '',
-				type: 'password',
-				passwordIcon: true,
-				border: true,
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<string>('')
+const type = ref<string>('password')
+const passwordIcon = ref<boolean>(true)
+const border = ref<boolean>(true)
 </script>
 ```
 
@@ -141,34 +129,31 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value: '',
-				type: 'select',
-				show: false,
-				border: true,
-				actionSheetList: [
-					{
-						text: '男'
-					},
-					{
-						text: '女'
-					},
-					{
-						text: '保密'
-					}
-				],
-			}
-		},
-		methods: {
-			// 点击actionSheet回调
-			actionSheetCallback(index) {
-				this.value = this.actionSheetList[index].text;
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<string>('')
+const type = ref<string>('select')
+const show = ref<boolean>(false)
+const border = ref<boolean>(true)
+
+const actionSheetList = ref<Array<{ text: string }>>([
+	{
+		text: '男'
+	},
+	{
+		text: '女'
+	},
+	{
+		text: '保密'
 	}
+])
+
+// 定义事件处理函数
+const actionSheetCallback = (index: number) => {
+	value.value = actionSheetList.value[index].text
+}
 </script>
 ```
 

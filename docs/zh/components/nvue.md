@@ -27,22 +27,21 @@
 ```html
 <template>
     <view @tap="parentClick">
-        <text @tap="childClick">
+        <text @tap="childClick">点击我</text>
     </view>
 </template>
 
-<script>
-    export default {
-        methods: {
-            childClick(e) {
-                console.log('内部被点击')
-                e.stopPropagation()
-            },
-            parentClick() {
-                console.log('父元素将不会捕获冒泡事件')
-            }
-        }
-    }
+<script setup lang="ts">
+// 定义子元素点击事件处理函数
+const childClick = (e: Event) => {
+    console.log('内部被点击')
+    e.stopPropagation()
+}
+
+// 定义父元素点击事件处理函数
+const parentClick = () => {
+    console.log('父元素将不会捕获冒泡事件')
+}
 </script>
 ```
 

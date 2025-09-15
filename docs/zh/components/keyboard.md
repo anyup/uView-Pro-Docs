@@ -22,19 +22,19 @@
 ```html
 <template>
 	<view>
-		<u-keyboard ref="uKeyboard" mode="car" v-model="show"></u-keyboard>
+		<u-keyboard ref="uKeyboardRef" mode="car" v-model="show"></u-keyboard>
 		<u-button @click="show = true">打开</u-button>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: false
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+
+// 定义组件引用
+const uKeyboardRef = ref<any>(null)
 </script>
 ```
 
@@ -75,17 +75,20 @@
 	<u-keyboard mode="number" v-model="show"></u-keyboard>
 </template>
 
-<script>
-	export default {
-		onReady() {
-			// 如果想一进入页面就打开键盘，请在此生命周期调用
-			this.show = true;
-		},
-		onLoad() {
-			// 不应在此调用，因为此时u-keyboard组件尚未创建完成
-			// this.show = true;
-		}
-	}
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+
+// 页面准备完成时触发（相当于 onReady 生命周期）
+onMounted(() => {
+	// 如果想一进入页面就打开键盘，请在此生命周期调用
+	show.value = true
+})
+
+// 注意：onLoad 生命周期在 Vue 3 中通常使用 onBeforeMount 或 onMounted 替代
+// 如果需要在更早的阶段设置，可以使用 onBeforeMount
 </script>
 ```
 
@@ -101,29 +104,26 @@
 	<u-keyboard mode="number" @change="valChange" @backspace="backspace" v-model="show"></u-keyboard>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value: '',
-				show: false
-			}
-		},
-		methods: {
-			// 按键被点击(点击退格键不会触发此事件)
-			valChange(val) {
-				// 将每次按键的值拼接到value变量中，注意+=写法
-				this.value += val;
-				console.log(this.value);
-			},
-			// 退格键被点击
-			backspace() {
-				// 删除value的最后一个字符
-				if(this.value.length) this.value = this.value.substr(0, this.value.length - 1);
-				console.log(this.value);
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+const value = ref<string>('')
+
+// 按键被点击(点击退格键不会触发此事件)
+const valChange = (val: string) => {
+	// 将每次按键的值拼接到value变量中，注意+=写法
+	value.value += val
+	console.log(value.value)
+}
+
+// 退格键被点击
+const backspace = () => {
+	// 删除value的最后一个字符
+	if (value.value.length) value.value = value.value.substr(0, value.value.length - 1)
+	console.log(value.value)
+}
 </script>
 ```
 

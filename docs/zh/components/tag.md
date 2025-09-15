@@ -52,19 +52,14 @@
 	<u-tag text="要清楚" closeable :show="show" @close="tagClick" />
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true
-			}
-		},
-		methods: {
-			tagClick(index) {
-				this.show = false;
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const show = ref(true)
+
+function tagClick(index: number) {
+	show.value = false
+}
 </script>
 ```
 

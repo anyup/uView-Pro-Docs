@@ -121,24 +121,21 @@ uView 提供了一个`background`参数(需对象形式)，可以自定义导航
   </view>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        background: {
-          backgroundColor: "#001f3f",
+<script setup lang="ts">
+import { reactive } from 'vue'
 
-          // 导航栏背景图
-          // background: 'url(https://cdn.uviewui.com/uview/xxx.jpg) no-repeat',
-          // 还可以设置背景图size属性
-          // backgroundSize: 'cover',
+// 定义响应式背景数据
+const background = reactive({
+  backgroundColor: "#001f3f",
 
-          // 渐变色
-          // backgroundImage: 'linear-gradient(45deg, rgb(28, 187, 180), rgb(141, 198, 63))'
-        },
-      };
-    },
-  };
+  // 导航栏背景图
+  // background: 'url(https://cdn.uviewui.com/uview/xxx.jpg) no-repeat',
+  // 还可以设置背景图size属性
+  // backgroundSize: 'cover',
+
+  // 渐变色
+  // backgroundImage: 'linear-gradient(45deg, rgb(28, 187, 180), rgb(141, 198, 63))'
+})
 </script>
 ```
 

@@ -28,14 +28,11 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: false
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
 </script>
 ```
 
@@ -113,7 +110,7 @@ uView提供了`length`来控制此种情况，此值可以是`数值`(单位rpx)
 ```html
 <template>
 	<view class="">
-		<u-button @click="show = true;">打开弹窗</u-button>
+		<u-button @click="show = true">打开弹窗</u-button>
 		<u-popup mode="bottom" v-model="show">
 			<view class="content">
 				<scroll-view scroll-y="true" style="height: 300rpx;">
@@ -124,28 +121,25 @@ uView提供了`length`来控制此种情况，此值可以是`数值`(单位rpx)
 					</view>
 				</scroll-view>
 				<view class="confrim-btn">
-					<u-button @click="show = false;">确定</u-button>
+					<u-button @click="show = false">确定</u-button>
 				</view>
 			</view>
 		</u-popup>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: false
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
 </script>
 
 <style lang="scss" scoped>
-	.content {
-		padding: 24rpx;
-		text-align: center;
-	}
+.content {
+	padding: 24rpx;
+	text-align: center;
+}
 </style>
 ```
 

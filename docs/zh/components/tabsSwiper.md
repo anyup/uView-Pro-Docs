@@ -41,23 +41,30 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 :::
 
 ```html
-<u-tabs-swiper ref="tabs" :list="list" :is-scroll="false"></u-tabs-swiper>
+<template>
+	<u-tabs-swiper ref="uTabsSwiperRef" :list="list" :is-scroll="false"></u-tabs-swiper>
+</template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [{
-					name: '待收货'
-				}, {
-					name: '待付款'
-				}, {
-					name: '待评价',
-					count: 5
-				}],
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义Tab项接口
+interface TabItem {
+	name: string
+	count?: number
+}
+
+// 定义响应式数据
+const list = ref<TabItem[]>([
+	{
+		name: '待收货'
+	}, {
+		name: '待付款'
+	}, {
+		name: '待评价',
+		count: 5
 	}
+])
 </script>
 ```
 
@@ -70,23 +77,29 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 同理，在1.7.4版本中新增的`count`属性，您可以设置其值为`cate_count`，组件内部会读取数组中的`cate_count`属性，而不是默认的`count`属性。
 
 ```html
-<u-tabs-swiper ref="tabs" name="cate_name" count="cate_count" :list="list" :is-scroll="false"></u-tabs-swiper>
+<template>
+  <u-tabs-swiper
+    ref="uTabsSwiperRef"
+    name="cate_name"
+    count="cate_count"
+    :list="list"
+    :is-scroll="false"
+  />
+</template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [{
-					cate_name: '待收货'
-				}, {
-					cate_name: '待付款'
-				}, {
-					cate_name: '待评价',
-                    cate_count: 5
-				}],
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface CateTab {
+  cate_name: string
+  cate_count?: number
+}
+
+const list = ref<CateTab[]>([
+  { cate_name: '待收货' },
+  { cate_name: '待付款' },
+  { cate_name: '待评价', cate_count: 5 }
+])
 </script>
 ```
 
@@ -98,7 +111,7 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 3. `bar-height`控制滑块高度。
 
 ```html
-<u-tabs-swiper ref="tabs" :list="list" bar-height="6" bar-width="40" active-color="#2979ff"></u-tabs-swiper>
+<u-tabs-swiper ref="uTabsSwiperRef" :list="list" bar-height="6" bar-width="40" active-color="#2979ff"></u-tabs-swiper>
 ```
 
 ## 控制tabsSwiper组件的活动tab样式
@@ -108,7 +121,7 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 3. `current`为初始化tabsSwiper的激活tab索引，默认为0。`gutter`为单个tab标签的左右内边距之和，即左右各占`gutter`的一半。
 
 ```html
-<u-tabs-swiper ref="tabs" :list="list" active-color="#2979ff" inactive-color="#606266" font-size="30" current="0"></u-tabs-swiper>
+<u-tabs-swiper ref="uTabsSwiperRef" :list="list" active-color="#2979ff" inactive-color="#606266" font-size="30" current="0"></u-tabs-swiper>
 ```
 
 ## 使用案例
@@ -126,61 +139,79 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 
 ```html
 <template>
-	<view>
-		<view>
-			<u-tabs-swiper ref="uTabs" :list="list" :current="current" @change="tabsChange" :is-scroll="false"
-			 swiperWidth="750"></u-tabs-swiper>
-		</view>
-		<swiper :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
-			<swiper-item class="swiper-item" v-for="(item, index) in tabs" :key="index">
-				<scroll-view scroll-y style="height: 800rpx;width: 100%;" @scrolltolower="onreachBottom">
-					...
-				</scroll-view>
-			</swiper-item>
-		</swiper>
-	</view>
+  <view>
+    <view>
+      <u-tabs-swiper
+        ref="uTabsRef"
+        :list="list"
+        :current="current"
+        @change="tabsChange"
+        :is-scroll="false"
+        swiperWidth="750"
+      ></u-tabs-swiper>
+    </view>
+    <swiper
+      :current="swiperCurrent"
+      @transition="transition"
+      @animationfinish="animationfinish"
+    >
+      <swiper-item
+        class="swiper-item"
+        v-for="(item, index) in list"
+        :key="index"
+      >
+        <scroll-view
+          scroll-y
+          style="height: 800rpx;width: 100%;"
+          @scrolltolower="onreachBottom"
+        >
+          ...
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [{
-					name: '十年'
-				}, {
-					name: '青春'
-				}, {
-					name: '之约'
-				}],
-				// 因为内部的滑动机制限制，请将tabs组件和swiper组件的current用不同变量赋值
-				current: 0, // tabs组件的current值，表示当前活动的tab选项
-				swiperCurrent: 0, // swiper组件的current值，表示当前那个swiper-item是活动的
-			};
-		},
-		methods: {
-			// tabs通知swiper切换
-			tabsChange(index) {
-				this.swiperCurrent = index;
-			},
-			// swiper-item左右移动，通知tabs的滑块跟随移动
-			transition(e) {
-				let dx = e.detail.dx;
-				this.$refs.uTabs.setDx(dx);
-			},
-			// 由于swiper的内部机制问题，快速切换swiper不会触发dx的连续变化，需要在结束时重置状态
-			// swiper滑动结束，分别设置tabs和swiper的状态
-			animationfinish(e) {
-				let current = e.detail.current;
-				this.$refs.uTabs.setFinishCurrent(current);
-				this.swiperCurrent = current;
-				this.current = current;
-			},
-			// scroll-view到底部加载更多
-			onreachBottom() {
-				
-			}
-		}
-	};
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface TabItem {
+  name: string
+}
+
+const list = ref<TabItem[]>([
+  { name: '十年' },
+  { name: '青春' },
+  { name: '之约' }
+])
+
+// tabs组件的current值，表示当前活动的tab选项
+const current = ref(0)
+// swiper组件的current值，表示当前那个swiper-item是活动的
+const swiperCurrent = ref(0)
+const uTabsRef = ref()
+
+function tabsChange(index: number) {
+  swiperCurrent.value = index
+}
+
+function transition(e: any) {
+  const dx = e.detail.dx
+  uTabsRef.value?.setDx(dx)
+}
+
+// 由于swiper的内部机制问题，快速切换swiper不会触发dx的连续变化，需要在结束时重置状态
+// swiper滑动结束，分别设置tabs和swiper的状态
+function animationfinish(e: any) {
+  const curr = e.detail.current
+  uTabsRef.value?.setFinishCurrent(curr)
+  swiperCurrent.value = curr
+  current.value = curr
+}
+
+function onreachBottom() {
+  // scroll-view到底部加载更多
+}
 </script>
 ```
 

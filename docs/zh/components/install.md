@@ -93,34 +93,31 @@ pnpm run dev:h5
 <br>
 <br>
 
-<script>
-import axios from "axios";
-export default {
-	data() {
-		return {
-			
-		}
-	},
-	methods: {
-		downloadPost(type) {
-			let url = this.$themeConfig.baseUrl + '/index/index/download';
-			axios.post(url, {
-			    type: type,
-			})
-			.then(function (response) {
-			    // console.log(response);
-			})
-			.catch(function (error) {
-			   // console.log(error);
-			});
-		}
-	}
+<script setup lang="ts">
+import axios from "axios"
+
+// 定义下载统计方法
+const downloadPost = (type: number) => {
+  // 注意：在实际项目中，需要通过适当的方式获取 baseUrl
+  // 这里假设可以通过 import.meta.env 或其他方式获取
+  const baseUrl = import.meta.env.VITE_BASE_URL || ''
+  const url = baseUrl + '/index/index/download'
+  
+  axios.post(url, {
+    type: type,
+  })
+  .then(function (response) {
+    // console.log(response);
+  })
+  .catch(function (error) {
+    // console.log(error);
+  })
 }
 </script>
 
 <style scoped>
 .download-link {
-	font-size: 14px;
-	color: #5e6d82;
+  font-size: 14px;
+  color: #5e6d82;
 }
 </style>

@@ -30,38 +30,38 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				status: 'loadmore',
-				list: 15,
-				page: 0
-			}
-		},
-		onReachBottom() {
-			if(this.page >= 3) return ;
-			this.status = 'loading';
-			this.page = ++ this.page;
-			setTimeout(() => {
-				this.list += 10;
-				if(this.page >= 3) this.status = 'nomore';
-				else this.status = 'loading';
-			}, 2000)
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+import { onReachBottom } from '@dcloudio/uni-app'
+
+// 定义响应式数据
+const status = ref<string>('loadmore')
+const list = ref<number>(15)
+const page = ref<number>(0)
+
+// 页面上拉触底事件处理
+onReachBottom(() => {
+	if (page.value >= 3) return
+	status.value = 'loading'
+	page.value = ++page.value
+	setTimeout(() => {
+		list.value += 10
+		if (page.value >= 3) status.value = 'nomore'
+		else status.value = 'loading'
+	}, 2000)
+})
 </script>
 
 <style lang="scss" scoped>
-	.wrap {
-		padding: 24rpx;
-	}
-	
-	.item {
-		padding: 24rpx 0;
-		color: $u-content-color;
-		font-size: 28rpx;
-	}
+.wrap {
+	padding: 24rpx;
+}
+
+.item {
+	padding: 24rpx 0;
+	color: $u-content-color;
+	font-size: 28rpx;
+}
 </style>
 ```
 
@@ -76,20 +76,19 @@
 	<u-loadmore :status="status" :icon-type="iconType" :load-text="loadText" />
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				status: 'loadmore',
-				iconType: 'flower',
-				loadText: {
-					loadmore: '轻轻上拉',
-					loading: '努力加载中',
-					nomore: '实在没有了'
-				}
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+// 定义响应式数据
+const status = ref<string>('loadmore')
+const iconType = ref<string>('flower')
+
+// 使用 reactive 定义 loadText 对象
+const loadText = reactive({
+	loadmore: '轻轻上拉',
+	loading: '努力加载中',
+	nomore: '实在没有了'
+})
 </script>
 ```
 

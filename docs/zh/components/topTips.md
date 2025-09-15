@@ -19,19 +19,25 @@
 
 ```html
 <template>
-	<u-top-tips ref="uTips"></u-top-tips>
+	<u-top-tips ref="uTipsRef"></u-top-tips>
 </template>
 
-<script>
-	export default {
-		onReady() {
-			this.$refs.uTips.show({
-				title: '铁马冰河入梦来',
-				type: 'success',
-				duration: '2300'
-			})
-		}
+<script setup lang="ts">
+import { ref, onReady } from 'vue'
+
+// 定义u-top-tips组件的引用
+const uTipsRef = ref()
+
+// 在onReady生命周期中调用
+onReady(() => {
+	if (uTipsRef.value) {
+		uTipsRef.value.show({
+			title: '铁马冰河入梦来',
+			type: 'success',
+			duration: '2300'
+		})
 	}
+})
 </script>
 ```
 
@@ -55,35 +61,36 @@ uView 有推出[Navbar 自定义导航栏](/zh/components/navbar.html)组件，�
 <template>
 	<view class="wrap">
 		<u-navbar title="文章列表"></u-navbar>
-		<u-top-tips ref="uTips" :navbar-height="statusBarHeight + navbarHeight"></u-top-tips>
+		<u-top-tips ref="uTipsRef" :navbar-height="statusBarHeight + navbarHeight"></u-top-tips>
 		<u-button @click="showTips">弹出Tips</u-button>
 	</view>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			// 状态栏高度，H5中，此值为0，因为H5不可操作状态栏
-			statusBarHeight: uni.getSystemInfoSync().statusBarHeight,
-			// 导航栏内容区域高度，不包括状态栏高度在内
-			navbarHeight: 44
-		};
-	},
-	methods: {
-		showTips() {
-			this.$refs.uTips.show({
-				title: '雨打梨花深闭门，忘了青春，误了青春'
-			});
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义u-top-tips组件的引用
+const uTipsRef = ref()
+
+// 状态栏高度，H5中，此值为0，因为H5不可操作状态栏
+const statusBarHeight = uni.getSystemInfoSync().statusBarHeight
+// 导航栏内容区域高度，不包括状态栏高度在内
+const navbarHeight = ref<number>(44)
+
+// 定义showTips方法
+const showTips = () => {
+	if (uTipsRef.value) {
+		uTipsRef.value.show({
+			title: '雨打梨花深闭门，忘了青春，误了青春'
+		})
 	}
-};
+}
 </script>
 
 <style lang="scss" scoped>
-	.wrap {
-		padding: 40rpx;
-	}
+.wrap {
+	padding: 40rpx;
+}
 </style>
 ```
 

@@ -38,24 +38,27 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: false,
-				list: [
-					{
-						value: '1',
-						label: '江'
-					},
-					{
-						value: '2',
-						label: '湖'
-					}
-				],
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义列表项接口
+interface ListItem {
+	value: string
+	label: string
+}
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+const list = ref<ListItem[]>([
+	{
+		value: '1',
+		label: '江'
+	},
+	{
+		value: '2',
+		label: '湖'
 	}
+])
 </script>
 ```
 
@@ -69,30 +72,33 @@
 	<u-select v-model="show" mode="single-column" :list="list" @confirm="confirm"></u-select>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				list: [
-					{
-						value: '1',
-						label: '江'
-					},
-					{
-						value: '2',
-						label: '湖'
-					}
-				],
-			}
-		},
-		methods: {
-			// 注意返回值为一个数组，单列时取数组的第一个元素即可(只有一个元素)
-			confirm(e) {
-				console.log(e);
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义列表项接口
+interface ListItem {
+	value: string
+	label: string
+}
+
+// 定义响应式数据
+const show = ref<boolean>(true)
+const list = ref<ListItem[]>([
+	{
+		value: '1',
+		label: '江'
+	},
+	{
+		value: '2',
+		label: '湖'
 	}
+])
+
+// 定义确认回调函数
+const confirm = (e: any[]) => {
+	// 注意返回值为一个数组，单列时取数组的第一个元素即可(只有一个元素)
+	console.log(e)
+}
 </script>
 ```
 
@@ -107,43 +113,48 @@
 	<u-select v-model="show" mode="mutil-column" :list="list" @confirm="confirm"></u-select>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				list: [
-					[
-						{
-							value: '1',
-							label: '江'
-						},
-						{
-							value: '2',
-							label: '湖'
-						}
-					],
-					[
-						{
-							value: '3',
-							label: '夜'
-						},
-						{
-							value: '4',
-							label: '雨'
-						}
-					],
-					
-				],
-			}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义列表项接口
+interface ListItem {
+	value: string
+	label: string
+}
+
+// 定义二维数组类型
+type MultiColumnList = ListItem[][]
+
+// 定义响应式数据
+const show = ref<boolean>(true)
+const list = ref<MultiColumnList>([
+	[
+		{
+			value: '1',
+			label: '江'
 		},
-		methods: {
-			// 回调参数为包含多个元素的数组，每个元素分别反应每一列的选择情况
-			confirm(e) {
-				console.log(e);
-			}
+		{
+			value: '2',
+			label: '湖'
 		}
-	}
+	],
+	[
+		{
+			value: '3',
+			label: '夜'
+		},
+		{
+			value: '4',
+			label: '雨'
+		}
+	]
+])
+
+// 定义确认回调函数
+const confirm = (e: any[]) => {
+	// 回调参数为包含多个元素的数组，每个元素分别反应每一列的选择情况
+	console.log(e)
+}
 </script>
 ```
 
@@ -158,71 +169,75 @@
 	<u-select v-model="show" mode="mutil-column-auto" :list="list" @confirm="confirm"></u-select>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true,
-				list: [
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义联动列表项接口
+interface LinkedListItem {
+	value: number
+	label: string
+	children?: LinkedListItem[]
+}
+
+// 定义响应式数据
+const show = ref<boolean>(true)
+const list = ref<LinkedListItem[]>([
+	{
+		value: 1,
+		label: '中国',
+		children: [
+			{
+				value: 2,
+				label: '广东',
+				children: [
 					{
-						value: 1,
-						label: '中国',
-						children: [
-							{
-								value: 2,
-								label: '广东',
-								children: [
-									{
-										value: 3,
-										label: '深圳'
-									},
-									{
-										value: 4,
-										label: '广州'
-									}
-								]
-							},
-							{
-								value: 5,
-								label: '广西',
-								children: [
-									{
-										value: 6,
-										label: '南宁'
-									},
-									{
-										value: 7,
-										label: '桂林'
-									}
-								]
-							}
-						]
+						value: 3,
+						label: '深圳'
 					},
 					{
-						value: 8,
-						label: '美国',
-						children: [
-							{
-								value: 9,
-								label: '纽约',
-								children: [
-									{
-										value: 10,
-										label: '皇后街区'
-									}
-								]
-							}
-						]
+						value: 4,
+						label: '广州'
+					}
+				]
+			},
+			{
+				value: 5,
+				label: '广西',
+				children: [
+					{
+						value: 6,
+						label: '南宁'
+					},
+					{
+						value: 7,
+						label: '桂林'
 					}
 				]
 			}
-		},
-		methods: {
-			confirm(e) {
-				console.log(e);
+		]
+	},
+	{
+		value: 8,
+		label: '美国',
+		children: [
+			{
+				value: 9,
+				label: '纽约',
+				children: [
+					{
+						value: 10,
+						label: '皇后街区'
+					}
+				]
 			}
-		}
+		]
 	}
+])
+
+// 定义确认回调函数
+const confirm = (e: any[]) => {
+	console.log(e)
+}
 </script>
 ```
 

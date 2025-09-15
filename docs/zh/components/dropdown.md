@@ -29,37 +29,39 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value1: 1,
-				value2: 2,
-				options1: [{
-						label: '默认排序',
-						value: 1,
-					},
-					{
-						label: '距离优先',
-						value: 2,
-					},
-					{
-						label: '价格优先',
-						value: 3,
-					}
-				],
-				options2: [{
-						label: '去冰',
-						value: 1,
-					},
-					{
-						label: '加冰',
-						value: 2,
-					},
-				],
-			}
-		},
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value1 = ref<number>(1)
+const value2 = ref<number>(2)
+
+// 定义选项数据
+const options1 = ref<Array<{ label: string; value: number }>>([
+  {
+    label: '默认排序',
+    value: 1,
+  },
+  {
+    label: '距离优先',
+    value: 2,
+  },
+  {
+    label: '价格优先',
+    value: 3,
+  }
+])
+
+const options2 = ref<Array<{ label: string; value: number }>>([
+  {
+    label: '去冰',
+    value: 1,
+  },
+  {
+    label: '加冰',
+    value: 2,
+  },
+])
 </script>
 ```
 
@@ -96,7 +98,7 @@ let options = [
 ```html
 <template>
 	<view class="">
-		<u-dropdown ref="uDropdown">
+		<u-dropdown ref="uDropdownRef">
 			<u-dropdown-item title="属性">
 				<view class="slot-content">
 					<view class="u-text-center u-content-color u-m-t-20 u-m-b-20">其他自定义内容</view>
@@ -107,14 +109,14 @@ let options = [
 	</view>
 </template>
 
-<script>
-	export default {
-		methods: {
-			closeDropdown() {
-				this.$refs.uDropdown.close();
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+// 假设 u-dropdown 组件实例类型，实际使用时需要根据具体组件定义
+const uDropdownRef = ref<any>(null)
+
+const closeDropdown = () => {
+	uDropdownRef.value.close()
+}
 </script>
 ```
 
@@ -125,7 +127,7 @@ let options = [
 ```html
 <template>
 	<view class="">
-		<u-dropdown ref="uDropdown">
+		<u-dropdown ref="uDropdownRef">
 			<u-dropdown-item title="属性">
 				<view class="slot-content" style="background-color: #FFFFFF;">
 					<scroll-view scroll-y="true" style="height: 200rpx;">
@@ -144,14 +146,14 @@ let options = [
 	</view>
 </template>
 
-<script>
-	export default {
-		methods: {
-			closeDropdown() {
-				this.$refs.uDropdown.close();
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+// 假设 u-dropdown 组件实例类型，实际使用时需要根据具体组件定义
+const uDropdownRef = ref<any>(null)
+
+const closeDropdown = () => {
+	uDropdownRef.value.close()
+}
 </script>
 ```
 
@@ -165,56 +167,63 @@ let options = [
 ```html
 <template>
 	<view class="">
-		<u-dropdown ref="uDropdown" @open="open" @close="close">
+		<u-dropdown ref="uDropdownRef" @open="open" @close="close">
 			<u-dropdown-item v-model="value1" title="距离" :options="options1" @change="change"></u-dropdown-item>
 			<u-dropdown-item v-model="value2" title="温度" :options="options2"></u-dropdown-item>
 		</u-dropdown>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value1: 1,
-				value2: 2,
-				options1: [{
-						label: '默认排序',
-						value: 1,
-					},
-					{
-						label: '距离优先',
-						value: 2,
-					}
-				],
-				options2: [{
-						label: '去冰',
-						value: 1,
-					},
-					{
-						label: '加冰',
-						value: 2,
-					},
-				],
-			}
-		},
-		methods: {
-			open(index) {
-				// 展开某个下来菜单时，先关闭原来的其他菜单的高亮
-				// 同时内部会自动给当前展开项进行高亮
-				this.$refs.uDropdown.highlight();
-			},
-			close(index) {
-				// 关闭的时候，给当前项加上高亮
-				// 当然，您也可以通过监听dropdown-item的@change事件进行处理
-				this.$refs.uDropdown.highlight(index);
-			},
-			change() {
-				// 更多的细节，如有需要请自行根据业务逻辑进行处理
-				// this.$refs.uDropdown.highlight(xxx);
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value1 = ref<number>(1)
+const value2 = ref<number>(2)
+
+// 定义选项数据
+const options1 = ref<Array<{ label: string; value: number }>>([
+	{
+		label: '默认排序',
+		value: 1,
+	},
+	{
+		label: '距离优先',
+		value: 2,
 	}
+])
+
+const options2 = ref<Array<{ label: string; value: number }>>([
+	{
+		label: '去冰',
+		value: 1,
+	},
+	{
+		label: '加冰',
+		value: 2,
+	},
+])
+
+// 定义组件引用
+const uDropdownRef = ref<any>(null)
+
+// 定义事件处理函数
+const open = (index: number) => {
+	// 展开某个下来菜单时，先关闭原来的其他菜单的高亮
+	// 同时内部会自动给当前展开项进行高亮
+	uDropdownRef.value?.highlight()
+}
+
+const close = (index: number) => {
+	// 关闭的时候，给当前项加上高亮
+	// 当然，您也可以通过监听dropdown-item的@change事件进行处理
+	uDropdownRef.value?.highlight(index)
+}
+
+const change = (value: any) => {
+	// 更多的细节，如有需要请自行根据业务逻辑进行处理
+	// uDropdownRef.value?.highlight(xxx)
+}
 </script>
 ```
 

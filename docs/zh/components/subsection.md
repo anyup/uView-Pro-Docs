@@ -21,25 +21,29 @@
 	<u-subsection :list="list" :current="1"></u-subsection>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [
-					{
-						name: '待发货'
-					}, 
-					{
-						name: '待付款'
-					}, 
-					{
-						name: '待评价'
-					}
-				],
-				current: 1
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义分段器选项接口
+interface SubsectionItem {
+	name: string
+}
+
+// 定义响应式数据
+const list = ref<SubsectionItem[]>([
+	{
+		name: '待发货'
+	}, 
+	{
+		name: '待付款'
+	}, 
+	{
+		name: '待评价'
 	}
+])
+
+// 定义当前选中索引
+const current = ref<number>(1)
 </script>
 ```
 
@@ -84,30 +88,33 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [
-					{
-						name: '待发货'
-					}, 
-					{
-						name: '待付款'
-					}, 
-					{
-						name: '待评价'
-					}
-				],
-				curNow: 0
-			}
-		},
-		methods: {
-			sectionChange(index) {
-				this.curNow = index;
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义分段器选项接口
+interface SubsectionItem {
+	name: string
+}
+
+// 定义响应式数据
+const list = ref<SubsectionItem[]>([
+	{
+		name: '待发货'
+	}, 
+	{
+		name: '待付款'
+	}, 
+	{
+		name: '待评价'
 	}
+])
+
+const curNow = ref<number>(0)
+
+// 定义分段器变化回调函数
+const sectionChange = (index: number) => {
+	curNow.value = index
+}
 </script>
 ```
 

@@ -30,19 +30,17 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		
-	}
+<script setup lang="ts">
+// 无网络提示组件无需任何逻辑处理，因此 script setup 块为空
 </script>
 
 <style lang="scss" scoped>
-	.u-text {
-		padding-top: 300rpx;
-		font-size: 30rpx;
-		color: $u-type-primary;
-		text-align: center;
-	}
+.u-text {
+	padding-top: 300rpx;
+	font-size: 30rpx;
+	color: $u-type-primary;
+	text-align: center;
+}
 </style>
 ```
 

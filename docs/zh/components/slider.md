@@ -22,20 +22,17 @@
 	</view>
 </template>
 	
-<script>
-	export default {
-		data() {	
-			return {
-				value: 30
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<number>(30)
 </script>
 
 <style scoped lang="scss">
-	.wrap {
-		padding: 30rpx;
-	}
+.wrap {
+	padding: 30rpx;
+}
 </style>
 ```
 
@@ -81,29 +78,26 @@
 	</view>
 </template>
 	
-<script>
-	export default {
-		data() {	
-			return {
-				value: 30
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<number>(30)
 </script>
 
 <style scoped lang="scss">
-	.wrap {
-		padding: 30rpx;
-	}
-	
-	.badge-button {
-		padding: 4rpx 6rpx;
-		background-color: $u-type-error;
-		color: #fff;
-		border-radius: 10rpx;
-		font-size: 22rpx;
-		line-height: 1;
-	}
+.wrap {
+	padding: 30rpx;
+}
+
+.badge-button {
+	padding: 4rpx 6rpx;
+	background-color: $u-type-error;
+	color: #fff;
+	border-radius: 10rpx;
+	font-size: 22rpx;
+	line-height: 1;
+}
 </style>
 ```
 

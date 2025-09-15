@@ -21,14 +21,11 @@
 	<u-mask :show="show" @click="show = false"></u-mask>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(true)
 </script>
 ```
 
@@ -46,29 +43,26 @@
 	</u-mask>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				show: true
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(true)
 </script>
 
 <style scoped>
-	.warp {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-	}
+.warp {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
 
-	.rect {
-		width: 120px;
-		height: 120px;
-		background-color: #fff;
-	}
+.rect {
+	width: 120px;
+	height: 120px;
+	background-color: #fff;
+}
 </style>
 ```
 

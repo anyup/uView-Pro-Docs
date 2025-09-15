@@ -22,21 +22,18 @@
 	<u-switch v-model="checked"></u-switch>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				checked: false,
-			};
-		},
-		methods: {
-			// switch打开或者关闭时触发，值为true或者false
-			// 即使不监听此事件，this.checked此时也会相应的变成true或者false
-			change(status) {
-				// console.log(status);
-			},
-		}
-	};
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const checked = ref<boolean>(false)
+
+// 定义switch变化回调函数
+const change = (status: boolean) => {
+	// switch打开或者关闭时触发，值为true或者false
+	// 即使不监听此事件，checked此时也会相应的变成true或者false
+	// console.log(status);
+}
 </script>
 ```
 
@@ -106,48 +103,47 @@
 	<u-switch v-model="checked" :loading="loading"></u-switch>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				checked: true,
-				loading: false,
-				// 中间变量，避免在watch中多次回调，造成无限循环
-				controlStatus: false
-			};
-		},
-		watch: {
-			checked(val) {
-				// 等于false，意味着用户手动关闭了switch
-				if (val == false) {
-					if(this.controlStatus == true) {
-						this.controlStatus = false;
-						return ;
-					}
-					// 重新打开switch，并让它处于加载中的状态
-					this.checked = true;
-					this.loading = true;
-					// 模拟向后端发起请求
-					this.getRestultFromServer();
-				}
-			}
-		},
-		methods: {
-			// switch打开或者关闭时触发，值为true或者false
-			change(status) {
-				// console.log(status);
-			},
-			getRestultFromServer() {
-				// 通过定时器模拟向后端请求
-				setTimeout(() => {
-					this.controlStatus = true;
-					// 后端允许用户关闭switch，设置checked为false，结束loading状态
-					this.loading = false;
-					this.checked = false;
-				}, 1500);
-			}
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+
+// 定义响应式数据
+const checked = ref<boolean>(true)
+const loading = ref<boolean>(false)
+// 中间变量，避免在watch中多次回调，造成无限循环
+const controlStatus = ref<boolean>(false)
+
+// 定义switch变化回调函数
+const change = (status: boolean) => {
+	// switch打开或者关闭时触发，值为true或者false
+	// console.log(status);
+}
+
+// 监听checked变化
+watch(checked, (val) => {
+	// 等于false，意味着用户手动关闭了switch
+	if (val == false) {
+		if(controlStatus.value == true) {
+			controlStatus.value = false;
+			return ;
 		}
-	};
+		// 重新打开switch，并让它处于加载中的状态
+		checked.value = true;
+		loading.value = true;
+		// 模拟向后端发起请求
+		getRestultFromServer();
+	}
+})
+
+// 模拟向后端发起请求
+const getRestultFromServer = () => {
+	// 通过定时器模拟向后端请求
+	setTimeout(() => {
+		controlStatus.value = true;
+		// 后端允许用户关闭switch，设置checked为false，结束loading状态
+		loading.value = false;
+		checked.value = false;
+	}, 1500);
+}
 </script>
 ```
 

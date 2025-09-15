@@ -18,23 +18,19 @@
 
 ```html
 <template>
-	<u-upload :action="action" :file-list="fileList" ></u-upload>
+    <u-upload :action="action" :file-list="fileList" ></u-upload>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				// 演示地址，请勿直接使用
-				action: 'http://www.example.com/upload',
-				fileList: [
-					{
-						url: 'http://pics.sc.chinaz.com/files/pic/pic9/201912/hpic1886.jpg',
-					}
-				]
-			}
-		}
-	}
+<script setup lang="ts">
+// 演示地址，请勿直接使用
+import { ref } from 'vue'
+
+const action = ref('http://www.example.com/upload')
+const fileList = ref([
+    {
+        url: 'http://pics.sc.chinaz.com/files/pic/pic9/201912/hpic1886.jpg',
+    }
+])
 </script>
 ```
 
@@ -43,27 +39,24 @@
 组件默认为自动上传，可以设置`auto-upload`为`false`，然后通过`ref`调用组件的`upload`方法，手动上传图片
 
 ```html
+<!-- 手动上传 -->
 <template>
-	<view>
-		<u-upload ref="uUpload" :action="action" :auto-upload="false" ></u-upload>
-		<u-button @click="submit">提交</u-button>
-	</view>
+    <view>
+        <u-upload ref="uUploadRef" :action="action" :auto-upload="false" ></u-upload>
+        <u-button @click="submit">提交</u-button>
+    </view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				// 非真实地址
-				action: 'http://www.example.com/upload',
-			}
-		},
-		methods: {
-			submit() {
-				this.$refs.uUpload.upload();
-			},
-		}
-	}
+<script setup lang="ts">
+// 非真实地址
+import { ref } from 'vue'
+
+const action = ref('http://www.example.com/upload')
+const uUploadRef = ref()
+
+function submit() {
+    uUploadRef.value?.upload()
+}
 </script>
 ```
 
@@ -78,34 +71,30 @@
 为了获得上传的文件列表，可以在提交表单时，通过`ref`获取组件内部的`lists`文件数组，历遍元素筛选出`progress`为100的文件
 
 ```html
+<!-- 获取上传的图片列表 -->
 <template>
-	<view>
-		<u-upload ref="uUpload" :action="action" :auto-upload="true" ></u-upload>
-		<u-button @click="submit">提交</u-button>
-	</view>
+    <view>
+        <u-upload ref="uUploadRef" :action="action" :auto-upload="true" ></u-upload>
+        <u-button @click="submit">提交</u-button>
+    </view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				action: 'http://www.example.com/upload',
-				filesArr: []
-			}
-		},
-		methods: {
-			submit() {
-				let files = [];
-				// 通过filter，筛选出上传进度为100的文件(因为某些上传失败的文件，进度值不为100，这个是可选的操作)
-				files = this.$refs.uUpload.lists.filter(val => {
-					return val.progress == 100;
-				})
-				// 如果您不需要进行太多的处理，直接如下即可
-				// files = this.$refs.uUpload.lists;
-				console.log(files)
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const action = ref('http://www.example.com/upload')
+const uUploadRef = ref()
+
+function submit() {
+    let files = []
+    // 通过filter，筛选出上传进度为100的文件(因为某些上传失败的文件，进度值不为100，这个是可选的操作)
+    files = uUploadRef.value?.lists.filter((val: any) => {
+        return val.progress == 100
+    })
+    // 如果您不需要进行太多的处理，直接如下即可
+    // files = uUploadRef.value?.lists
+    console.log(files)
+}
 </script>
 ```
 
@@ -121,23 +110,20 @@
 以下示例为屏蔽组件内部的提示，在移除图片时，监听`onRemove`事件，手动提示的情况
 
 ```html
+<!-- 屏蔽组件内部的提示，在移除图片时，监听onRemove事件，手动提示的情况 -->
 <template>
-	<u-upload ref="uUpload" :action="action" :show-tips="false" @on-remove="onRemove"></u-upload>
+    <u-upload ref="uUploadRef" :action="action" :show-tips="false" @on-remove="onRemove"></u-upload>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				action: 'http://www.example.com/upload',
-			}
-		},
-		methods: {
-			onRemove(index, lists) {
-				console.log('图片已被移除')
-			},
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const action = ref('http://www.example.com/upload')
+const uUploadRef = ref()
+
+function onRemove(index: number, lists: any[]) {
+    console.log('图片已被移除')
+}
 </script>
 ```
 
@@ -171,67 +157,58 @@
 ### 1. 普通返回
 
 ```html
+<!-- before-upload 普通返回 -->
 <template>
-	<u-upload :before-upload="beforeUpload"></u-upload>
+    <u-upload :before-upload="beforeUpload"></u-upload>
 </template>
 
-<script>
-	export default {
-		methods: {
-			beforeUpload(index, list) {
-				// 只上传偶数索引的文件
-				if(index % 2 == 0) return true;
-				else return false;
-			}
-		}
-	}
+<script setup lang="ts">
+function beforeUpload(index: number, list: any[]) {
+    // 只上传偶数索引的文件
+    if(index % 2 == 0) return true;
+    else return false;
+}
 </script>
 ```
 
 ### 2. 请求之后再返回
 
 ```html
+<!-- before-upload 请求之后再返回 -->
 <template>
-	<u-upload :before-upload="beforeUpload"></u-upload>
+    <u-upload :before-upload="beforeUpload"></u-upload>
 </template>
 
-<script>
-	export default {
-		methods: {
-			async beforeUpload(index, list) {
-				// await等待一个请求，请求回来后再返回true，继续上传文件
-				let data = await uni.$u.post('url');
-				return true; // 或者根据逻辑返回false
-			}
-		}
-	}
+<script setup lang="ts">
+async function beforeUpload(index: number, list: any[]) {
+    // await等待一个请求，请求回来后再返回true，继续上传文件
+    let data = await uni.$u.post('url');
+    return true; // 或者根据逻辑返回false
+}
 </script>
 ```
 
 ### 3. 返回一个Promise
 
 ```html
+<!-- before-upload 返回一个Promise -->
 <template>
-	<u-upload :before-upload="beforeUpload"></u-upload>
+    <u-upload :before-upload="beforeUpload"></u-upload>
 </template>
 
-<script>
-	export default {
-		methods: {
-			beforeUpload(index, list) {
-				// 返回一个promise
-				return new Promise((resolve, reject) => {
-					uni.$u.post('url').then(res => {
-						// resolve()之后，将会进入promise的组件内部的then回调，相当于返回true
-						resolve();
-					}).catch(err => {
-						// reject()之后，将会进入promise的组件内部的catch回调，相当于返回false
-						reject();
-					})
-				})
-			}
-		}
-	}
+<script setup lang="ts">
+function beforeUpload(index: number, list: any[]) {
+    // 返回一个promise
+    return new Promise((resolve, reject) => {
+        uni.$u.post('url').then(res => {
+            // resolve()之后，将会进入promise的组件内部的then回调，相当于返回true
+            resolve();
+        }).catch(err => {
+            // reject()之后，将会进入promise的组件内部的catch回调，相当于返回false
+            reject();
+        })
+    })
+}
 </script>
 ```
 
@@ -309,82 +286,78 @@ lists = [
 以下为完整的自定义图片预览列表示例：
 
 ```html
+<!-- 自定义图片预览列表 -->
 <template>
-	<view class="wrap">
-		<view class="pre-box" v-if="!showUploadList">
-			<view class="pre-item" v-for="(item, index) in lists" :key="index">
-				<image class="pre-item-image" :src="item.url" mode="aspectFill"></image>
-			</view>
-		</view>
-		<u-upload :custom-btn="true" ref="uUpload" :show-upload-list="showUploadList" :action="action">
-			<template #addBtn>
-				<view class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
-					<u-icon name="photo" size="60" color="#c0c4cc"></u-icon>
-				</view>
-			</template>
-		</u-upload>
-	</view>
+    <view class="wrap">
+        <view class="pre-box" v-if="!showUploadList">
+            <view class="pre-item" v-for="(item, index) in lists" :key="index">
+                <image class="pre-item-image" :src="item.url" mode="aspectFill"></image>
+            </view>
+        </view>
+        <u-upload :custom-btn="true" ref="uUploadRef" :show-upload-list="showUploadList" :action="action">
+            <template #addBtn>
+                <view class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
+                    <u-icon name="photo" size="60" color="#c0c4cc"></u-icon>
+                </view>
+            </template>
+        </u-upload>
+    </view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				action: 'http://www.example.com', // 演示地址
-				showUploadList: false, 
-				// 如果将某个ref的组件实例赋值给data中的变量，在小程序中会因为循环引用而报错
-				// 这里直接获取内部的lists变量即可
-				lists: []
-			}
-		},
-		// 只有onReady生命周期才能调用refs操作组件
-		onReady() {
-			// 得到整个组件对象，内部图片列表变量为"lists"
-			this.lists = this.$refs.uUpload.lists;
-		}
-	}
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const action = ref('http://www.example.com') // 演示地址
+const showUploadList = ref(false)
+const uUploadRef = ref()
+const lists = ref<any[]>([])
+
+// 只有onMounted生命周期才能调用refs操作组件
+onMounted(() => {
+    // 得到整个组件对象，内部图片列表变量为"lists"
+    lists.value = uUploadRef.value?.lists || []
+})
 </script>
 
 <style lang="scss">
-	.wrap {
-		padding: 24rpx;
-	}
-	
-	.slot-btn {
-		width: 341rpx;
-		height: 140rpx;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: rgb(244, 245, 246);
-		border-radius: 10rpx;
-	}
+    .wrap {
+        padding: 24rpx;
+    }
+    
+    .slot-btn {
+        width: 341rpx;
+        height: 140rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(244, 245, 246);
+        border-radius: 10rpx;
+    }
 
-	.slot-btn__hover {
-		background-color: rgb(235, 236, 238);
-	}
+    .slot-btn__hover {
+        background-color: rgb(235, 236, 238);
+    }
 
-	.pre-box {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-	}
+    .pre-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 
-	.pre-item {
-		flex: 0 0 48.5%;
-		border-radius: 10rpx;
-		height: 140rpx;
-		overflow: hidden;
-		position: relative;
-		margin-bottom: 20rpx;
-	}
+    .pre-item {
+        flex: 0 0 48.5%;
+        border-radius: 10rpx;
+        height: 140rpx;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20rpx;
+    }
 
-	.pre-item-image {
-		width: 100%;
-		height: 140rpx;
-	}
-</style>
+    .pre-item-image {
+        width: 100%;
+        height: 140rpx;
+    }
 ```
 
 

@@ -22,15 +22,12 @@
 	<u-rate :count="count" v-model="value"></u-rate>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				count: 4,
-				value: 2
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const count = ref<number>(4)
+const value = ref<number>(2)
 </script>
 ```
 
@@ -68,16 +65,13 @@
   </view>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        value: 2,
-        colors: ['#ffc454', '#ffb409', '#ff9500'],
-        icons: ['thumb-down-fill', 'thumb-down-fill', 'thumb-up-fill', 'thumb-up-fill']
-      }
-    }
-  }
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<number>(2)
+const colors = ref<string[]>(['#ffc454', '#ffb409', '#ff9500'])
+const icons = ref<string[]>(['thumb-down-fill', 'thumb-down-fill', 'thumb-up-fill', 'thumb-up-fill'])
 </script>
 ```
 

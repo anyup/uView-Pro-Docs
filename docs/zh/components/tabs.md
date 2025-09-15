@@ -33,29 +33,37 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 
 
 ```html
-<u-tabs :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
+<template>
+	<u-tabs :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
+</template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [{
-					name: '待收货'
-				}, {
-					name: '待付款'
-				}, {
-					name: '待评价',
-					count: 5
-				}],
-				current: 0
-			}
-		},
-		methods: {
-			change(index) {
-				this.current = index;
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义Tab项接口
+interface TabItem {
+	name: string
+	count?: number
+}
+
+// 定义响应式数据
+const list = ref<TabItem[]>([
+	{
+		name: '待收货'
+	}, {
+		name: '待付款'
+	}, {
+		name: '待评价',
+		count: 5
 	}
+])
+
+const current = ref<number>(0)
+
+// 定义change事件回调函数
+const change = (index: number) => {
+	current.value = index
+}
 </script>
 ```
 
@@ -68,29 +76,37 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 同理，在1.7.4版本中新增的`count`属性，您可以设置其值为`cate_count`，组件内部会读取数组中的`cate_count`属性，而不是默认的`count`属性。
 
 ```html
-<u-tabs name="cate_name" count="cate_count" :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
+<template>
+	<u-tabs :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
+</template>
 
-<script>
-	export default {
-		data() {
-			return {
-				list: [{
-					cate_name: '待收货'
-				}, {
-					cate_name: '待付款'
-				}, {
-					cate_name: '待评价',
-                    cate_count: 5
-				}],
-				current: 0
-			}
-		},
-		methods: {
-			change(index) {
-				this.current = index;
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义Tab项接口
+interface TabItem {
+	name: string
+	count?: number
+}
+
+// 定义响应式数据
+const list = ref<TabItem[]>([
+	{
+		name: '待收货'
+	}, {
+		name: '待付款'
+	}, {
+		name: '待评价',
+		count: 5
 	}
+])
+
+const current = ref<number>(0)
+
+// 定义change事件回调函数
+const change = (index: number) => {
+	current.value = index
+}
 </script>
 ```
 
@@ -100,7 +116,7 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 可以通过`current`控制tabs当前的第几个tab处于激活状态
 
 ```html
-<u-tabs ref="tabs" :list="list" current="2"></u-tabs>
+<u-tabs ref="uTabsRef" :list="list" current="2"></u-tabs>
 ```
 
 
@@ -111,7 +127,7 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 
 ```html
 <view style="width: 400rpx;">
-	<u-tabs ref="tabs" :list="list" current="2"></u-tabs>
+	<u-tabs ref="uTabsRef" :list="list" current="2"></u-tabs>
 </view>
 ```
 
@@ -123,7 +139,7 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 3. `bar-height`控制滑块高度。
 
 ```html
-<u-tabs ref="tabs" :list="list" bar-height="6" bar-width="40" active-color="#2979ff"></u-tabs>
+<u-tabs ref="uTabsRef" :list="list" bar-height="6" bar-width="40" active-color="#2979ff"></u-tabs>
 ```
 
 ## 控制tabs组件的活动tab样式
@@ -133,7 +149,7 @@ uView中，共有2个组件可以实现tabs标签切换，分别是`tabs`组件�
 3. `current`为初始化tabs的激活tab索引，默认为0。`gutter`为单个tab标签的左右内边距之和，即左右各占`gutter`的一半。
 
 ```html
-<u-tabs ref="tabs" :list="list" active-color="#2979ff" inactive-color="#606266" font-size="30" :current="current"></u-tabs>
+<u-tabs ref="uTabsRef" :list="list" active-color="#2979ff" inactive-color="#606266" font-size="30" :current="current"></u-tabs>
 ```
 
 

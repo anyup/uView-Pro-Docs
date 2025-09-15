@@ -35,34 +35,35 @@
 	</u-index-list>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				scrollTop: 0,
-				indexList: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
-					"V", "W", "X", "Y", "Z"
-				]
-			}
-		},
-		onPageScroll(e) {
-			this.scrollTop = e.scrollTop;
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+import { onPageScroll } from '@dcloudio/uni-app'
+
+// 定义响应式数据
+const scrollTop = ref<number>(0)
+const indexList = ref<Array<string>>([
+	"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+	"N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+])
+
+// 页面滚动事件处理
+onPageScroll((e) => {
+	scrollTop.value = e.scrollTop
+})
 </script>
 
 <style lang="scss" scoped>
-	.list-cell {
-		display: flex;
-		box-sizing: border-box;
-		width: 100%;
-		padding: 10px 24rpx;
-		overflow: hidden;
-		color: #323233;
-		font-size: 14px;
-		line-height: 24px;
-		background-color: #fff;
-	}
+.list-cell {
+	display: flex;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px 24rpx;
+	overflow: hidden;
+	color: #323233;
+	font-size: 14px;
+	line-height: 24px;
+	background-color: #fff;
+}
 </style>
 ```
 

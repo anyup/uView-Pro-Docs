@@ -22,19 +22,16 @@
 	<u-number-box v-model="value" @change="valChange"></u-number-box>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				value: 0
-			}
-		},
-		methods: {
-			valChange(e) {
-				console.log('当前值为: ' + e.value)
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const value = ref<number>(0)
+
+// 定义值变化的回调函数
+const valChange = (e: { value: number }) => {
+	console.log('当前值为: ' + e.value)
+}
 </script>
 ```
 

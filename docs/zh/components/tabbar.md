@@ -81,51 +81,60 @@ let list = [
   </view>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        list: [
-          {
-            iconPath: "home",
-            selectedIconPath: "home-fill",
-            text: "首页",
-            count: 2,
-            isDot: true,
-            customIcon: false,
-          },
-          {
-            iconPath: "photo",
-            selectedIconPath: "photo-fill",
-            text: "放映厅",
-            customIcon: false,
-          },
-          {
-            iconPath: "https://cdn.uviewui.com/uview/common/min_button.png",
-            selectedIconPath: "https://cdn.uviewui.com/uview/common/min_button_select.png",
-            text: "发布",
-            midButton: true,
-            customIcon: false,
-          },
-          {
-            iconPath: "play-right",
-            selectedIconPath: "play-right-fill",
-            text: "直播",
-            customIcon: false,
-          },
-          {
-            iconPath: "account",
-            selectedIconPath: "account-fill",
-            text: "我的",
-            count: 23,
-            isDot: false,
-            customIcon: false,
-          },
-        ],
-        current: 0,
-      };
-    },
-  };
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义Tabbar项接口
+interface TabbarItem {
+  iconPath: string
+  selectedIconPath: string
+  text: string
+  count?: number
+  isDot?: boolean
+  customIcon: boolean
+  midButton?: boolean
+}
+
+// 定义响应式数据
+const list = ref<TabbarItem[]>([
+  {
+    iconPath: "home",
+    selectedIconPath: "home-fill",
+    text: "首页",
+    count: 2,
+    isDot: true,
+    customIcon: false,
+  },
+  {
+    iconPath: "photo",
+    selectedIconPath: "photo-fill",
+    text: "放映厅",
+    customIcon: false,
+  },
+  {
+    iconPath: "https://cdn.uviewui.com/uview/common/min_button.png",
+    selectedIconPath: "https://cdn.uviewui.com/uview/common/min_button_select.png",
+    text: "发布",
+    midButton: true,
+    customIcon: false,
+  },
+  {
+    iconPath: "play-right",
+    selectedIconPath: "play-right-fill",
+    text: "直播",
+    customIcon: false,
+  },
+  {
+    iconPath: "account",
+    selectedIconPath: "account-fill",
+    text: "我的",
+    count: 23,
+    isDot: false,
+    customIcon: false,
+  },
+])
+
+const current = ref<number>(0)
 </script>
 ```
 
@@ -158,16 +167,13 @@ let list = [
   <u-tabbar :before-switch="beforeSwitch"></u-tabbar>
 </template>
 
-<script>
-  export default {
-    methods: {
-      beforeSwitch(index) {
-        // 只能切换偶数项
-        if (index % 2 == 0) return true;
-        else return false;
-      },
-    },
-  };
+<script setup lang="ts">
+// 定义切换前的回调函数
+const beforeSwitch = (index: number): boolean => {
+  // 只能切换偶数项
+  if (index % 2 == 0) return true;
+  else return false;
+}
 </script>
 ```
 
@@ -178,16 +184,15 @@ let list = [
   <u-tabbar :before-switch="beforeSwitch"></u-tabbar>
 </template>
 
-<script>
-  export default {
-    methods: {
-      async beforeSwitch(index) {
-        // await等待一个请求，请求回来后再返回true，再进行切换
-        let data = await uni.$u.post("url");
-        return true; // 或者根据逻辑返回false
-      },
-    },
-  };
+<script setup lang="ts">
+// 定义切换前的异步回调函数
+const beforeSwitch = async (index: number): Promise<boolean> => {
+  // await等待一个请求，请求回来后再返回true，再进行切换
+  // let data = await uni.$u.post("url");
+  // 模拟异步操作
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  return true; // 或者根据逻辑返回false
+}
 </script>
 ```
 
@@ -198,26 +203,26 @@ let list = [
   <u-tabbar :before-switch="beforeSwitch"></u-tabbar>
 </template>
 
-<script>
-  export default {
-    methods: {
-      beforeSwitch(index) {
-        // 返回一个promise
-        return new Promise((resolve, reject) => {
-          this.$u
-            .post("url")
-            .then((res) => {
-              // resolve()之后，将会进入promise的组件内部的then回调，相当于返回true
-              resolve();
-            })
-            .catch((err) => {
-              // reject()之后，将会进入promise的组件内部的catch回调，相当于返回false
-              reject();
-            });
-        });
-      },
-    },
-  };
+<script setup lang="ts">
+// 定义切换前返回Promise的回调函数
+const beforeSwitch = (index: number): Promise<void> => {
+  // 返回一个promise
+  return new Promise((resolve, reject) => {
+    // 模拟异步请求
+    setTimeout(() => {
+      // 模拟请求成功的情况
+      const success = Math.random() > 0.5; // 50%概率成功
+      
+      if (success) {
+        // resolve()之后，将会进入promise的组件内部的then回调，相当于返回true
+        resolve();
+      } else {
+        // reject()之后，将会进入promise的组件内部的catch回调，相当于返回false
+        reject();
+      }
+    }, 1000);
+  });
+}
 </script>
 ```
 

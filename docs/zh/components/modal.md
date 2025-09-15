@@ -27,21 +27,18 @@
 		</u-button>
 	</view>
 </template>
-	
-<script>
-	export default {
-		data() {	
-			return {
-				show: false,
-				content: '东临碣石，以观沧海'
-			}
-		},
-		methods: {
-			open() {
-				this.show = true;
-			}
-		}
-	}
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+const content = ref<string>('东临碣石，以观沧海')
+
+// 定义打开模态框的方法
+const open = () => {
+	show.value = true
+}
 </script>
 ```
 
@@ -64,31 +61,26 @@
 		</u-button>
 	</view>
 </template>
-	
-<script>
-	export default {
-		data() {	
-			return {
-				show: false,
-				content: `
-					空山新雨后<br>
-					天气晚来秋
-				`
-			}
-		},
-		methods: {
-			open() {
-				this.show = true;
-			}
-		}
-	}
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+const content = ref<string>(`空山新雨后<br>天气晚来秋`)
+
+// 定义打开模态框的方法
+const open = () => {
+	show.value = true
+}
 </script>
+
 <style lang="scss" scoped>
-	.slot-content {
-		font-size: 28rpx;
-		color: $u-content-color;
-		padding-left: 30rpx;
-	}
+.slot-content {
+	font-size: 28rpx;
+	color: $u-content-color;
+	padding-left: 30rpx;
+}
 </style>
 ```
 
@@ -100,34 +92,33 @@
 ```html
 <template>
 	<view class="">
-		<u-modal v-model="show" @confirm="confirm" ref="uModal" :async-close="true"></u-modal>
+		<u-modal v-model="show" @confirm="confirm" ref="uModalRef" :async-close="true"></u-modal>
 		<u-button @click="showModal">弹起Modal</u-button>
 	</view>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-			show: false
-		}
-	},
-	onLoad: function(opt) {
-		
-	},
-	methods:{
-		showModal() {
-			this.show = true;
-		},
-		confirm() {
-			setTimeout(() => {
-				// 3秒后自动关闭
-				this.show = false;
-				// 如果不想关闭，而单是清除loading状态，需要通过ref手动调用方法
-				// this.$refs.uModal.clearLoading();
-			}, 3000)
-		}
-    }
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const show = ref<boolean>(false)
+
+// 定义组件引用
+const uModalRef = ref<any>(null)
+
+// 定义显示模态框的方法
+const showModal = () => {
+	show.value = true
+}
+
+// 定义确认按钮的回调函数
+const confirm = () => {
+	setTimeout(() => {
+		// 3秒后自动关闭
+		show.value = false
+		// 如果不想关闭，而单是清除loading状态，需要通过ref手动调用方法
+		// uModalRef.value?.clearLoading()
+	}, 3000)
 }
 </script>
 ```

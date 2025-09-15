@@ -127,53 +127,62 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				current: 0,
-				list: ['integral', 'kefu-ermai', 'coupon', 'gift', 'scan', 'pause-circle', 'wifi', 'email', 'list']
-			};
-		},
-		methods: {
-			change(e) {
-				this.current = e.detail.current;
-			}
-		}
-	};
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const current = ref<number>(0)
+const list = ref<Array<string>>([
+	'integral', 'kefu-ermai', 'coupon', 'gift', 'scan', 
+	'pause-circle', 'wifi', 'email', 'list'
+])
+
+// 定义事件处理函数
+const change = (e: any) => {
+	current.value = e.detail.current
+}
+
+// 注意：isSwiper 变量在原代码中未定义，但模板中使用了，这里需要根据实际需求处理
+const isSwiper = ref<boolean>(true)
+
+// 注意：click 方法在模板中使用了但未在原代码中定义，这里需要根据实际需求实现
+const click = (index: number) => {
+	// 根据实际需求实现点击逻辑
+	console.log('点击了宫格:', index)
+}
 </script>
 
 <style scoped lang="scss">
-	/* 下方这些scss变量为uView内置变量，详见开发  组件-指南-内置样式 */
+/* 下方这些scss变量为uView内置变量，详见开发  组件-指南-内置样式 */
 
-	.grid-text {
-		font-size: 28rpx;
-		margin-top: 4rpx;
-		color: $u-type-info;
-	}
-	
-	.swiper {
-		height: 480rpx;
-	}
-	
-	.indicator-dots {
-		margin-top: 40rpx;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	
-	.indicator-dots-item {
-		background-color: $u-tips-color;
-		height: 6px;
-		width: 6px;
-		border-radius: 10px;
-		margin: 0 3px;
-	}
-	
-	.indicator-dots-active {
-		background-color: $u-type-primary;
-	}
+.grid-text {
+	font-size: 28rpx;
+	margin-top: 4rpx;
+	color: $u-type-info;
+}
+
+.swiper {
+	height: 480rpx;
+}
+
+.indicator-dots {
+	margin-top: 40rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.indicator-dots-item {
+	background-color: $u-tips-color;
+	height: 6px;
+	width: 6px;
+	border-radius: 10px;
+	margin: 0 3px;
+}
+
+.indicator-dots-active {
+	background-color: $u-type-primary;
+}
 </style>
 ```
 

@@ -39,39 +39,41 @@
 	</view>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			list: [
-				{
-					name: 'apple',
-					disabled: false
-				},
-				{
-					name: 'banner',
-					disabled: false
-				},
-				{
-					name: 'orange',
-					disabled: false
-				}
-			],
-			// u-radio-group的v-model绑定的值如果设置为某个radio的name，就会被默认选中
-			value: 'orange',
-		};
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义列表数据接口
+interface RadioItem {
+	name: string
+	disabled: boolean
+}
+
+// 定义响应式数据
+const list = ref<RadioItem[]>([
+	{
+		name: 'apple',
+		disabled: false
 	},
-	methods: {
-		// 选中某个单选框时，由radio时触发
-		radioChange(e) {
-			// console.log(e);
-		},
-		// 选中任一radio时，由radio-group触发
-		radioGroupChange(e) {
-			// console.log(e);
-		}
+	{
+		name: 'banner',
+		disabled: false
+	},
+	{
+		name: 'orange',
+		disabled: false
 	}
-};
+])
+
+const value = ref<string>('orange')
+
+// 定义事件处理函数
+const radioChange = (e: any) => {
+	// console.log(e);
+}
+
+const radioGroupChange = (e: any) => {
+	// console.log(e);
+}
 </script>
 ```
 

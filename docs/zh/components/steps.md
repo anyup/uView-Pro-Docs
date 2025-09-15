@@ -23,22 +23,29 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				numList: [{
-					name: '下单'
-				}, {
-					name: '出库'
-				}, {
-					name: '运输'
-				}, {
-					name: '签收'
-				}, ],
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义步骤项接口
+interface StepItem {
+	name: string
+}
+
+// 定义响应式数据
+const numList = ref<StepItem[]>([
+	{
+		name: '下单'
+	}, 
+	{
+		name: '出库'
+	}, 
+	{
+		name: '运输'
+	}, 
+	{
+		name: '签收'
 	}
+])
 </script>
 ```
 

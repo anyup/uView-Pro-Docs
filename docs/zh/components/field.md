@@ -38,15 +38,12 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				mobile: '',
-				code: ''
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const mobile = ref<string>('')
+const code = ref<string>('')
 </script>
 ```
 
@@ -96,14 +93,12 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				errorMessage: '剑未配妥，出门已是江湖'
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const mobile = ref<string>('')
+const errorMessage = ref<string>('剑未配妥，出门已是江湖')
 </script>
 ```
 
@@ -125,40 +120,41 @@
 				<u-button size="mini" type="success" @click="getCode">{{codeText}}</u-button>
 			</template>
 		</u-field>
-		<u-verification-code ref="uCode" @change="codeChange"></u-verification-code>
+		<u-verification-code ref="uCodeRef" @change="codeChange"></u-verification-code>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				mobile: '',
-				code: '',
-				codeText: ''
-			}
-		},
-		methods: {
-			codeChange(text) {
-				this.codeText = text;
-			},
-			getCode() {
-				if(this.$refs.uCode.canGetCode) {
-					// 模拟向后端请求验证码
-					uni.showLoading({
-						title: '正在获取验证码'
-					})
-					setTimeout(() => {
-						uni.hideLoading();
-						// 通知验证码组件内部开始倒计时
-						this.$refs.uCode.start();
-					}, 1000);
-				}else {
-					uni.$u.toast('倒计时结束后再发送');
-				}
-			}
-		}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const mobile = ref<string>('')
+const code = ref<string>('')
+const codeText = ref<string>('')
+
+// 定义组件引用
+const uCodeRef = ref<any>(null)
+
+// 定义事件处理函数
+const codeChange = (text: string) => {
+	codeText.value = text
+}
+
+const getCode = () => {
+	if (uCodeRef.value?.canGetCode) {
+		// 模拟向后端请求验证码
+		uni.showLoading({
+			title: '正在获取验证码'
+		})
+		setTimeout(() => {
+			uni.hideLoading()
+			// 通知验证码组件内部开始倒计时
+			uCodeRef.value?.start()
+		}, 1000)
+	} else {
+		uni.$u.toast('倒计时结束后再发送')
 	}
+}
 </script>
 ```
 
@@ -183,34 +179,34 @@
 	</view>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			sex: '',
-			sexList: [
-				{
-					text: '男',
-				},
-				{
-					text: '女'
-				},
-				{
-					text: '保密'
-				}
-			],
-			show: false
-		};
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const sex = ref<string>('')
+const show = ref<boolean>(false)
+
+// 定义性别选项列表
+const sexList = ref<Array<{ text: string }>>([
+	{
+		text: '男',
 	},
-	methods: {
-		showAction() {
-			this.show = true;
-		},
-		clickItem(index) {
-			this.sex = this.sexList[index].text;
-		}
+	{
+		text: '女'
+	},
+	{
+		text: '保密'
 	}
-};
+])
+
+// 定义事件处理函数
+const showAction = () => {
+	show.value = true
+}
+
+const clickItem = (index: number) => {
+	sex.value = sexList.value[index].text
+}
 </script>
 ```
 

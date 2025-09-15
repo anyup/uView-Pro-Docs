@@ -22,52 +22,15 @@
 	</u-read-more>
 </template>
 
-<script> 
-	export default {
-		data() {
-			return {
-				// 这是一段很长的文字，也可能包含有HTML标签等内容
-				content: `山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
-				苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
-				无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`,
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 定义响应式数据
+const content = ref<string>(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
+苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
+无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`)
 </script>
 ```
-
-<!-- ## 兼容性
-
-由于一些微信小程序平台的渲染能力的问题，在解析[u-parse](/zh/components/readMore.html)组件内容时会比较耗时，导致`read-more`组件内部无法准确得知
-内容的高度，而出现计算错误，这种情况下，我们需要借助`u-parse`组件的`@load`(内容多为文字时)或者`@ready`(内容多为图片时，可能会有较大延时)事件，通过`ref`
-重新初始化`read-more`组件的高度，如下：
-
-```html
-<template>
-	<u-read-more ref="uReadMore">
-		<u-parse :html="content" @load="parseLoaded"></u-parse>
-	</u-read-more>
-</template>
-
-<script> 
-	export default {
-		data() {
-			return {
-				// 这是一段很长的文字，也可能包含有HTML标签等内容
-				content: `山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
-				苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
-				无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`,
-			}
-		},
-		methods: {
-			parseLoaded() {
-				this.$refs.uReadMore.init();
-			}
-		}
-	}
-</script>
-``` -->
-
 
 ## 展开收起
 
@@ -96,31 +59,34 @@
 
 ```html
 <template>
-	<u-read-more ref="uReadMore">
+	<u-read-more ref="uReadMoreRef">
 		<rich-text :nodes="content"></rich-text>
 	</u-read-more>
 </template>
 
-<script> 
-	export default {
-		data() {
-			return {
-				content: '',
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+// 定义响应式数据
+const content = ref<string>('')
+const uReadMoreRef = ref<any>(null)
+
+// 模拟页面加载完成生命周期
+onMounted(() => {
+	// 模拟后端请求
+	setTimeout(() => {
+		content.value = `山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
+		苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
+		无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`
+		
+		// 使用 nextTick 确保 DOM 更新后初始化组件
+		setTimeout(() => {
+			if (uReadMoreRef.value && uReadMoreRef.value.init) {
+				uReadMoreRef.value.init()
 			}
-		},
-		onLoad() {
-			// 模拟后端请求
-			setTimeout(() => {
-				this.content = `山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
-				苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
-				无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`,
-				// 请注意上方已在组件中添加ref-uReadMore
-				this.$nextTick(() => {
-					this.$refs.uReadMore.init();
-				})
-			}, 2000);
-		}
-	}
+		}, 0)
+	}, 2000)
+})
 </script>
 ```
 
@@ -146,19 +112,19 @@
 	</u-read-more>
 </template>
 
-<script> 
-	export default {
-		data() {
-			return {
-				content: '',
-				shadowStyle: {
-					backgroundImage: "none",
-					paddingTop: "0",
-					marginTop: "20rpx"
-				}
-			}
-		}
-	}
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+// 定义响应式数据
+const content = ref<string>('')
+const uReadMore = ref<any>(null)
+
+// 定义阴影样式对象
+const shadowStyle = reactive({
+	backgroundImage: "none",
+	paddingTop: "0",
+	marginTop: "20rpx"
+})
 </script>
 ```
 
