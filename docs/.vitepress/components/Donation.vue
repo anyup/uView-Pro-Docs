@@ -4,20 +4,18 @@
     <br />
     <br />
     uView Pro文档和源码全部开源免费，如果您认为uView Pro帮到了您的开发工作，您可以捐赠uView Pro的研发工作，捐赠无门槛，哪怕是一杯可乐也好(相信这比打赏主播更有意义)。
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-3 col-xs-12 col-box">
-          <div class="sponsor-type">
-            <img src="https://ik.imagekit.io/anyup/images/social/weixin-pay.png" />
-          </div>
+    <el-row :gutter="20">
+      <el-col :md="8" :xs="24">
+        <div class="sponsor-type">
+          <img src="https://ik.imagekit.io/anyup/images/social/weixin-pay.png" />
         </div>
-        <div class="col-sm-3 col-md-3 col-xs-12 col-box col-sm-offset-1">
-          <div class="sponsor-type">
-            <img src="https://ik.imagekit.io/anyup/images/social/ali-pay.png" />
-          </div>
+      </el-col>
+      <el-col :md="8" :xs="24">
+        <div class="sponsor-type">
+          <img src="https://ik.imagekit.io/anyup/images/social/ali-pay.png" />
         </div>
-      </div>
-    </div>
+      </el-col>
+    </el-row>
 
     以下为历史捐赠者名单，无论金额多少，我们都铭记在心，感谢您的支持！
     <br />
@@ -55,6 +53,7 @@
         <template #default="scope">
           <span v-if="scope.row.platform === 'wechat'">微信</span>
           <span v-else-if="scope.row.platform === 'alipay'">支付宝</span>
+          <span v-else-if="scope.row.platform === 'dcloud'">DCloud</span>
           <span v-else>其他</span>
         </template>
       </el-table-column>
@@ -67,40 +66,39 @@
   </div>
 </template>
 
-<script>
-import axios from 'axios';
+<script setup lang="ts">
+// 捐赠者名单展示组件，支持历史捐赠者列表展示
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
 
-export default {
-  data() {
-    return {
-      donationList: [],
-      baseUrl: 'https://env-00jxty5jnvo5-static.normal.cloudstatic.cn/api',
-      order: 'donationDate',
-    };
-  },
-  created() {
-    this.fetchDonationList();
-  },
-  methods: {
-    fetchDonationList() {
-      axios
-        .get(`${this.baseUrl}/donation.json?updateAt=${Date.now()}`)
-        .then(({ data }) => {
-          const {
-            data: { list },
-            code,
-          } = data;
-          if (code === 0) {
-            this.donationList = list;
-          }
-        });
-    },
-  },
-};
+// 云端静态资源基础地址
+const baseUrl = 'https://env-00jxty5jnvo5-static.normal.cloudstatic.cn/api'
+// 捐赠者列表数据
+const donationList = ref<any[]>([])
+// 排序方式（可扩展）
+const order = ref('donationDate')
+
+// 获取捐赠者列表
+function fetchDonationList() {
+  axios
+    .get(`${baseUrl}/donation.json?updateAt=${Date.now()}`)
+    .then(({ data }) => {
+      const { data: { list }, code } = data
+      if (code === 0) {
+        donationList.value = list
+      }
+    })
+}
+
+// 页面加载时获取数据
+onMounted(() => {
+  fetchDonationList()
+})
 </script>
 
 <style scoped>
 .sponsor-type {
+  width: 100%;
   text-align: center;
   margin: 30px 0;
   display: inline-block;

@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-block custom-block-for-no-api" style="padding: 0;">
+  <div class="custom-block custom-block-for-no-api">
     <div class="custom-block tip">
       <p class="custom-block-title">提示</p>
       <p>
@@ -18,15 +18,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      default: ``
-    }
+<script setup lang="ts">
+// 页面模板下载提示块组件，支持自定义提示文本
+const props = defineProps({
+  text: {
+    type: String,
+    default: ''
   }
-}
+})
 </script>
 
 <style scoped>

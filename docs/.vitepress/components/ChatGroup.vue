@@ -17,33 +17,51 @@
   </div>
 </template>
 
-
-<script>
-export default {
-  props: {
-    type: {
-      type: String,
-      default: '1'
-    },
-    borderColor: {
-      type: String,
-      default: '#dcdfe6'
-    }
-  },
-  data() {
-    return {
-      list: [
-        { name: '微信群', img: `https://ik.imagekit.io/anyup/images/social/weixin-chat.png?updatedAt=${new Date().getTime()}`, tips: '微信扫码', type: '1', url: '' },
-        { name: 'QQ群', img: 'https://ik.imagekit.io/anyup/images/social/qq-chat.png', tips: '浏览器扫码', type: '1', url: 'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=98nSVDldWEbDdq4lxiP4aL7uATfMSlI6&authKey=G2yQJ5MQiKzMldaxBsIfKt17NuJuUw8Fr6zdKLggc6NZXgw4BVbqkU2U3EE994yd&noverify=0&group_code=811732166' },
-      ]
-    }
-  },
-  computed: {
-    currentList() {
-      return this.list.filter(item => item.type === '1')
-    }
-  }
+<script setup lang="ts">
+// 群二维码列表项类型定义
+interface GroupItem {
+  name: string
+  img: string
+  tips: string
+  type: string
+  url: string
+  fullscreen?: boolean
 }
+
+import { computed, ref } from 'vue'
+
+// 组件 props
+const props = defineProps({
+  type: {
+    type: String,
+    default: '1'
+  },
+  borderColor: {
+    type: String,
+    default: '#dcdfe6'
+  }
+})
+
+// 群二维码数据列表
+const list = ref<GroupItem[]>([
+  {
+    name: '微信群',
+    img: `https://ik.imagekit.io/anyup/images/social/weixin-chat.png?updatedAt=${new Date().getTime()}`,
+    tips: '微信扫码',
+    type: '1',
+    url: ''
+  },
+  {
+    name: 'QQ群',
+    img: 'https://ik.imagekit.io/anyup/images/social/qq-chat.png',
+    tips: '浏览器扫码',
+    type: '1',
+    url: 'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=98nSVDldWEbDdq4lxiP4aL7uATfMSlI6&authKey=G2yQJ5MQiKzMldaxBsIfKt17NuJuUw8Fr6zdKLggc6NZXgw4BVbqkU2U3EE994yd&noverify=0&group_code=811732166'
+  }
+])
+
+// 当前类型的二维码列表
+const currentList = computed(() => list.value.filter(item => item.type === props.type))
 </script>
 
 <style scoped>

@@ -17,37 +17,46 @@
 	</div>
 </template>
 
-<script>
-export default {
-	props: {
-		color: {
-			type: String,
-			default: '#ffffff'
-		},
-		bgColor: {
-			type: String,
-			default: '#2979ff'
-		},
-		name: {
-			type: String,
-			default: ''
-		},
-		value: {
-			type: String,
-			default: ''
-		}
-	},
-	data() {
-		return {
-			pickerColor: this.value
-		};
-	},
-	methods: {
-		change(e) {
-			this.$emit('update:modelValue', e.toLowerCase())
-		},
-	}
-};
+<script setup lang="ts">
+// 颜色选择器组件，支持显示名称、当前颜色值，并通过el-color-picker选择颜色
+import { ref, watch } from 'vue'
+
+// 组件props定义
+const props = defineProps({
+  color: {
+    type: String,
+    default: '#ffffff'
+  },
+  bgColor: {
+    type: String,
+    default: '#2979ff'
+  },
+  name: {
+    type: String,
+    default: ''
+  },
+  value: {
+    type: String,
+    default: ''
+  }
+})
+
+// pickerColor为el-color-picker的绑定值，初始为value
+const pickerColor = ref(props.value)
+
+// 监听外部value变化，保持pickerColor同步
+watch(() => props.value, (val) => {
+  pickerColor.value = val
+})
+
+// 颜色选择变化时触发，向父组件派发事件
+function change(e: string) {
+  // 统一小写，便于样式处理
+  emit('update:modelValue', e.toLowerCase())
+}
+
+// 事件派发
+const emit = defineEmits(['update:modelValue'])
 </script>
 
 <style lang="scss" scoped>

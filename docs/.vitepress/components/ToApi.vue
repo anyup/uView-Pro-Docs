@@ -4,15 +4,14 @@
   </a>
 </template>
 
-<script>
-export default {
-  props: {
-    anchor: {
-      type: String,
-      default: 'api'
-    }
+<script setup lang="ts">
+// API锚点跳转组件，点击图片跳转到指定锚点
+const props = defineProps({
+  anchor: {
+    type: String,
+    default: 'api'
   }
-}
+})
 </script>
 
 <style scoped lang="scss">
