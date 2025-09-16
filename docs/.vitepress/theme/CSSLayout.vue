@@ -56,5 +56,8 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     <template #nav-bar-title-after>
       <BadgeNpm />
     </template>
+    <template #sidebar-nav-before>
+      <SidebarAdvs />
+    </template>
   </DefaultTheme.Layout>
 </template>

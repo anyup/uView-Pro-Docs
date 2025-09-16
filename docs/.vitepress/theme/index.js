@@ -29,6 +29,7 @@ import BadgeNpm from '../components/BadgeNpm.vue'
 import ToApi from '../components/ToApi.vue'
 import IconList from '../components/IconList.vue'
 import CustomBlock from '../components/CustomBlock.vue'
+import SidebarAdvs from '../components/SidebarAdvs.vue'
 import CSSLayout from './CSSLayout.vue'
 
 let homePageStyle = undefined
@@ -65,6 +66,7 @@ export default {
     app.component('ToApi', ToApi)
     app.component('IconList', IconList)
     app.component('CustomBlock', CustomBlock)
+    app.component('SidebarAdvs', SidebarAdvs)
 
     if (typeof window === 'undefined') return
     document.documentElement.classList.add('rainbow')

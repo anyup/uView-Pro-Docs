@@ -54,6 +54,14 @@ class Menu<T> {
         text: '捐赠',
         link: `${this.localeStr}/resource/donation`
       },
+      {
+        text: 'Github',
+        link: `https://github.com/anyup/uView-Pro`
+      },
+      {
+        text: 'Gitee',
+        link: `https://gitee.com/anyup/uView-Pro`
+      },
     ]
   }
   // 侧边栏
