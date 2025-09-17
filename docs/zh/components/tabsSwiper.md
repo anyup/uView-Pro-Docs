@@ -74,7 +74,7 @@ const list = ref<TabItem[]>([
 会导致用户需要循环一遍，把`cate_name`改成`name`，显然不人性的，所以uView给tabsSwiper组件提供了一个`name`参数，您可以设置其值为`cate_name`，组件内部
 会读取数组中的`cate_name`属性，而不是默认的`name`属性。
 
-同理，在1.7.4版本中新增的`count`属性，您可以设置其值为`cate_count`，组件内部会读取数组中的`cate_count`属性，而不是默认的`count`属性。
+同理，`count`属性，您可以设置其值为`cate_count`，组件内部会读取数组中的`cate_count`属性，而不是默认的`count`属性。
 
 ```html
 <template>

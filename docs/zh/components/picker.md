@@ -11,7 +11,7 @@
 4. 四是多列模式
 
 ::: warning 说明
-从`1.3.0`版本起，不建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/zh/components/select.html)组件，
+不再建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/zh/components/select.html)组件，
 以后此组件将专注于时间和地区的选择。
 :::
 
@@ -112,7 +112,7 @@ let params = {
 	province: true,
 	city: true,
 	area: true,
-	timestamp: true, // 1.3.7版本提供
+	timestamp: true,
 }
 
 
@@ -162,7 +162,7 @@ let params = {
 
 ## 二、单列和多列模式
 
-**从`1.3.0`版本起，不建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/zh/components/select.html)组件。**
+**不再建议使用此组件的单列和多列模式，因为已经有更友好，简单易用，专门用于处理列选择的[Select 列选择器](/zh/components/select.html)组件。**
 
 ### 1. 设置默认值
 
