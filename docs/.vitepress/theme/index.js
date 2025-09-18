@@ -31,7 +31,7 @@ import SidebarAdvs from '../components/SidebarAdvs.vue'
 import CSSLayout from './CSSLayout.vue'
 import Contributors from '../components/Contributors.vue'
 import Developers from '../components/Developers.vue'
-import Overview from '../components/overview.vue'
+import Overview from '../components/Overview.vue'
 import Partners from '../components/Partners.vue'
 
 let homePageStyle = undefined
