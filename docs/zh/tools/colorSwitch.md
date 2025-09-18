@@ -55,12 +55,8 @@ onMounted(() => {
 - `step` <Number\> 均分值，把开始值和结束值平均分成多少份
 
 ```js
-export default{
-	onLoad() {
-		console.log(uni.$u.colorGradient('rgb(250,250,250)', 'rgb(252,252,252)', 3));
-		// 结果为：["#fafafa", "#fafafa", "#fbfbfb"]
-	}
-}
+console.log(uni.$u.colorGradient('rgb(250,250,250)', 'rgb(252,252,252)', 3));
+// 结果为：["#fafafa", "#fafafa", "#fbfbfb"]
 ```
 
 

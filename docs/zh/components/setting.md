@@ -2,25 +2,11 @@
 
 uView Pro 支持 `npm` 和 `uni_modules` 两种主流安装方式，配置方式高度一致。无论采用哪种方式，均可通过 easycom 实现组件自动引入，极大提升开发效率。以下为统一的配置说明：
 
-## 1. 安装 uView Pro
+:::tip 提示
+确保你已经安装了 uView Pro，详见安装文档：[install](install.html)
+:::
 
-- npm 安装：
-
-```bash
-npm install uview-pro
-# 或
-yarn add uview-pro
-# 或
-pnpm add uview-pro
-```
-
-- uni_modules 安装：
-
-通过 HBuilderX 插件市场或手动下载，将 uView Pro 放入 `uni_modules` 目录。
-
-[插件市场：https://ext.dcloud.net.cn/plugin?id=24633](https://ext.dcloud.net.cn/plugin?id=24633)
-
-## 2. 引入 uView Pro 主库
+## 1. 引入 uView Pro 主库
 
 在 `main.ts` 中引入并注册 uView Pro：
 
@@ -41,7 +27,7 @@ export function createApp() {
 }
 ```
 
-## 3. 引入全局样式
+## 2. 引入全局样式
 
 在 `uni.scss` 中引入主题样式：
 
@@ -64,7 +50,7 @@ export function createApp() {
 </style>
 ```
 
-## 4. 配置 easycom 自动引入组件
+## 3. 配置 easycom 自动引入组件
 
 在 `pages.json` 中配置 easycom 规则，实现组件自动引入：
 
@@ -86,13 +72,13 @@ export function createApp() {
 }
 ```
 
-:::tip 温馨提示
+:::tip 注意
 - 1.修改 `easycom` 规则后需重启 HX 或重新编译项目。
 - 2.请确保 `pages.json` 中只有一个 easycom 字段，否则请自行合并多个规则。
 - 3.一定要放在 `custom` 内，否则无效。
 :::
 
-## 5. Volar 类型提示支持
+## 4. Volar 类型提示支持
 
 如需在 CLI 项目中获得 Volar 的全局类型提示，请在 `tsconfig.json` 中添加：
 
@@ -109,7 +95,7 @@ export function createApp() {
 
 > HBuilderX 项目暂不支持 tsconfig.json 的 types 配置，CLI 项目推荐配置以获得最佳 TS 体验。
 
-## 6. 组件使用
+## 5. 组件使用
 
 配置完成后，无需 import 和 components 注册，可直接在 SFC 中使用 uView Pro 组件：
 

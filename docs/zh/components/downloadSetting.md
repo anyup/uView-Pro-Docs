@@ -18,75 +18,93 @@ npm i sass-loader -D
 
 ## 准备工作
 
-在进行配置之前，请确保您已经根据[安装](/zh/components/install.html)中的步骤对 uView Pro 进行了下载安装，如果没有，请先下载安装。
+在进行配置之前，请确保您已经根据[安装](install.html)中的步骤对 uView Pro 进行了下载安装，如果没有，请先下载安装。
 
-## 配置步骤
+## 1. 引入 uView Pro 主库
 
-### 1. 引入 uView 主库
-
-在项目根目录中的`main.ts`中，引入并使用 uView Pro 的工具库，注意这两行要放在`import Vue`之后。
+在 `main.ts` 中引入并注册 uView Pro：
 
 ```js
 // main.ts
-import { createSSRApp } from "vue";
-import uViewPro from "uview-pro";
+import { createSSRApp } from 'vue'
+// uni_modules 方式
+import uViewPro from '@/uni_modules/uview-pro'
 
 export function createApp() {
-  const app = createSSRApp(App);
-  app.use(uViewPro);
-  // 其他配置
+  const app = createSSRApp(App)
+  app.use(uViewPro)
   return {
-    app,
-  };
+    app
+  }
 }
 ```
 
-### 2. 在引入 uView Pro 的全局 SCSS 主题文件
+## 2. 引入全局样式
 
-在项目根目录的`uni.scss`中引入此文件。
+在 `uni.scss` 中引入主题样式：
 
-```css
-/* uni.scss */
-@import "uview-pro/theme.scss";
+```scss
+// uni_modules 方式
+@import '@/uni_modules/uview-pro/theme.scss';
 ```
 
-### 3. 引入 uView Pro 基础样式
+在 `App.vue` 首行引入基础样式：
 
-:::danger 注意！
-在`App.vue`中**首行**的位置引入，注意给 style 标签加入 lang="scss"属性
-:::
-
-```css
+```scss
 <style lang="scss">
-	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
-	@import "uview-pro/index.scss";
+  // uni_modules 方式
+  @import "@/uni_modules/uview-pro/index.scss";
 </style>
 ```
 
-### 4. 配置 easycom 组件模式
+## 3. 配置 easycom 自动引入组件
 
-此配置需要在项目根目录的`pages.json`中进行。
-
-:::tip 温馨提示
-
-1. uni-app 为了调试性能的原因，修改`easycom`规则不会实时生效，配置完后，您需要重启 HX 或者重新编译项目才能正常使用 uView 的功能。
-2. 请确保您的`pages.json`中只有一个`easycom`字段，否则请自行合并多个引入规则。
-3. 注意一定要放在`custom`里，否则无效，https://ask.dcloud.net.cn/question/131175
-
-:::
+在 `pages.json` 中配置 easycom 规则，实现组件自动引入：
 
 ```json
 // pages.json
 {
   "easycom": {
-    // 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+    "autoscan": true,
     "custom": {
-      "^u-(.*)": "@/uview-pro/components/u-$1/u-$1.vue"
+      // uni_modules 方式
+      "^u-(.*)": "@/uni_modules/uview-pro/components/u-$1/u-$1.vue"
     }
   },
-  // 此为本身已有的内容
   "pages": [
-    // ......
+    // ...
   ]
 }
+```
+
+:::tip 注意
+
+- 1.修改 `easycom` 规则后需重启 HX 或重新编译项目。
+- 2.请确保 `pages.json` 中只有一个 easycom 字段，否则请自行合并多个规则。
+- 3.一定要放在 `custom` 内，否则无效。
+  :::
+
+## 4. Volar 类型提示支持
+
+如需在 CLI 项目中获得 Volar 的全局类型提示，请在 `tsconfig.json` 中添加：
+
+```json
+{
+  "compilerOptions": {
+    // uni_modules 方式
+    "types": ["@/uni_modules/uview-pro/types"]
+  }
+}
+```
+
+> HBuilderX 项目暂不支持 tsconfig.json 的 types 配置，CLI 项目推荐配置以获得最佳 TS 体验。
+
+## 5. 组件使用
+
+配置完成后，无需 import 和 components 注册，可直接在 SFC 中使用 uView Pro 组件：
+
+```vue
+<template>
+  <u-button type="primary">按钮</u-button>
+</template>
 ```
