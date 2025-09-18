@@ -13,7 +13,7 @@
                 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/resource/sketch-template.png" alt="">
                 <h3>Sketch Template</h3>
                 <p>通过在Sketch中导入uView组件库，可以在交互设计阶段方便地调用常用的组件</p>
-                <a href="https://cdn.uviewui.com/uview/resources/sketch.sketch">下载</a>
+                <a href="/resources/sketch.zip">下载</a>
             </div>
         </li>
         <li >
@@ -21,7 +21,7 @@
                 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/resource/axure-template.png" alt="">
                 <h3>Axure Template</h3>
                 <p>通过在Axure中导入uView组件库，可以在交互设计阶段方便地调用常用的组件</p>
-                <a href="https://cdn.uviewui.com/uview/resources/axure.rp">下载</a>
+                <a href="/resources/axure.zip">下载</a>
             </div>
         </li>
     </ul>
@@ -38,7 +38,7 @@
                 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/resource/i18n-demo.png" alt="">
                 <h3>I18n多语言示例</h3>
                 <p>我们为您制作了一个I18n多语言的示例工程，下载运行即可，注意此版本不适用于nvue</p>
-                <a href="https://cdn.uviewui.com/uview/resources/i18n.zip">下载</a>
+                <a href="/resources/i18n.zip">下载</a>
             </div>
         </li>
         <li >
@@ -46,7 +46,7 @@
                 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/resource/scaffold-demo.png" alt="">
                 <h3>脚手架空白工程</h3>
                 <p>已配置uView的空白项目，适用于新项目或者学习使用，下载后在HX中运行即可</p>
-                <a href="https://cdn.uviewui.com/uview/resources/uView-cli.zip">下载</a>
+                <a href="/resources/uView-cli.zip">下载</a>
             </div>
         </li>
         <li >
@@ -54,7 +54,7 @@
                 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/resource/tabbar-demo.png" alt="">
                 <h3>Tabbar组件使用示例</h3>
                 <p>请注意配合文档说明使用此组件，这里为组件的使用示例工程，下载即可使用</p>
-                <a href="https://cdn.uviewui.com/uview/resources/Tabbar.zip">下载</a>
+                <a href="/resources/Tabbar.zip">下载</a>
             </div>
         </li> -->
         <li >
@@ -62,8 +62,7 @@
                 <img src="https://ik.imagekit.io/anyup/uview-pro/docs/resource/empty-placeholder.png" alt="">
                 <h3>Empty组件配套占位图</h3>
                 <p>我们的专业设计师精心为您做了一套精美的缺省图，涵盖各个场景，文件内含图片和Sketch源文件</p>
-                <!-- <a href="http://cdn.uviewui.com/uview/resources/Empty.zip">下载</a> -->
-                <a href="https://yanxincloudplatform.oss-cn-beijing.aliyuncs.com/cloudplatform/Empty.zip">下载</a>
+                <a href="/resources/empty.zip">下载</a>
             </div>
         </li>
     </ul>
