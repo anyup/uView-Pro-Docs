@@ -15,6 +15,7 @@ export default defineConfig({
     //   include: [/\.vue$/, /\.vue\?vue/, /\.md$/]
     // }),
     groupIconVitePlugin({
+      // customIcon 可选，按需配置
       customIcon: {
         postcss: 'vscode-icons:file-type-postcss'
       }
