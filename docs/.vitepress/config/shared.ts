@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { search as zhSearch } from './zh'
+import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
 
 export const shared = defineConfig({
   title: 'uView Pro',
@@ -17,11 +18,14 @@ export const shared = defineConfig({
           return code.replace(/\[\!\!code/g, '[!code')
         }
       }
-    ]
+    ],
+    config(md) {
+      md.use(groupIconMdPlugin)
+    },
   },
 
   sitemap: {
-    hostname: 'https://www.anyup.cn',
+    hostname: 'https://uviewpro.cn',
     transformItems(items) {
       return items.filter(item => !item.url.includes('migration'))
     }
@@ -39,7 +43,7 @@ export const shared = defineConfig({
     ['meta', { property: 'og:title', content: 'uView Pro | Vite & Vue Powered Static Site Generator' }],
     ['meta', { property: 'og:site_name', content: 'uView Pro' }],
     ['meta', { property: 'og:image', content: '/anyup/images/vitepress-og.png' }],
-    ['meta', { property: 'og:url', content: 'https://www.anyup.cn' }],
+    ['meta', { property: 'og:url', content: 'https://uviewpro.cn' }],
     ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }],
     // 不蒜子网站统计 https://busuanzi.ibruce.info/
     ['script', { src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }],

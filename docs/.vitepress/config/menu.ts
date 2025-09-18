@@ -24,23 +24,52 @@ class Menu<T> {
       {
         text: '指南',
         activeMatch: `${this.localeStr}/guide`,
-        link: `${this.localeStr}/guide/demo`
-        // items: [{ text: '效果演示', link: `${this.localeStr}/guide/demo` }]
+        // link: `${this.localeStr}/guide/intro`
+        items: [
+          { text: '介绍', link: `${this.localeStr}/guide/intro` },
+          { text: '效果演示', link: `${this.localeStr}/guide/demo` },
+          { text: '扩展图标库', link: `${this.localeStr}/guide/customIcon` },
+          { text: '自定义主题', link: `${this.localeStr}/guide/theme` },
+          { text: '代码提示', link: `${this.localeStr}/guide/codeHint` },
+          { text: '设计理念', link: `${this.localeStr}/guide/design` },
+          { text: '注意事项', link: `${this.localeStr}/guide/note` },
+          { text: '常见问题', link: `${this.localeStr}/guide/faq` },
+        ]
       },
       {
         text: '组件',
         activeMatch: `${this.localeStr}/components`,
-        link: `${this.localeStr}/components/intro`
+        // link: `${this.localeStr}/components/intro`
+        items: [
+          { text: '组件总览', link: `${this.localeStr}/components/intro` },
+          { text: '基础组件', link: `${this.localeStr}/components/color` },
+          { text: '表单组件', link: `${this.localeStr}/components/input` },
+          { text: '数据组件', link: `${this.localeStr}/components/circleProgress` },
+          { text: '反馈组件', link: `${this.localeStr}/components/actionSheet` },
+          { text: '布局组件', link: `${this.localeStr}/components/line` },
+          { text: '导航组件', link: `${this.localeStr}/components/dropdown` },
+          { text: '其他组件', link: `${this.localeStr}/components/messageInput` },
+        ]
       },
       {
         text: '工具',
         activeMatch: `${this.localeStr}/tools`,
-        link: `${this.localeStr}/tools/intro`
+        // link: `${this.localeStr}/tools/intro`
+        items: [
+          { text: '起步', link: `${this.localeStr}/tools/intro` },
+          { text: '网络', link: `${this.localeStr}/tools/http` },
+          { text: '工具库', link: `${this.localeStr}/tools/debounce` }
+        ]
       },
       {
         text: '模版',
         activeMatch: `${this.localeStr}/layout`,
-        link: `${this.localeStr}/layout/intro`
+        // link: `${this.localeStr}/layout/intro`
+        items: [
+          { text: '起步', link: `${this.localeStr}/layout/intro` },
+          { text: '部件', link: `${this.localeStr}/layout/coupon` },
+          { text: '页面', link: `${this.localeStr}/layout/wxCenter` }
+        ]
       },
       {
         text: '资源',
@@ -83,13 +112,14 @@ class Menu<T> {
         text: '指南',
         base: `${this.localeStr}/guide/`,
         items: [
+          { text: '介绍', link: 'intro' },
           { text: '效果演示', link: 'demo' },
-          { text: '扩展自定义图标库', link: 'customIcon' },
+          { text: '扩展图标库', link: 'customIcon' },
           { text: '自定义主题', link: 'theme' },
           { text: '代码提示', link: 'codeHint' },
           { text: '设计理念', link: 'design' },
           { text: '注意事项', link: 'note' },
-          { text: 'FAQ', link: 'faq' }
+          { text: '常见问题', link: 'faq' }
         ]
       }
     ]
@@ -242,7 +272,7 @@ class Menu<T> {
         base: `${this.localeStr}/tools/`,
         items: [
           {
-            text: '指南',
+            text: '起步',
             collapsed: false,
             items: [
               { text: '介绍', link: 'intro' },
