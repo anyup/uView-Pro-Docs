@@ -17,7 +17,7 @@ const advList = [
   {
     title: '商务合作',
     imageUrl:
-      'https://mmbiz.qpic.cn/mmbiz_png/XTwjYITHToBXysqCKM1AmmfoAzZl5iaa05jwWREAU8JbJMKscSvLYKtbRmHuh35JeVGrUobfa4U8AwWxia9dQ2cw/640',
+      'https://mmbiz.qpic.cn/mmbiz_png/XTwjYITHToBTNrZHaIylOQUkUIXmtjDm2iaZu2RvPGmdUNbe4LPNVOGBXQFrhCibov3HiayD9YYWst1xN3R5BibMiag/640',
     link: 'https://mp.weixin.qq.com/s/OcaoEfC2xqDHYtyyihVWaA'
   }
 ]

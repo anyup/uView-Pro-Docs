@@ -1,5 +1,5 @@
 <template>
-  <div class="pv-row">
+  <div class="pv-row container">
     <div class="pv-col">本站总访问量<span id="busuanzi_value_site_pv"></span>次</div>
     <div class="pv-col">本站总访客数<span id="busuanzi_value_site_uv"></span>人</div>
     <div class="pv-col">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
@@ -42,11 +42,18 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+.container {
+  margin: 0 auto;
+  max-width: 1152px;
+}
+
 .pv-row {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+  margin-top: 50px;
+  /* padding: 10px; */
 }
 .pv-col {
   flex: 1;
