@@ -23,14 +23,16 @@ import ChatGroup from '../components/ChatGroup.vue'
 import Donation from '../components/Donation.vue'
 import ThemeGenerate from '../components/ThemeGenerate.vue'
 import TemplateDownload from '../components/TemplateDownload.vue'
-import HomeStar from '../components/HomeStar.vue'
 import BadgeVersion from '../components/BadgeVersion.vue'
-import BadgeNpm from '../components/BadgeNpm.vue'
 import ToApi from '../components/ToApi.vue'
 import IconList from '../components/IconList.vue'
 import CustomBlock from '../components/CustomBlock.vue'
 import SidebarAdvs from '../components/SidebarAdvs.vue'
 import CSSLayout from './CSSLayout.vue'
+import Contributors from '../components/Contributors.vue'
+import Developers from '../components/Developers.vue'
+import Overview from '../components/overview.vue'
+import Partners from '../components/Partners.vue'
 
 let homePageStyle = undefined
 
@@ -38,10 +40,7 @@ let homePageStyle = undefined
 export default {
   extends: DefaultTheme,
   Layout() {
-    return h(CSSLayout, null, {
-      'home-hero-info-after': () => h(HomeStar),
-      'nav-bar-title-after': () => h(BadgeNpm)
-    })
+    return h(CSSLayout)
   },
   enhanceApp({ app, router }) {
     // 注册ElementPlus
@@ -67,6 +66,10 @@ export default {
     app.component('IconList', IconList)
     app.component('CustomBlock', CustomBlock)
     app.component('SidebarAdvs', SidebarAdvs)
+    app.component('Contributors', Contributors)
+    app.component('Developers', Developers)
+    app.component('Overview', Overview)
+    app.component('Partners', Partners)
 
     if (typeof window === 'undefined') return
     document.documentElement.classList.add('rainbow')
