@@ -3,7 +3,7 @@
 uView Pro 支持 `npm` 和 `uni_modules` 两种主流安装方式，配置方式高度一致。无论采用哪种方式，均可通过 easycom 实现组件自动引入，极大提升开发效率。以下为统一的配置说明：
 
 :::tip 提示
-确保你已经安装了 uView Pro，详见安装文档：[install](install.html)
+确保你已经安装了 uView Pro，详见安装文档：[uView Pro 安装](install.html)
 :::
 
 ## 1. 引入 uView Pro 主库

@@ -2,19 +2,30 @@
 
 ## 关于 SCSS
 
+## 关于 SCSS
+
 uView Pro 依赖 SCSS，您必须要安装此插件，否则无法正常运行。
 
 - 如果您的项目是由`HBuilder X`创建的，相信已经安装 scss 插件，如果没有，请在 HX 菜单的 工具->插件安装中找到"scss/sass 编译"插件进行安装，
   如不生效，重启 HX 即可
-- 如果您的项目是由`vue-cli`创建的，请通过以下命令安装对 sass(scss)的支持，如果已安装，请略过。
+- 如果您的项目是由 vue-cli 创建的，请通过以下命令安装对 sass(scss)的支持，如果已安装，请略过。
 
-```js
-// 安装sass
+```bash
+# 安装sass
 npm i sass -D
 
-// 安装sass-loader
+# 安装sass-loader
 npm i sass-loader -D
 ```
+
+:::tip 注意
+sass、sass-loader 版本过高或过低，导致编译异常，因此推荐统一并锁定依赖版本：
+
+```json
+"sass": "1.63.2",
+"sass-loader": "10.4.1"
+```
+:::
 
 ## 准备工作
 
