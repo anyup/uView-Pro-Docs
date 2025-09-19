@@ -38,6 +38,11 @@ export default {
 				title:'有题记小程序',
 				imageUrl: 'https://ik.imagekit.io/anyup/images/social/youti-item.png?updatedAt=1754376701993',
 				link: 'https://mp.weixin.qq.com/s/bgkhC02WPlEHmGnCbSmDcg'
+			},{
+
+				title:'精美浏览器插件',
+				imageUrl: 'https://ik.imagekit.io/anyup/uview-pro/advs/nbtab.png?updatedAt=1758250689316',
+				link: 'https://nbtab.com/'
 			}]
         }
     },
