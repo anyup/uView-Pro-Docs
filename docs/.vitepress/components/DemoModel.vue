@@ -15,7 +15,7 @@ const props = defineProps({
   },
   baseUrl: {
     type: String,
-    default: 'https://h5-uview-pro.netlify.app/#'
+    default: 'https://h5.uviewpro.cn/#'
   }
 })
 
