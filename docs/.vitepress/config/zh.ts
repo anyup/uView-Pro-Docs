@@ -15,10 +15,10 @@ export const zh = defineConfig({
 
     sidebar: menu.sidebar(),
 
-    editLink: {
-      pattern: 'https://github.com/anyup/uView-Pro-Docs/docs/:path',
-      text: '在 GitHub 上编辑此页面'
-    },
+    // editLink: {
+    //   pattern: 'https://github.com/anyup/uView-Pro-Docs/docs/:path',
+    //   text: '在 GitHub 上编辑此页面'
+    // },
 
     footer: {
       message: '备案许可：<a style="color:#4e6e8e;" rel="noopener noreferrer" target="_blank" href="https://beian.miit.gov.cn/">鲁ICP备2021040594号-1</a>',
