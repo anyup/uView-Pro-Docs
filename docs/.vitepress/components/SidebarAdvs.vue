@@ -1,13 +1,23 @@
 <template>
-  <el-carousel height="90px" :interval="3000">
+  <el-carousel height="90px" :interval="3000" indicator-position="outside">
     <el-carousel-item v-for="item in advList" :key="item.imageUrl">
-      <img :alt="item.title" :src="`${item.imageUrl}`" @click="handleItemClick(item)" />
+      <img
+        :alt="item.title"
+        :src="`${item.imageUrl}`"
+        @click="handleItemClick(item)"
+      />
     </el-carousel-item>
   </el-carousel>
 </template>
 
 <script setup lang="ts">
 const advList = [
+  {
+    title: '精美浏览器插件',
+    imageUrl:
+      'https://ik.imagekit.io/anyup/uview-pro/advs/nbtab.png?updatedAt=1758250689316',
+    link: 'https://nbtab.com/'
+  },
   {
     title: '有题记小程序',
     imageUrl:
