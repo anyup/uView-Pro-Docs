@@ -37,7 +37,7 @@ export const shared = defineConfig({
     ['link', { rel: 'stylesheet', href: '//at.alicdn.com/t/c/font_4522599_t4534k2ng8.css' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
-    ['meta', { name: 'keywords', content: 'anyup,uView Pro,Colorful App,JavaScript,TypeScript,Vue3,uni-app,前端工具库,博客,blog' }],
+    ['meta', { name: 'keywords', content: 'uview,uView Pro,uview-pro,uviewpro,uview ui,JavaScript,TypeScript,Vue3,uni-app,uniapp,anyup' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh' }],
     ['meta', { property: 'og:title', content: 'uView Pro | Vite & Vue Powered Static Site Generator' }],
