@@ -5,7 +5,7 @@
       href="https://beian.miit.gov.cn/"
       target="_blank"
       rel="noopener noreferrer"
-      >鲁ICP备2021040594号-1</a
+      >鲁ICP备2021040594号-5</a
     >
   </div>
 </template>
