@@ -1,13 +1,18 @@
 <template>
   <div>
-    做一个UI框架是一项庞大的工作，尤其是要多端适配，并且迅速跟进uniapp官方的更新，uView Pro作者经常为此工作到深夜……
+    做一个UI框架是一项庞大的工作，尤其是要多端适配，并且迅速跟进uniapp官方的更新，uView
+    Pro作者经常为此工作到深夜……
     <br />
     <br />
-    uView Pro文档和源码全部开源免费，如果您认为uView Pro帮到了您的开发工作，您可以捐赠uView Pro的研发工作，捐赠无门槛，哪怕是一杯可乐也好(相信这比打赏主播更有意义)。
+    uView Pro文档和源码全部开源免费，如果您认为uView
+    Pro帮到了您的开发工作，您可以捐赠uView
+    Pro的研发工作，捐赠无门槛，哪怕是一杯可乐也好(相信这比打赏主播更有意义)。
     <el-row :gutter="20">
       <el-col :md="8" :xs="24">
         <div class="sponsor-type">
-          <img src="https://ik.imagekit.io/anyup/images/social/weixin-pay.png" />
+          <img
+            src="https://ik.imagekit.io/anyup/images/social/weixin-pay.png"
+          />
         </div>
       </el-col>
       <el-col :md="8" :xs="24">
@@ -19,7 +24,20 @@
 
     以下为历史捐赠者名单，无论金额多少，我们都铭记在心，感谢您的支持！
     <br />
-    如有遗漏，请及时联系微信（anyupxing），我们将及时更新。
+    如有遗漏，请及时联系，我们将及时更新。
+
+    <el-popover
+      placement="top-start"
+      title="扫码添加：anyupxing"
+      :width="200"
+      trigger="hover"
+    >
+      <img src="https://ik.imagekit.io/anyup/images/social/weixin-person.png" alt="" srcset="" />
+      <template #reference>
+        <a class="cursor follow-us">微信搜索或扫码添加：anyupxing</a>
+      </template>
+    </el-popover>
+
     <br />
     <br />
 
@@ -41,8 +59,8 @@
         <template #default="scope">
           <el-avatar
             v-if="scope.row.avatar"
-            :src="baseUrl + scope.row.avatar"
-            :size="40"
+            :src="scope.row.avatar"
+            :size="30"
           ></el-avatar>
           <span v-else>--</span>
         </template>
@@ -72,6 +90,7 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 // 云端静态资源基础地址
+// const baseUrl = '/json'
 const baseUrl = 'https://env-00jxty5jnvo5-static.normal.cloudstatic.cn/api'
 // 捐赠者列表数据
 const donationList = ref<any[]>([])
@@ -83,7 +102,10 @@ function fetchDonationList() {
   axios
     .get(`${baseUrl}/donation.json?updateAt=${Date.now()}`)
     .then(({ data }) => {
-      const { data: { list }, code } = data
+      const {
+        data: { list },
+        code
+      } = data
       if (code === 0) {
         donationList.value = list
       }

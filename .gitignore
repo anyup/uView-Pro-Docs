@@ -31,3 +31,4 @@ deploy
 /json/
 /docs/.vitepress/cache/*
 build/
+/docs/public/json/*
