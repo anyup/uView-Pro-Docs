@@ -67,7 +67,7 @@ Vue.use(uView);
 }
 ```
 
-请通过[快速上手](https://uview-pro.netlify.app/components/quickstart.html)了解更详细的内容 
+请通过[快速上手](https://uviewpro.cn/zh/components/quickstart.html)了解更详细的内容 
 
 ## 使用方法
 配置easycom规则后，自动按需引入，无需`import`组件，直接引用即可。
@@ -78,21 +78,21 @@ Vue.use(uView);
 </template>
 ```
 
-请通过[快速上手](https://uview-pro.netlify.app/components/quickstart.html)了解更详细的内容 
+请通过[快速上手](https://uviewpro.cn/zh/components/quickstart.html)了解更详细的内容 
 
 ## 链接
 
-- [官方文档](https://uview-pro.netlify.app/)
-- [更新日志](https://uview-pro.netlify.app/components/changelog.html)
-- [升级指南](https://uview-pro.netlify.app/components/changelog.html)
-- [交流反馈](https://uview-pro.netlify.app/cooperation/about.html)
+- [官方文档](https://uviewpro.cn)
+- [更新日志](https://uviewpro.cn/zh/components/changelog.html)
+- [升级指南](https://uviewpro.cn/zh/components/changelog.html)
+- [交流反馈](https://uviewpro.cn/zh/cooperation/about.html)
 
 ## 预览
 
 您可以通过**微信**扫码，查看最佳的演示效果。
 <br>
 <br>
-<img src="https://uview-pro.netlify.app/common/weixin_mini_qrcode.png" width="220" height="220" >
+<img src="https://uviewpro.cn/zh/common/weixin_mini_qrcode.png" width="220" height="220" >
 
 
 ## 版权信息

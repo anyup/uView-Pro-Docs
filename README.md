@@ -8,14 +8,14 @@
 
 uView Pro，是[uni-app](https://uniapp.dcloud.io/)全面兼容Vue3的uni-app生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水。
 
-## [官方文档：https://uview-pro.netlify.app/](https://uview-pro.netlify.app/)
+## [官方文档：https://uviewpro.cn](https://uviewpro.cn)
 
 ## 链接
 
-- [官方文档](https://uview-pro.netlify.app/)
-- [更新日志](https://uview-pro.netlify.app/components/changelog.html)
-- [升级指南](https://uview-pro.netlify.app/components/changelog.html)
-- [交流反馈](https://uview-pro.netlify.app/cooperation/about.html)
+- [官方文档](https://uviewpro.cn)
+- [更新日志](https://uviewpro.cn/zh/components/changelog.html)
+- [升级指南](https://uviewpro.cn/zh/components/changelog.html)
+- [交流反馈](https://uviewpro.cn/zh/cooperation/about.html)
 
 ## 交流反馈
 

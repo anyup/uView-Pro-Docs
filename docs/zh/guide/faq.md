@@ -259,12 +259,12 @@ uView Pro 作为 uni-app 生态的新星组件库，凭借完善的 TS 类型支
 
 **官方资源**：
 
-- [uView Pro 官方文档](https://uview-pro.netlify.app/)
+- [uView Pro 官方文档](https://uviewpro.cn)
 - [GitHub 开源仓库](https://github.com/anyup/uview-pro)
 - [Gitee 镜像](https://gitee.com/anyup/uview-pro)
 - [插件市场](https://ext.dcloud.net.cn/plugin?id=24633)
 - [官方 Issue 区](https://github.com/anyup/uview-pro/issues)
-- [社区交流反馈区](https://uview-pro.netlify.app/cooperation/about.html)
+- [社区交流反馈区](https://uviewpro.cn/zh/cooperation/about.html)
 
 如有更多问题，欢迎在官方 issue 区留言或加入交流群反馈！
 

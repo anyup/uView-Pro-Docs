@@ -349,7 +349,7 @@ onMounted(() => {
 // 下载主题文件
 function downThemeFile() {
   let content = `// 此自定义uView Pro主题生成于${dateTime()}` + '\n'
-  content += '// 地址：https://uview-pro.netlify.app/guide/theme.html\n\n'
+  content += '// 地址：https://uviewpro.cn/zh/guide/theme.html\n\n'
   for (const key in color.value) {
     content += `$u-${key}: ${color.value[key]};\n`
   }
@@ -362,7 +362,7 @@ function downThemeFile() {
 
 function downThemeFileTs() {
   let content = `// 此自定义uView Pro主题生成于${dateTime()}\n`
-  content += '// 地址：https://uview-pro.netlify.app/guide/theme.html\n\nexport default {\n'
+  content += '// 地址：https://uviewpro.cn/zh/guide/theme.html\n\nexport default {\n'
   for (const key in color.value) {
     content += `  ${formatToCamelCase(key.replace('type-',''))}: '${color.value[key]}',\n`
   }
