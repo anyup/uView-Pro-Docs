@@ -1,10 +1,26 @@
 import { defineConfig } from 'vitepress'
 import { search as zhSearch } from './zh'
 import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
+import { getEnvVar } from './env'
+
+// 获取环境变量
+const baseUrl = getEnvVar('VITE_BASE_URL', '/json')
+const base = getEnvVar('VITE_BASE', '/')
+
+console.log('Environment variables loaded:')
+console.log('VITE_BASE_URL:', baseUrl)
+console.log('VITE_BASE:', base)
 
 export const shared = defineConfig({
+  base,
+  vite: {
+    define: {
+      // 将环境变量暴露给客户端
+      'import.meta.env.VITE_BASE_URL': JSON.stringify(baseUrl),
+      'import.meta.env.VITE_BASE': JSON.stringify(base),
+    },
+  },
   title: 'uView Pro',
-  base: '/',
   lastUpdated: true,
   cleanUrls: false, // 简洁的 URL，需要服务器支持
   metaChunk: true, // 将页面元数据提取到单独的 JavaScript 块中，而不是内联在初始 HTML 中

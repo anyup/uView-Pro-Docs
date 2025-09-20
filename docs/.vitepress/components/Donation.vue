@@ -90,8 +90,7 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 // 云端静态资源基础地址
-// const baseUrl = '/json'
-const baseUrl = 'https://env-00jxty5jnvo5-static.normal.cloudstatic.cn/api'
+const baseUrl = (import.meta as any).env.VITE_BASE_URL || '/json'
 // 捐赠者列表数据
 const donationList = ref<any[]>([])
 // 排序方式（可扩展）
