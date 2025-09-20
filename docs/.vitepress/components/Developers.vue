@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="member-item" v-for="item in list" :key="item.id">
+    <div
+      class="member-item"
+      v-for="(item, index) in developerList"
+      :key="index"
+    >
       <div class="member-item__avatar">
         <img :src="`${item.avatar}`" />
       </div>
@@ -70,6 +74,7 @@
 
 <script setup lang="ts">
 // uView Pro开发者团队成员展示组件
+import axios from 'axios'
 import { ref, onMounted } from 'vue'
 
 interface Skill {
@@ -89,32 +94,27 @@ interface Member {
   sort?: number
 }
 
-const list = ref<Member[]>([])
+const developerList = ref<Member[]>([])
+
+const baseUrl = (import.meta as any).env.VITE_BASE_URL || '/json'
+
+// 获取广告列表
+function fetchDeveloperList() {
+  axios
+    .get(`${baseUrl}/developers.json?updateAt=${Date.now()}`)
+    .then(({ data }) => {
+      const {
+        data: { list },
+        code
+      } = data
+      if (code === 0) {
+        developerList.value = list
+      }
+    })
+}
 
 onMounted(() => {
-  list.value = [
-    {
-      avatar: 'https://avatars.githubusercontent.com/u/106022674',
-      nickname: 'Bin',
-      position: '前端开发',
-      introduction:
-        '立志成为一名优秀的前端开发工程师，梦想加入开源社区，为开源贡献力量。',
-      city: '',
-      skills: [
-        {
-          tag: 'link',
-          url: 'https://ffgenius.netlify.app/'
-        },
-        {
-          tag: 'github',
-          url: 'https://github.com/ffgenius'
-        }
-      ],
-      type: 1,
-      isActive: true,
-      sort: 1
-    }
-  ]
+  fetchDeveloperList()
 })
 </script>
 
