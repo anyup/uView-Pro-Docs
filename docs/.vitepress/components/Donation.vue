@@ -8,14 +8,14 @@
     Pro帮到了您的开发工作，您可以捐赠uView
     Pro的研发工作，捐赠无门槛，哪怕是一杯可乐也好(相信这比打赏主播更有意义)。
     <el-row :gutter="20">
-      <el-col :md="8" :xs="24">
+      <el-col :md="8" :sm="12" :xs="24">
         <div class="sponsor-type">
           <img
             src="https://ik.imagekit.io/anyup/images/social/weixin-pay.png"
           />
         </div>
       </el-col>
-      <el-col :md="8" :xs="24">
+      <el-col :md="8" :sm="12" :xs="24">
         <div class="sponsor-type">
           <img src="https://ik.imagekit.io/anyup/images/social/ali-pay.png" />
         </div>
