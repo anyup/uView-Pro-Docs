@@ -1,16 +1,16 @@
 <template>
   <div>
     <el-alert type="warning" show-icon> 
-		<template #title>
-		    <div style="font-size: 16px;">当前文档即将下线，访问新版文档请前往：<a href="https://uviewpro.cn" style="cursor: pointer;">https://uviewpro.cn</a></div>
-		</template>
-	</el-alert>
+      <template #title>
+          <div style="font-size: 16px;">当前文档即将下线，访问新版文档请前往：<a href="https://uviewpro.cn" style="cursor: pointer;">https://uviewpro.cn</a></div>
+      </template>
+    </el-alert>
     <el-dialog
       title="提示"
       :visible.sync="dialogVisible"
-      width="30%"
+      width="400px"
     >
-      <div style="font-size: 16px;">当前文档即将下线，访问新版文档请前往：<br></br><a href="https://uviewpro.cn" style="cursor: pointer;">https://uviewpro.cn</a></div>
+      <div style="font-size: 16px;">当前文档即将下线，访问新版文档请前往：<br></br>唯一域名：<a href="https://uviewpro.cn" style="cursor: pointer;">https://uviewpro.cn</a></div>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="dialogVisible = false">
           确 定
@@ -195,6 +195,9 @@ export default {
 </script>
 
 <style scoped>
+.v-modal {
+  display: none !important;
+}
 ul,
 ol {
   padding-left: 0;
