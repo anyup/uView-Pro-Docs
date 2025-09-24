@@ -167,9 +167,9 @@
     </div>
     <div class="foot">
       Copyright {{ year }} uView Pro |
-      <a target="_blank" href="http://beian.miit.gov.cn"
-        >鲁ICP备2021040594号-1</a
-      >
+      <a target="_blank" href="http://beian.miit.gov.cn">
+        鲁ICP备2021040594号-1
+        </a>
     </div>
   </div>
 </template>
@@ -179,17 +179,19 @@ export default {
   data() {
     return {
       year: new Date().getFullYear(),
-	  dialogVisible: true,
-	  desc: '当前文档即将下线，访问新版文档请前往：https://uviewpro.cn'
+	    dialogVisible: false,
+	    desc: '当前文档即将下线，访问新版文档请前往：https://uviewpro.cn'
     };
   },
   created() {
-    // this.$alert('深圳宝安区高薪招聘前端开发岗位，加入我们，和uView Pro核心研发团队一起工作和成长，快来看看吧！联系QQ：1416956117，查看岗位：http://zpurl.cn/Y3SzR', '高薪招聘前端开发', {
-    // 	confirmButtonText: '确定',
-    // 	callback: action => {
-    // 		if(action == 'confirm') window.open("http://zpurl.cn/YnBDC");
-    // 	}
-    // });
+    //  this.$alert('当前文档即将下线，请访问新版文档：<a href="https://uviewpro.cn">https://uviewpro.cn</a>', '提示', {
+    //  	confirmButtonText: '确定',
+    //   showClose: false,
+    //   dangerouslyUseHTMLString: true,
+    //  	callback: action => {
+    //  		if(action == 'confirm') window.open("https://uviewpro.cn");
+    //  	}
+    //  });
   },
 };
 </script>

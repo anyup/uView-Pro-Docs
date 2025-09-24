@@ -24,6 +24,20 @@ export default {
       }
       return 'NotFound'
     }
+  },
+  created() {
+    this.$alert(
+      '当前文档即将下线，请访问新版文档：<a href="https://uviewpro.cn">https://uviewpro.cn</a>',
+      "提示",
+      {
+        confirmButtonText: "确定",
+        showClose: false,
+        dangerouslyUseHTMLString: true,
+        callback: (action) => {
+          if (action == "confirm") window.open("https://uviewpro.cn");
+        },
+      }
+    );
   }
 }
 </script>
